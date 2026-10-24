@@ -14,9 +14,9 @@ license.name = "MIT"
 license.url = "https://opensource.org/licenses/MIT"
 license.dist = "repo"
 environment = "client_and_server"
-sources_url = "https://github.com/Suel-ki/Beautify-Refabricated"
-homepage_url = "https://github.com/Suel-ki/Beautify-Refabricated"
-issues_url = "https://github.com/Suel-ki/Beautify-Refabricated/issues"
+sources_url = "https://github.com/Suel-ki/beautify-stonecutter"
+homepage_url = "https://github.com/Suel-ki/beautify-stonecutter"
+issues_url = "https://github.com/Suel-ki/beautify-stonecutter/issues"
 discord_url = ""
 dev_jvm_args = [
 	"-XX:+IgnoreUnrecognizedVMOptions",
@@ -32,9 +32,9 @@ dev_jvm_args = [
 
 [fabric]
 deps.fabric-loader-range = ">=0.15.11"
-sources_url = "https://github.com/Suel-ki/Beautify-Refabricated"
-homepage_url = "https://github.com/Suel-ki/Beautify-Refabricated"
-issues_url = "https://github.com/Suel-ki/Beautify-Refabricated/issues"
+sources_url = "https://github.com/Suel-ki/beautify-stonecutter"
+homepage_url = "https://www.curseforge.com/minecraft/mc-mods/beautify-refabricated"
+issues_url = "https://github.com/Suel-ki/beautify-stonecutter/issues"
 
 [fabric."26.3"]
 deps.mezz-config = "0.6.8"
@@ -100,9 +100,9 @@ deps.every-compat = "1.20-2.9.15-fabric"
 deps.moonlight = "1.20-2.16.27-fabric"
 
 [neoforge]
-sources_url = "https://github.com/Suel-ki/Beautify-Refoxed"
-homepage_url = "https://github.com/Suel-ki/Beautify-Refoxed"
-issues_url = "https://github.com/Suel-ki/Beautify-Refoxed/issues"
+sources_url = "https://github.com/Suel-ki/beautify-stonecutter"
+homepage_url = "https://www.curseforge.com/minecraft/mc-mods/beautify-refoxed"
+issues_url = "https://github.com/Suel-ki/beautify-stonecutter/issues"
 
 [neoforge."26.3"]
 deps.mezz-config = "0.6.8"
