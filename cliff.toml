@@ -81,7 +81,7 @@ commit_parsers = [
 	{ message = "^style", group = "Code Style" },
 	{ message = "^revert", group = "Revert" },
 	{ message = "^test", group = "Tests" },
-	{ message = "^chore", group = "Chores" },
+	{ message = "^chore", skip = true },
 	{ body = ".*security", group = "Security" },
 	{ message = ".*\\((ci|cd|dx)(/.*)?\\).*", group = "Development/Tooling" },
 
