@@ -14,6 +14,8 @@ sealed class Loader(val id: String) {
 
 	open val isFabricLike: Boolean = false
 
+	open val displayName: String = id.replaceFirstChar(Char::titlecase)
+
 	abstract fun generateManifest(ctx: Context): String
 
 	object Fabric : Loader("fabric") {
@@ -126,6 +128,7 @@ sealed class Loader(val id: String) {
 	}
 
 	object NeoForge : ForgeLike("neoforge") {
+	override val displayName = "NeoForge"
 		override val modManifestPath = "META-INF/neoforge.mods.toml"
 		override val excludedResources = (super.excludedResources + "META-INF/mods.toml") + "pack.mcmeta"
 	}
