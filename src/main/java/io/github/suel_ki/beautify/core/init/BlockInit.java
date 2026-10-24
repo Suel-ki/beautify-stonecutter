@@ -303,6 +303,38 @@ public class BlockInit {
         //? if >=1.21.11 {
         flammableRegistry.add(PALE_OAK_TRELLIS, 30, 20);
         //?}
+
+        // blinds
+        flammableRegistry.add(SPRUCE_BLINDS, 30, 20);
+        flammableRegistry.add(DARK_OAK_BLINDS, 30, 20);
+        flammableRegistry.add(CRIMSON_BLINDS, 30, 20);
+        flammableRegistry.add(CHERRY_BLINDS, 30, 20);
+        flammableRegistry.add(ACACIA_BLINDS, 30, 20);
+        flammableRegistry.add(JUNGLE_BLINDS, 30, 20);
+        flammableRegistry.add(OAK_BLINDS, 30, 20);
+        flammableRegistry.add(BIRCH_BLINDS, 30, 20);
+        flammableRegistry.add(WARPED_BLINDS, 30, 20);
+        flammableRegistry.add(MANGROVE_BLINDS, 30, 20);
+        flammableRegistry.add(BAMBOO_BLINDS, 30, 20);
+        //? if >=1.21.11 {
+        flammableRegistry.add(PALE_OAK_BLINDS, 30, 20);
+        //?}
+
+        // picture frames
+        flammableRegistry.add(SPRUCE_PICTURE_FRAME, 30, 20);
+        flammableRegistry.add(DARK_OAK_PICTURE_FRAME, 30, 20);
+        flammableRegistry.add(CRIMSON_PICTURE_FRAME, 30, 20);
+        flammableRegistry.add(CHERRY_PICTURE_FRAME, 30, 20);
+        flammableRegistry.add(ACACIA_PICTURE_FRAME, 30, 20);
+        flammableRegistry.add(JUNGLE_PICTURE_FRAME, 30, 20);
+        flammableRegistry.add(OAK_PICTURE_FRAME, 30, 20);
+        flammableRegistry.add(BIRCH_PICTURE_FRAME, 30, 20);
+        flammableRegistry.add(WARPED_PICTURE_FRAME, 30, 20);
+        flammableRegistry.add(MANGROVE_PICTURE_FRAME, 30, 20);
+        flammableRegistry.add(BAMBOO_PICTURE_FRAME, 30, 20);
+        //? if >=1.21.11 {
+        flammableRegistry.add(PALE_OAK_PICTURE_FRAME, 30, 20);
+        //?}
     }
 }
 //?} else {
