@@ -10,22 +10,11 @@ permissions:
   contents: write
 
 jobs:
-  release:
-    name: Release (${{ matrix.loader }})
+  prepare:
+    name: Prepare release
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        loader: [ fabric, neoforge ]
-    env:
-      MOD_IS_RELEASE: true
-      PUB_LOADER: ${{ matrix.loader }}
-      # Fabric and NeoForge are separate publishing projects; their project ids live in the repository Variables
-      PUB_MODRINTH_PROJECT_ID: ${{ matrix.loader == 'fabric' && vars.PUB_MODRINTH_PROJECT_ID_FABRIC || vars.PUB_MODRINTH_PROJECT_ID_NEOFORGE }}
-      PUB_CURSEFORGE_PROJECT_ID: ${{ matrix.loader == 'fabric' && vars.PUB_CURSEFORGE_PROJECT_ID_FABRIC || vars.PUB_CURSEFORGE_PROJECT_ID_NEOFORGE }}
-      # Only the fabric job creates the GitHub Release so the two jobs do not race for the same release
-      PUB_GITHUB_ENABLE: ${{ matrix.loader == 'fabric' && vars.PUB_GITHUB_ENABLE || 'false' }}
-
+    outputs:
+      tag: ${{ steps.tag.outputs.tag }}
     steps:
       - uses: actions/checkout@v4
         with:
@@ -33,8 +22,6 @@ jobs:
 
       - name: Resolve tag
         id: tag
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           read -r VERSION CHANNEL_TAG < <(python3 -c '
           import tomllib
@@ -67,7 +54,7 @@ jobs:
           echo "tag=$TAG" >> "$GITHUB_OUTPUT"
 
       - name: Create tag
-        if: github.event_name == 'workflow_dispatch' && matrix.loader == 'fabric'
+        if: github.event_name == 'workflow_dispatch'
         env:
           TAG: ${{ steps.tag.outputs.tag }}
         run: |
@@ -79,6 +66,28 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git tag -a "$TAG" -m "$TAG"
           git push origin "$TAG"
+
+  release:
+    name: Release (${{ matrix.loader }})
+    needs: prepare
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        loader: [ fabric, neoforge ]
+    env:
+      MOD_IS_RELEASE: true
+      PUB_LOADER: ${{ matrix.loader }}
+      # Fabric and NeoForge are separate publishing projects; their project ids live in the repository Variables
+      PUB_MODRINTH_PROJECT_ID: ${{ matrix.loader == 'fabric' && vars.PUB_MODRINTH_PROJECT_ID_FABRIC || vars.PUB_MODRINTH_PROJECT_ID_NEOFORGE }}
+      PUB_CURSEFORGE_PROJECT_ID: ${{ matrix.loader == 'fabric' && vars.PUB_CURSEFORGE_PROJECT_ID_FABRIC || vars.PUB_CURSEFORGE_PROJECT_ID_NEOFORGE }}
+      # Only the fabric job creates the GitHub Release so the two jobs do not race for the same release
+      PUB_GITHUB_ENABLE: ${{ matrix.loader == 'fabric' && vars.PUB_GITHUB_ENABLE || 'false' }}
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Prepare git-cliff
         run: |
@@ -103,7 +112,7 @@ jobs:
       - name: Build and publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          RELEASE_TAG: ${{ steps.tag.outputs.tag }}
+          RELEASE_TAG: ${{ needs.prepare.outputs.tag }}
           PUB_DRY_RUN: ${{ vars.PUB_DRY_RUN }}
           PUB_MODS_ENABLE: ${{ vars.PUB_MODS_ENABLE }}
           PUB_MAVEN_ENABLE: ${{ vars.PUB_MAVEN_ENABLE }}
