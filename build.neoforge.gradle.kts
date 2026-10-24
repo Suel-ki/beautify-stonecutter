@@ -20,7 +20,6 @@ platform {
 			forgeLikeVersionRange.set("[${prop("deps.neoforge")},)")
 		}
 
-		optionalCompatMods()
 	}
 }
 

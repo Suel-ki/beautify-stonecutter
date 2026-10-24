@@ -35,7 +35,10 @@ platform {
 		}
 		optional("modmenu") {}
 
-		optionalCompatMods()
+		required("cloth-config") {
+			slug("cloth-config")
+			fabricLikeVersionRange = ">=${prop("deps.cloth-config")}"
+		}
 	}
 }
 
