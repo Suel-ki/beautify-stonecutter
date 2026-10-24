@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "frames",
+  "key": {
+    "/": "minecraft:stick",
+    "W": "minecraft:white_wool",
+    "_": "minecraft:spruce_slab"
+  },
+  "pattern": [
+    " _ ",
+    " W ",
+    " _/"
+  ],
+  "result": {
+    "id": "beautify:spruce_picture_frame"
+  }
+}

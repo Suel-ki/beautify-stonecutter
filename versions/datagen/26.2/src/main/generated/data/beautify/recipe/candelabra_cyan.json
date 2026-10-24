@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "candelabras",
+  "key": {
+    "#": "minecraft:cyan_candle",
+    "I": "minecraft:iron_nugget"
+  },
+  "pattern": [
+    "###",
+    "III",
+    " I "
+  ],
+  "result": {
+    "id": "beautify:lamp_candelabra_cyan"
+  }
+}

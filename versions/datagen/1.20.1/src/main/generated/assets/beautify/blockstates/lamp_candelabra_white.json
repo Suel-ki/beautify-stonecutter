@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "facing=east,hanging=false,on=false": {
+      "model": "beautify:block/lamps/candelabras/standing_lamp_candelabra_off_white",
+      "y": 90
+    },
+    "facing=east,hanging=false,on=true": {
+      "model": "beautify:block/lamps/candelabras/standing_lamp_candelabra_white",
+      "y": 90
+    },
+    "facing=east,hanging=true,on=false": {
+      "model": "beautify:block/lamps/candelabras/lamp_candelabra_off_white",
+      "y": 90
+    },
+    "facing=east,hanging=true,on=true": {
+      "model": "beautify:block/lamps/candelabras/lamp_candelabra_white",
+      "y": 90
+    },
+    "facing=north,hanging=false,on=false": {
+      "model": "beautify:block/lamps/candelabras/standing_lamp_candelabra_off_white"
+    },
+    "facing=north,hanging=false,on=true": {
+      "model": "beautify:block/lamps/candelabras/standing_lamp_candelabra_white"
+    },
+    "facing=north,hanging=true,on=false": {
+      "model": "beautify:block/lamps/candelabras/lamp_candelabra_off_white"
+    },
+    "facing=north,hanging=true,on=true": {
+      "model": "beautify:block/lamps/candelabras/lamp_candelabra_white"
+    },
+    "facing=south,hanging=false,on=false": {
+      "model": "beautify:block/lamps/candelabras/standing_lamp_candelabra_off_white",
+      "y": 180
+    },
+    "facing=south,hanging=false,on=true": {
+      "model": "beautify:block/lamps/candelabras/standing_lamp_candelabra_white",
+      "y": 180
+    },
+    "facing=south,hanging=true,on=false": {
+      "model": "beautify:block/lamps/candelabras/lamp_candelabra_off_white",
+      "y": 180
+    },
+    "facing=south,hanging=true,on=true": {
+      "model": "beautify:block/lamps/candelabras/lamp_candelabra_white",
+      "y": 180
+    },
+    "facing=west,hanging=false,on=false": {
+      "model": "beautify:block/lamps/candelabras/standing_lamp_candelabra_off_white",
+      "y": 270
+    },
+    "facing=west,hanging=false,on=true": {
+      "model": "beautify:block/lamps/candelabras/standing_lamp_candelabra_white",
+      "y": 270
+    },
+    "facing=west,hanging=true,on=false": {
+      "model": "beautify:block/lamps/candelabras/lamp_candelabra_off_white",
+      "y": 270
+    },
+    "facing=west,hanging=true,on=true": {
+      "model": "beautify:block/lamps/candelabras/lamp_candelabra_white",
+      "y": 270
+    }
+  }
+}

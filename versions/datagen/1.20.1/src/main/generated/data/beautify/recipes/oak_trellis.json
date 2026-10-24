@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "trellis",
+  "key": {
+    "/": {
+      "item": "minecraft:stick"
+    },
+    "O": {
+      "item": "minecraft:oak_log"
+    }
+  },
+  "pattern": [
+    "/ /",
+    " O ",
+    "/ /"
+  ],
+  "result": {
+    "count": 4,
+    "item": "beautify:oak_trellis"
+  },
+  "show_notification": true
+}

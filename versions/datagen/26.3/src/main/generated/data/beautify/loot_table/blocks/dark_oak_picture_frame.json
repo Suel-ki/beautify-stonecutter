@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "condition": {
+        "type": "minecraft:survives_explosion"
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "beautify:dark_oak_picture_frame"
+        }
+      ],
+      "rolls": 1
+    }
+  ]
+}

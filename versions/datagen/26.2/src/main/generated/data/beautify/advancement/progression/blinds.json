@@ -1,0 +1,44 @@
+{
+  "parent": "beautify:progression/root",
+  "criteria": {
+    "obtain": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "beautify:oak_blinds",
+              "beautify:spruce_blinds",
+              "beautify:dark_oak_blinds",
+              "beautify:birch_blinds",
+              "beautify:acacia_blinds",
+              "beautify:jungle_blinds",
+              "beautify:warped_blinds",
+              "beautify:crimson_blinds",
+              "beautify:cherry_blinds",
+              "beautify:iron_blinds",
+              "beautify:mangrove_blinds"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.beautify.blinds.description"
+    },
+    "icon": {
+      "id": "beautify:oak_blinds"
+    },
+    "title": {
+      "translate": "advancements.beautify.blinds.title"
+    }
+  },
+  "requirements": [
+    [
+      "obtain"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

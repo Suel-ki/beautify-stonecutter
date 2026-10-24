@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "frames",
+  "key": {
+    "/": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "item": "minecraft:white_wool"
+    },
+    "_": {
+      "item": "minecraft:crimson_slab"
+    }
+  },
+  "pattern": [
+    " _ ",
+    " W ",
+    " _/"
+  ],
+  "result": {
+    "count": 1,
+    "id": "beautify:crimson_picture_frame"
+  }
+}

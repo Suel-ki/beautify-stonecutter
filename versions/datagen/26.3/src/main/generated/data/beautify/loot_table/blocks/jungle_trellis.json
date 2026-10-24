@@ -1,0 +1,277 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "condition": {
+            "type": "minecraft:match_block",
+            "blocks": "beautify:jungle_trellis",
+            "state": {
+              "flowers": "0"
+            }
+          },
+          "name": "beautify:jungle_trellis"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "condition": {
+            "type": "minecraft:match_block",
+            "blocks": "beautify:jungle_trellis",
+            "state": {
+              "flowers": "1"
+            }
+          },
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:rose_bush"
+                  }
+                ],
+                "rolls": 1
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:jungle_trellis"
+                  }
+                ],
+                "rolls": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "condition": {
+            "type": "minecraft:match_block",
+            "blocks": "beautify:jungle_trellis",
+            "state": {
+              "flowers": "2"
+            }
+          },
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:sunflower"
+                  }
+                ],
+                "rolls": 1
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:jungle_trellis"
+                  }
+                ],
+                "rolls": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "condition": {
+            "type": "minecraft:match_block",
+            "blocks": "beautify:jungle_trellis",
+            "state": {
+              "flowers": "3"
+            }
+          },
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:peony"
+                  }
+                ],
+                "rolls": 1
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:jungle_trellis"
+                  }
+                ],
+                "rolls": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "condition": {
+            "type": "minecraft:match_block",
+            "blocks": "beautify:jungle_trellis",
+            "state": {
+              "flowers": "4"
+            }
+          },
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:lilac"
+                  }
+                ],
+                "rolls": 1
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:jungle_trellis"
+                  }
+                ],
+                "rolls": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "condition": {
+            "type": "minecraft:match_block",
+            "blocks": "beautify:jungle_trellis",
+            "state": {
+              "flowers": "5"
+            }
+          },
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:vine"
+                  }
+                ],
+                "rolls": 1
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:jungle_trellis"
+                  }
+                ],
+                "rolls": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "condition": {
+            "type": "minecraft:match_block",
+            "blocks": "beautify:jungle_trellis",
+            "state": {
+              "flowers": "6"
+            }
+          },
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:weeping_vines"
+                  }
+                ],
+                "rolls": 1
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:jungle_trellis"
+                  }
+                ],
+                "rolls": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "condition": {
+            "type": "minecraft:match_block",
+            "blocks": "beautify:jungle_trellis",
+            "state": {
+              "flowers": "7"
+            }
+          },
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:twisting_vines"
+                  }
+                ],
+                "rolls": 1
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:jungle_trellis"
+                  }
+                ],
+                "rolls": 1
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "condition": {
+            "type": "minecraft:match_block",
+            "blocks": "beautify:jungle_trellis",
+            "state": {
+              "flowers": "8"
+            }
+          },
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:glow_lichen"
+                  }
+                ],
+                "rolls": 1
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:jungle_trellis"
+                  }
+                ],
+                "rolls": 1
+              }
+            ]
+          }
+        }
+      ],
+      "rolls": 1
+    }
+  ]
+}

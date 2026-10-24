@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "minecraft:glass_pane",
+    "c": "minecraft:copper_ingot"
+  },
+  "pattern": [
+    " # ",
+    "#c#",
+    " # "
+  ],
+  "result": {
+    "id": "beautify:lamp_light_bulb"
+  }
+}

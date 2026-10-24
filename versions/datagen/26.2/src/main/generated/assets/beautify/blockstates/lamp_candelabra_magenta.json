@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "facing=east,hanging=false,on=false": {
+      "model": "beautify:block/lamps/candelabras/standing_lamp_candelabra_off_magenta",
+      "y": 90
+    },
+    "facing=east,hanging=false,on=true": {
+      "model": "beautify:block/lamps/candelabras/standing_lamp_candelabra_magenta",
+      "y": 90
+    },
+    "facing=east,hanging=true,on=false": {
+      "model": "beautify:block/lamps/candelabras/lamp_candelabra_off_magenta",
+      "y": 90
+    },
+    "facing=east,hanging=true,on=true": {
+      "model": "beautify:block/lamps/candelabras/lamp_candelabra_magenta",
+      "y": 90
+    },
+    "facing=north,hanging=false,on=false": {
+      "model": "beautify:block/lamps/candelabras/standing_lamp_candelabra_off_magenta"
+    },
+    "facing=north,hanging=false,on=true": {
+      "model": "beautify:block/lamps/candelabras/standing_lamp_candelabra_magenta"
+    },
+    "facing=north,hanging=true,on=false": {
+      "model": "beautify:block/lamps/candelabras/lamp_candelabra_off_magenta"
+    },
+    "facing=north,hanging=true,on=true": {
+      "model": "beautify:block/lamps/candelabras/lamp_candelabra_magenta"
+    },
+    "facing=south,hanging=false,on=false": {
+      "model": "beautify:block/lamps/candelabras/standing_lamp_candelabra_off_magenta",
+      "y": 180
+    },
+    "facing=south,hanging=false,on=true": {
+      "model": "beautify:block/lamps/candelabras/standing_lamp_candelabra_magenta",
+      "y": 180
+    },
+    "facing=south,hanging=true,on=false": {
+      "model": "beautify:block/lamps/candelabras/lamp_candelabra_off_magenta",
+      "y": 180
+    },
+    "facing=south,hanging=true,on=true": {
+      "model": "beautify:block/lamps/candelabras/lamp_candelabra_magenta",
+      "y": 180
+    },
+    "facing=west,hanging=false,on=false": {
+      "model": "beautify:block/lamps/candelabras/standing_lamp_candelabra_off_magenta",
+      "y": 270
+    },
+    "facing=west,hanging=false,on=true": {
+      "model": "beautify:block/lamps/candelabras/standing_lamp_candelabra_magenta",
+      "y": 270
+    },
+    "facing=west,hanging=true,on=false": {
+      "model": "beautify:block/lamps/candelabras/lamp_candelabra_off_magenta",
+      "y": 270
+    },
+    "facing=west,hanging=true,on=true": {
+      "model": "beautify:block/lamps/candelabras/lamp_candelabra_magenta",
+      "y": 270
+    }
+  }
+}

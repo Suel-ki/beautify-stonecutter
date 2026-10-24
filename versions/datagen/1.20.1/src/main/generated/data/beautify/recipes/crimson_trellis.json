@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "trellis",
+  "key": {
+    "/": {
+      "item": "minecraft:stick"
+    },
+    "O": {
+      "item": "minecraft:crimson_stem"
+    }
+  },
+  "pattern": [
+    "/ /",
+    " O ",
+    "/ /"
+  ],
+  "result": {
+    "count": 4,
+    "item": "beautify:crimson_trellis"
+  },
+  "show_notification": true
+}

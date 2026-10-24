@@ -1,0 +1,63 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "beautify:lamp_jar",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "fill_level": "0"
+              }
+            }
+          ],
+          "name": "beautify:lamp_jar"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:lamp_jar",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "fill_level": "5"
+              }
+            }
+          ],
+          "name": "beautify:blocks/lamp_jar1"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:lamp_jar",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "fill_level": "10"
+              }
+            }
+          ],
+          "name": "beautify:blocks/lamp_jar2"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:lamp_jar",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "fill_level": "15"
+              }
+            }
+          ],
+          "name": "beautify:blocks/lamp_jar3"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

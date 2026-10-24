@@ -1,0 +1,295 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "beautify:warped_trellis",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "flowers": "0"
+              }
+            }
+          ],
+          "name": "beautify:warped_trellis"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:warped_trellis",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "flowers": "1"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:rose_bush"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:warped_trellis"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:warped_trellis",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "flowers": "2"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:sunflower"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:warped_trellis"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:warped_trellis",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "flowers": "3"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:peony"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:warped_trellis"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:warped_trellis",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "flowers": "4"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:lilac"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:warped_trellis"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:warped_trellis",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "flowers": "5"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:vine"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:warped_trellis"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:warped_trellis",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "flowers": "6"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:weeping_vines"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:warped_trellis"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:warped_trellis",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "flowers": "7"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:twisting_vines"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:warped_trellis"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:warped_trellis",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "flowers": "8"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:glow_lichen"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:warped_trellis"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

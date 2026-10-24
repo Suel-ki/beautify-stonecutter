@@ -1,0 +1,36 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "requirement": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:stick"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "requirement"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "beautify:oak_blinds",
+      "beautify:spruce_blinds",
+      "beautify:birch_blinds",
+      "beautify:dark_oak_blinds",
+      "beautify:jungle_blinds",
+      "beautify:crimson_blinds",
+      "beautify:cherry_blinds",
+      "beautify:acacia_blinds",
+      "beautify:warped_blinds",
+      "beautify:mangrove_blinds",
+      "beautify:bamboo_blinds",
+      "beautify:pale_oak_blinds"
+    ]
+  }
+}

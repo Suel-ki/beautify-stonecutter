@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "blinds",
+  "key": {
+    "/": {
+      "item": "minecraft:stick"
+    },
+    "_": {
+      "item": "minecraft:crimson_slab"
+    }
+  },
+  "pattern": [
+    "/_/",
+    "/_/"
+  ],
+  "result": {
+    "count": 1,
+    "id": "beautify:crimson_blinds"
+  }
+}

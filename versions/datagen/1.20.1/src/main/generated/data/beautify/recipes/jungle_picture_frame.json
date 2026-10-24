@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "frames",
+  "key": {
+    "/": {
+      "item": "minecraft:stick"
+    },
+    "W": {
+      "item": "minecraft:white_wool"
+    },
+    "_": {
+      "item": "minecraft:jungle_slab"
+    }
+  },
+  "pattern": [
+    " _ ",
+    " W ",
+    " _/"
+  ],
+  "result": {
+    "item": "beautify:jungle_picture_frame"
+  },
+  "show_notification": true
+}

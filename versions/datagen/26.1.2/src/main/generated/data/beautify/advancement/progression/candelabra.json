@@ -1,0 +1,32 @@
+{
+  "parent": "beautify:progression/root",
+  "criteria": {
+    "obtain": {
+      "conditions": {
+        "items": [
+          {
+            "items": "beautify:lamp_candelabra"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.beautify.candelabra.description"
+    },
+    "icon": {
+      "id": "beautify:lamp_candelabra"
+    },
+    "title": {
+      "translate": "advancements.beautify.candelabra.title"
+    }
+  },
+  "requirements": [
+    [
+      "obtain"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

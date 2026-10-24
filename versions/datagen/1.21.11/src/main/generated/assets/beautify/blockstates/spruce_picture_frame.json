@@ -1,0 +1,394 @@
+{
+  "variants": {
+    "diagonal=false,facing=east,frame_motive=0": {
+      "model": "beautify:block/pictureframes/spruce_sunset_picture_frame",
+      "y": 90
+    },
+    "diagonal=false,facing=east,frame_motive=1": {
+      "model": "beautify:block/pictureframes/spruce_flower_picture_frame",
+      "y": 90
+    },
+    "diagonal=false,facing=east,frame_motive=10": {
+      "model": "beautify:block/pictureframes/spruce_river_picture_frame",
+      "y": 90
+    },
+    "diagonal=false,facing=east,frame_motive=11": {
+      "model": "beautify:block/pictureframes/spruce_beach_picture_frame",
+      "y": 90
+    },
+    "diagonal=false,facing=east,frame_motive=12": {
+      "model": "beautify:block/pictureframes/spruce_frog_picture_frame",
+      "y": 90
+    },
+    "diagonal=false,facing=east,frame_motive=2": {
+      "model": "beautify:block/pictureframes/spruce_wasteland_picture_frame",
+      "y": 90
+    },
+    "diagonal=false,facing=east,frame_motive=3": {
+      "model": "beautify:block/pictureframes/spruce_plant_picture_frame",
+      "y": 90
+    },
+    "diagonal=false,facing=east,frame_motive=4": {
+      "model": "beautify:block/pictureframes/spruce_kebab_picture_frame",
+      "y": 90
+    },
+    "diagonal=false,facing=east,frame_motive=5": {
+      "model": "beautify:block/pictureframes/spruce_aztec2_picture_frame",
+      "y": 90
+    },
+    "diagonal=false,facing=east,frame_motive=6": {
+      "model": "beautify:block/pictureframes/spruce_aztec_picture_frame",
+      "y": 90
+    },
+    "diagonal=false,facing=east,frame_motive=7": {
+      "model": "beautify:block/pictureframes/spruce_alban_picture_frame",
+      "y": 90
+    },
+    "diagonal=false,facing=east,frame_motive=8": {
+      "model": "beautify:block/pictureframes/spruce_bomb_picture_frame",
+      "y": 90
+    },
+    "diagonal=false,facing=east,frame_motive=9": {
+      "model": "beautify:block/pictureframes/spruce_shroom_picture_frame",
+      "y": 90
+    },
+    "diagonal=false,facing=north,frame_motive=0": {
+      "model": "beautify:block/pictureframes/spruce_sunset_picture_frame"
+    },
+    "diagonal=false,facing=north,frame_motive=1": {
+      "model": "beautify:block/pictureframes/spruce_flower_picture_frame"
+    },
+    "diagonal=false,facing=north,frame_motive=10": {
+      "model": "beautify:block/pictureframes/spruce_river_picture_frame"
+    },
+    "diagonal=false,facing=north,frame_motive=11": {
+      "model": "beautify:block/pictureframes/spruce_beach_picture_frame"
+    },
+    "diagonal=false,facing=north,frame_motive=12": {
+      "model": "beautify:block/pictureframes/spruce_frog_picture_frame"
+    },
+    "diagonal=false,facing=north,frame_motive=2": {
+      "model": "beautify:block/pictureframes/spruce_wasteland_picture_frame"
+    },
+    "diagonal=false,facing=north,frame_motive=3": {
+      "model": "beautify:block/pictureframes/spruce_plant_picture_frame"
+    },
+    "diagonal=false,facing=north,frame_motive=4": {
+      "model": "beautify:block/pictureframes/spruce_kebab_picture_frame"
+    },
+    "diagonal=false,facing=north,frame_motive=5": {
+      "model": "beautify:block/pictureframes/spruce_aztec2_picture_frame"
+    },
+    "diagonal=false,facing=north,frame_motive=6": {
+      "model": "beautify:block/pictureframes/spruce_aztec_picture_frame"
+    },
+    "diagonal=false,facing=north,frame_motive=7": {
+      "model": "beautify:block/pictureframes/spruce_alban_picture_frame"
+    },
+    "diagonal=false,facing=north,frame_motive=8": {
+      "model": "beautify:block/pictureframes/spruce_bomb_picture_frame"
+    },
+    "diagonal=false,facing=north,frame_motive=9": {
+      "model": "beautify:block/pictureframes/spruce_shroom_picture_frame"
+    },
+    "diagonal=false,facing=south,frame_motive=0": {
+      "model": "beautify:block/pictureframes/spruce_sunset_picture_frame",
+      "y": 180
+    },
+    "diagonal=false,facing=south,frame_motive=1": {
+      "model": "beautify:block/pictureframes/spruce_flower_picture_frame",
+      "y": 180
+    },
+    "diagonal=false,facing=south,frame_motive=10": {
+      "model": "beautify:block/pictureframes/spruce_river_picture_frame",
+      "y": 180
+    },
+    "diagonal=false,facing=south,frame_motive=11": {
+      "model": "beautify:block/pictureframes/spruce_beach_picture_frame",
+      "y": 180
+    },
+    "diagonal=false,facing=south,frame_motive=12": {
+      "model": "beautify:block/pictureframes/spruce_frog_picture_frame",
+      "y": 180
+    },
+    "diagonal=false,facing=south,frame_motive=2": {
+      "model": "beautify:block/pictureframes/spruce_wasteland_picture_frame",
+      "y": 180
+    },
+    "diagonal=false,facing=south,frame_motive=3": {
+      "model": "beautify:block/pictureframes/spruce_plant_picture_frame",
+      "y": 180
+    },
+    "diagonal=false,facing=south,frame_motive=4": {
+      "model": "beautify:block/pictureframes/spruce_kebab_picture_frame",
+      "y": 180
+    },
+    "diagonal=false,facing=south,frame_motive=5": {
+      "model": "beautify:block/pictureframes/spruce_aztec2_picture_frame",
+      "y": 180
+    },
+    "diagonal=false,facing=south,frame_motive=6": {
+      "model": "beautify:block/pictureframes/spruce_aztec_picture_frame",
+      "y": 180
+    },
+    "diagonal=false,facing=south,frame_motive=7": {
+      "model": "beautify:block/pictureframes/spruce_alban_picture_frame",
+      "y": 180
+    },
+    "diagonal=false,facing=south,frame_motive=8": {
+      "model": "beautify:block/pictureframes/spruce_bomb_picture_frame",
+      "y": 180
+    },
+    "diagonal=false,facing=south,frame_motive=9": {
+      "model": "beautify:block/pictureframes/spruce_shroom_picture_frame",
+      "y": 180
+    },
+    "diagonal=false,facing=west,frame_motive=0": {
+      "model": "beautify:block/pictureframes/spruce_sunset_picture_frame",
+      "y": 270
+    },
+    "diagonal=false,facing=west,frame_motive=1": {
+      "model": "beautify:block/pictureframes/spruce_flower_picture_frame",
+      "y": 270
+    },
+    "diagonal=false,facing=west,frame_motive=10": {
+      "model": "beautify:block/pictureframes/spruce_river_picture_frame",
+      "y": 270
+    },
+    "diagonal=false,facing=west,frame_motive=11": {
+      "model": "beautify:block/pictureframes/spruce_beach_picture_frame",
+      "y": 270
+    },
+    "diagonal=false,facing=west,frame_motive=12": {
+      "model": "beautify:block/pictureframes/spruce_frog_picture_frame",
+      "y": 270
+    },
+    "diagonal=false,facing=west,frame_motive=2": {
+      "model": "beautify:block/pictureframes/spruce_wasteland_picture_frame",
+      "y": 270
+    },
+    "diagonal=false,facing=west,frame_motive=3": {
+      "model": "beautify:block/pictureframes/spruce_plant_picture_frame",
+      "y": 270
+    },
+    "diagonal=false,facing=west,frame_motive=4": {
+      "model": "beautify:block/pictureframes/spruce_kebab_picture_frame",
+      "y": 270
+    },
+    "diagonal=false,facing=west,frame_motive=5": {
+      "model": "beautify:block/pictureframes/spruce_aztec2_picture_frame",
+      "y": 270
+    },
+    "diagonal=false,facing=west,frame_motive=6": {
+      "model": "beautify:block/pictureframes/spruce_aztec_picture_frame",
+      "y": 270
+    },
+    "diagonal=false,facing=west,frame_motive=7": {
+      "model": "beautify:block/pictureframes/spruce_alban_picture_frame",
+      "y": 270
+    },
+    "diagonal=false,facing=west,frame_motive=8": {
+      "model": "beautify:block/pictureframes/spruce_bomb_picture_frame",
+      "y": 270
+    },
+    "diagonal=false,facing=west,frame_motive=9": {
+      "model": "beautify:block/pictureframes/spruce_shroom_picture_frame",
+      "y": 270
+    },
+    "diagonal=true,facing=east,frame_motive=0": {
+      "model": "beautify:block/pictureframes/spruce_sunset_picture_frame_diagonal",
+      "y": 90
+    },
+    "diagonal=true,facing=east,frame_motive=1": {
+      "model": "beautify:block/pictureframes/spruce_flower_picture_frame_diagonal",
+      "y": 90
+    },
+    "diagonal=true,facing=east,frame_motive=10": {
+      "model": "beautify:block/pictureframes/spruce_river_picture_frame_diagonal",
+      "y": 90
+    },
+    "diagonal=true,facing=east,frame_motive=11": {
+      "model": "beautify:block/pictureframes/spruce_beach_picture_frame_diagonal",
+      "y": 90
+    },
+    "diagonal=true,facing=east,frame_motive=12": {
+      "model": "beautify:block/pictureframes/spruce_frog_picture_frame_diagonal",
+      "y": 90
+    },
+    "diagonal=true,facing=east,frame_motive=2": {
+      "model": "beautify:block/pictureframes/spruce_wasteland_picture_frame_diagonal",
+      "y": 90
+    },
+    "diagonal=true,facing=east,frame_motive=3": {
+      "model": "beautify:block/pictureframes/spruce_plant_picture_frame_diagonal",
+      "y": 90
+    },
+    "diagonal=true,facing=east,frame_motive=4": {
+      "model": "beautify:block/pictureframes/spruce_kebab_picture_frame_diagonal",
+      "y": 90
+    },
+    "diagonal=true,facing=east,frame_motive=5": {
+      "model": "beautify:block/pictureframes/spruce_aztec2_picture_frame_diagonal",
+      "y": 90
+    },
+    "diagonal=true,facing=east,frame_motive=6": {
+      "model": "beautify:block/pictureframes/spruce_aztec_picture_frame_diagonal",
+      "y": 90
+    },
+    "diagonal=true,facing=east,frame_motive=7": {
+      "model": "beautify:block/pictureframes/spruce_alban_picture_frame_diagonal",
+      "y": 90
+    },
+    "diagonal=true,facing=east,frame_motive=8": {
+      "model": "beautify:block/pictureframes/spruce_bomb_picture_frame_diagonal",
+      "y": 90
+    },
+    "diagonal=true,facing=east,frame_motive=9": {
+      "model": "beautify:block/pictureframes/spruce_shroom_picture_frame_diagonal",
+      "y": 90
+    },
+    "diagonal=true,facing=north,frame_motive=0": {
+      "model": "beautify:block/pictureframes/spruce_sunset_picture_frame_diagonal"
+    },
+    "diagonal=true,facing=north,frame_motive=1": {
+      "model": "beautify:block/pictureframes/spruce_flower_picture_frame_diagonal"
+    },
+    "diagonal=true,facing=north,frame_motive=10": {
+      "model": "beautify:block/pictureframes/spruce_river_picture_frame_diagonal"
+    },
+    "diagonal=true,facing=north,frame_motive=11": {
+      "model": "beautify:block/pictureframes/spruce_beach_picture_frame_diagonal"
+    },
+    "diagonal=true,facing=north,frame_motive=12": {
+      "model": "beautify:block/pictureframes/spruce_frog_picture_frame_diagonal"
+    },
+    "diagonal=true,facing=north,frame_motive=2": {
+      "model": "beautify:block/pictureframes/spruce_wasteland_picture_frame_diagonal"
+    },
+    "diagonal=true,facing=north,frame_motive=3": {
+      "model": "beautify:block/pictureframes/spruce_plant_picture_frame_diagonal"
+    },
+    "diagonal=true,facing=north,frame_motive=4": {
+      "model": "beautify:block/pictureframes/spruce_kebab_picture_frame_diagonal"
+    },
+    "diagonal=true,facing=north,frame_motive=5": {
+      "model": "beautify:block/pictureframes/spruce_aztec2_picture_frame_diagonal"
+    },
+    "diagonal=true,facing=north,frame_motive=6": {
+      "model": "beautify:block/pictureframes/spruce_aztec_picture_frame_diagonal"
+    },
+    "diagonal=true,facing=north,frame_motive=7": {
+      "model": "beautify:block/pictureframes/spruce_alban_picture_frame_diagonal"
+    },
+    "diagonal=true,facing=north,frame_motive=8": {
+      "model": "beautify:block/pictureframes/spruce_bomb_picture_frame_diagonal"
+    },
+    "diagonal=true,facing=north,frame_motive=9": {
+      "model": "beautify:block/pictureframes/spruce_shroom_picture_frame_diagonal"
+    },
+    "diagonal=true,facing=south,frame_motive=0": {
+      "model": "beautify:block/pictureframes/spruce_sunset_picture_frame_diagonal",
+      "y": 180
+    },
+    "diagonal=true,facing=south,frame_motive=1": {
+      "model": "beautify:block/pictureframes/spruce_flower_picture_frame_diagonal",
+      "y": 180
+    },
+    "diagonal=true,facing=south,frame_motive=10": {
+      "model": "beautify:block/pictureframes/spruce_river_picture_frame_diagonal",
+      "y": 180
+    },
+    "diagonal=true,facing=south,frame_motive=11": {
+      "model": "beautify:block/pictureframes/spruce_beach_picture_frame_diagonal",
+      "y": 180
+    },
+    "diagonal=true,facing=south,frame_motive=12": {
+      "model": "beautify:block/pictureframes/spruce_frog_picture_frame_diagonal",
+      "y": 180
+    },
+    "diagonal=true,facing=south,frame_motive=2": {
+      "model": "beautify:block/pictureframes/spruce_wasteland_picture_frame_diagonal",
+      "y": 180
+    },
+    "diagonal=true,facing=south,frame_motive=3": {
+      "model": "beautify:block/pictureframes/spruce_plant_picture_frame_diagonal",
+      "y": 180
+    },
+    "diagonal=true,facing=south,frame_motive=4": {
+      "model": "beautify:block/pictureframes/spruce_kebab_picture_frame_diagonal",
+      "y": 180
+    },
+    "diagonal=true,facing=south,frame_motive=5": {
+      "model": "beautify:block/pictureframes/spruce_aztec2_picture_frame_diagonal",
+      "y": 180
+    },
+    "diagonal=true,facing=south,frame_motive=6": {
+      "model": "beautify:block/pictureframes/spruce_aztec_picture_frame_diagonal",
+      "y": 180
+    },
+    "diagonal=true,facing=south,frame_motive=7": {
+      "model": "beautify:block/pictureframes/spruce_alban_picture_frame_diagonal",
+      "y": 180
+    },
+    "diagonal=true,facing=south,frame_motive=8": {
+      "model": "beautify:block/pictureframes/spruce_bomb_picture_frame_diagonal",
+      "y": 180
+    },
+    "diagonal=true,facing=south,frame_motive=9": {
+      "model": "beautify:block/pictureframes/spruce_shroom_picture_frame_diagonal",
+      "y": 180
+    },
+    "diagonal=true,facing=west,frame_motive=0": {
+      "model": "beautify:block/pictureframes/spruce_sunset_picture_frame_diagonal",
+      "y": 270
+    },
+    "diagonal=true,facing=west,frame_motive=1": {
+      "model": "beautify:block/pictureframes/spruce_flower_picture_frame_diagonal",
+      "y": 270
+    },
+    "diagonal=true,facing=west,frame_motive=10": {
+      "model": "beautify:block/pictureframes/spruce_river_picture_frame_diagonal",
+      "y": 270
+    },
+    "diagonal=true,facing=west,frame_motive=11": {
+      "model": "beautify:block/pictureframes/spruce_beach_picture_frame_diagonal",
+      "y": 270
+    },
+    "diagonal=true,facing=west,frame_motive=12": {
+      "model": "beautify:block/pictureframes/spruce_frog_picture_frame_diagonal",
+      "y": 270
+    },
+    "diagonal=true,facing=west,frame_motive=2": {
+      "model": "beautify:block/pictureframes/spruce_wasteland_picture_frame_diagonal",
+      "y": 270
+    },
+    "diagonal=true,facing=west,frame_motive=3": {
+      "model": "beautify:block/pictureframes/spruce_plant_picture_frame_diagonal",
+      "y": 270
+    },
+    "diagonal=true,facing=west,frame_motive=4": {
+      "model": "beautify:block/pictureframes/spruce_kebab_picture_frame_diagonal",
+      "y": 270
+    },
+    "diagonal=true,facing=west,frame_motive=5": {
+      "model": "beautify:block/pictureframes/spruce_aztec2_picture_frame_diagonal",
+      "y": 270
+    },
+    "diagonal=true,facing=west,frame_motive=6": {
+      "model": "beautify:block/pictureframes/spruce_aztec_picture_frame_diagonal",
+      "y": 270
+    },
+    "diagonal=true,facing=west,frame_motive=7": {
+      "model": "beautify:block/pictureframes/spruce_alban_picture_frame_diagonal",
+      "y": 270
+    },
+    "diagonal=true,facing=west,frame_motive=8": {
+      "model": "beautify:block/pictureframes/spruce_bomb_picture_frame_diagonal",
+      "y": 270
+    },
+    "diagonal=true,facing=west,frame_motive=9": {
+      "model": "beautify:block/pictureframes/spruce_shroom_picture_frame_diagonal",
+      "y": 270
+    }
+  }
+}

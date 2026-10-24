@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "candelabras",
+  "key": {
+    "#": "minecraft:light_gray_candle",
+    "I": "minecraft:iron_nugget"
+  },
+  "pattern": [
+    "###",
+    "III",
+    " I "
+  ],
+  "result": {
+    "id": "beautify:lamp_candelabra_light_gray"
+  }
+}

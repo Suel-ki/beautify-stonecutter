@@ -1,0 +1,9 @@
+{
+  "parent": "beautify:block/pots/base/hanging_pot_flat_grown",
+  "render_type": "cutout",
+  "textures": {
+    "1": "beautify:block/pots/vine_pot_grown",
+    "2": "beautify:block/pots/vine_pot_overlay_grown",
+    "particle": "minecraft:block/terracotta"
+  }
+}

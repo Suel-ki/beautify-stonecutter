@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "minecraft:bamboo",
+    "S": "minecraft:string",
+    "c": "minecraft:copper_ingot"
+  },
+  "pattern": [
+    " # ",
+    "ScS",
+    " # "
+  ],
+  "result": {
+    "id": "beautify:lamp_bamboo"
+  }
+}

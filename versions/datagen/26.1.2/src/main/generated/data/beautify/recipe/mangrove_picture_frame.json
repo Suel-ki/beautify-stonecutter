@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "frames",
+  "key": {
+    "/": "minecraft:stick",
+    "W": "minecraft:white_wool",
+    "_": "minecraft:mangrove_slab"
+  },
+  "pattern": [
+    " _ ",
+    " W ",
+    " _/"
+  ],
+  "result": {
+    "id": "beautify:mangrove_picture_frame"
+  }
+}

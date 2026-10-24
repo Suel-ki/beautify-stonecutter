@@ -1,0 +1,32 @@
+{
+  "parent": "beautify:progression/root",
+  "criteria": {
+    "obtain": {
+      "conditions": {
+        "items": [
+          {
+            "items": "beautify:bookstack"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.beautify.bookstack.description"
+    },
+    "icon": {
+      "id": "beautify:bookstack"
+    },
+    "title": {
+      "translate": "advancements.beautify.bookstack.title"
+    }
+  },
+  "requirements": [
+    [
+      "obtain"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

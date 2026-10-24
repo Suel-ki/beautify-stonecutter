@@ -1,0 +1,58 @@
+{
+  "variants": {
+    "facing=east,hidden=false,open=false": {
+      "model": "beautify:block/blinds/cherry_blinds_up",
+      "y": 90
+    },
+    "facing=east,hidden=false,open=true": {
+      "model": "beautify:block/blinds/cherry_blinds_down",
+      "y": 90
+    },
+    "facing=east,hidden=true,open=false": {
+      "model": "beautify:block/blinds/none"
+    },
+    "facing=east,hidden=true,open=true": {
+      "model": "beautify:block/blinds/none"
+    },
+    "facing=north,hidden=false,open=false": {
+      "model": "beautify:block/blinds/cherry_blinds_up"
+    },
+    "facing=north,hidden=false,open=true": {
+      "model": "beautify:block/blinds/cherry_blinds_down"
+    },
+    "facing=north,hidden=true,open=false": {
+      "model": "beautify:block/blinds/none"
+    },
+    "facing=north,hidden=true,open=true": {
+      "model": "beautify:block/blinds/none"
+    },
+    "facing=south,hidden=false,open=false": {
+      "model": "beautify:block/blinds/cherry_blinds_up",
+      "y": 180
+    },
+    "facing=south,hidden=false,open=true": {
+      "model": "beautify:block/blinds/cherry_blinds_down",
+      "y": 180
+    },
+    "facing=south,hidden=true,open=false": {
+      "model": "beautify:block/blinds/none"
+    },
+    "facing=south,hidden=true,open=true": {
+      "model": "beautify:block/blinds/none"
+    },
+    "facing=west,hidden=false,open=false": {
+      "model": "beautify:block/blinds/cherry_blinds_up",
+      "y": 270
+    },
+    "facing=west,hidden=false,open=true": {
+      "model": "beautify:block/blinds/cherry_blinds_down",
+      "y": 270
+    },
+    "facing=west,hidden=true,open=false": {
+      "model": "beautify:block/blinds/none"
+    },
+    "facing=west,hidden=true,open=true": {
+      "model": "beautify:block/blinds/none"
+    }
+  }
+}

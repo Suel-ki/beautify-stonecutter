@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "frames",
+  "key": {
+    "/": "minecraft:stick",
+    "W": "minecraft:white_wool",
+    "_": "minecraft:birch_slab"
+  },
+  "pattern": [
+    " _ ",
+    " W ",
+    " _/"
+  ],
+  "result": {
+    "id": "beautify:birch_picture_frame"
+  }
+}

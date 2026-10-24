@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "blinds",
+  "key": {
+    "/": "minecraft:stick",
+    "_": "minecraft:dark_oak_slab"
+  },
+  "pattern": [
+    "/_/",
+    "/_/"
+  ],
+  "result": {
+    "id": "beautify:dark_oak_blinds"
+  }
+}

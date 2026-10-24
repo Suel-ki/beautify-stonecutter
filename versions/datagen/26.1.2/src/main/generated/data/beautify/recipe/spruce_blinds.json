@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "blinds",
+  "key": {
+    "/": "minecraft:stick",
+    "_": "minecraft:spruce_slab"
+  },
+  "pattern": [
+    "/_/",
+    "/_/"
+  ],
+  "result": {
+    "id": "beautify:spruce_blinds"
+  }
+}

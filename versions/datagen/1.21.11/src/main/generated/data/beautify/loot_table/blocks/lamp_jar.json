@@ -1,0 +1,132 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "beautify:lamp_jar",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "fill_level": "0"
+              }
+            }
+          ],
+          "name": "beautify:lamp_jar"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:lamp_jar",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "fill_level": "5"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "bonus_rolls": 0.0,
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:lamp_jar"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "bonus_rolls": 0.0,
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:glowstone_dust"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:lamp_jar",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "fill_level": "10"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "bonus_rolls": 0.0,
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:lamp_jar"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "bonus_rolls": 0.0,
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:glowstone_dust"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:lamp_jar",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "fill_level": "15"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "bonus_rolls": 0.0,
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:lamp_jar"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "bonus_rolls": 0.0,
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:glowstone_dust"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

@@ -1,0 +1,1323 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "beautify:hanging_pot",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "potflower": "0"
+              }
+            }
+          ],
+          "name": "beautify:hanging_pot"
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:hanging_pot",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "potflower": "1"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:hanging_pot"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:rose_bush"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "conditions": [
+                  {
+                    "block": "beautify:hanging_pot",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "grown": "true"
+                    }
+                  }
+                ],
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:rose_bush"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:hanging_pot",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "potflower": "2"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:hanging_pot"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:lilac"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "conditions": [
+                  {
+                    "block": "beautify:hanging_pot",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "grown": "true"
+                    }
+                  }
+                ],
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:lilac"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:hanging_pot",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "potflower": "3"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:hanging_pot"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:blue_orchid"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "conditions": [
+                  {
+                    "block": "beautify:hanging_pot",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "grown": "true"
+                    }
+                  }
+                ],
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:blue_orchid"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:hanging_pot",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "potflower": "4"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:hanging_pot"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:vine"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "conditions": [
+                  {
+                    "block": "beautify:hanging_pot",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "grown": "true"
+                    }
+                  }
+                ],
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:vine"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:hanging_pot",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "potflower": "5"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:hanging_pot"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:sunflower"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "conditions": [
+                  {
+                    "block": "beautify:hanging_pot",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "grown": "true"
+                    }
+                  }
+                ],
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:sunflower"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:hanging_pot",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "potflower": "6"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:hanging_pot"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:peony"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "conditions": [
+                  {
+                    "block": "beautify:hanging_pot",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "grown": "true"
+                    }
+                  }
+                ],
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:peony"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:hanging_pot",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "potflower": "7"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:hanging_pot"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:azure_bluet"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "conditions": [
+                  {
+                    "block": "beautify:hanging_pot",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "grown": "true"
+                    }
+                  }
+                ],
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:azure_bluet"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:hanging_pot",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "potflower": "8"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:hanging_pot"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:red_tulip"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "conditions": [
+                  {
+                    "block": "beautify:hanging_pot",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "grown": "true"
+                    }
+                  }
+                ],
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:red_tulip"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:hanging_pot",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "potflower": "9"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:hanging_pot"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:orange_tulip"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "conditions": [
+                  {
+                    "block": "beautify:hanging_pot",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "grown": "true"
+                    }
+                  }
+                ],
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:orange_tulip"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:hanging_pot",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "potflower": "10"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:hanging_pot"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:white_tulip"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "conditions": [
+                  {
+                    "block": "beautify:hanging_pot",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "grown": "true"
+                    }
+                  }
+                ],
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:white_tulip"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:hanging_pot",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "potflower": "11"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:hanging_pot"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:pink_tulip"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "conditions": [
+                  {
+                    "block": "beautify:hanging_pot",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "grown": "true"
+                    }
+                  }
+                ],
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:pink_tulip"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:hanging_pot",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "potflower": "12"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:hanging_pot"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:allium"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "conditions": [
+                  {
+                    "block": "beautify:hanging_pot",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "grown": "true"
+                    }
+                  }
+                ],
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:allium"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:hanging_pot",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "potflower": "13"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:hanging_pot"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:dandelion"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "conditions": [
+                  {
+                    "block": "beautify:hanging_pot",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "grown": "true"
+                    }
+                  }
+                ],
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:dandelion"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:hanging_pot",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "potflower": "14"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:hanging_pot"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:poppy"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "conditions": [
+                  {
+                    "block": "beautify:hanging_pot",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "grown": "true"
+                    }
+                  }
+                ],
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:poppy"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:hanging_pot",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "potflower": "15"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:hanging_pot"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:glow_lichen"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "conditions": [
+                  {
+                    "block": "beautify:hanging_pot",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "grown": "true"
+                    }
+                  }
+                ],
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:glow_lichen"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:hanging_pot",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "potflower": "16"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:hanging_pot"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:oxeye_daisy"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "conditions": [
+                  {
+                    "block": "beautify:hanging_pot",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "grown": "true"
+                    }
+                  }
+                ],
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:oxeye_daisy"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:hanging_pot",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "potflower": "17"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:hanging_pot"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:lily_of_the_valley"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "conditions": [
+                  {
+                    "block": "beautify:hanging_pot",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "grown": "true"
+                    }
+                  }
+                ],
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:lily_of_the_valley"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:hanging_pot",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "potflower": "18"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:hanging_pot"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:cornflower"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "conditions": [
+                  {
+                    "block": "beautify:hanging_pot",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "grown": "true"
+                    }
+                  }
+                ],
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:cornflower"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:hanging_pot",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "potflower": "19"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:hanging_pot"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:weeping_vines"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "conditions": [
+                  {
+                    "block": "beautify:hanging_pot",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "grown": "true"
+                    }
+                  }
+                ],
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:weeping_vines"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:hanging_pot",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "potflower": "20"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:hanging_pot"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:twisting_vines"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "conditions": [
+                  {
+                    "block": "beautify:hanging_pot",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "grown": "true"
+                    }
+                  }
+                ],
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:twisting_vines"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:hanging_pot",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "potflower": "21"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:hanging_pot"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:wither_rose"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "conditions": [
+                  {
+                    "block": "beautify:hanging_pot",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "grown": "true"
+                    }
+                  }
+                ],
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:wither_rose"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:hanging_pot",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "potflower": "22"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:hanging_pot"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:glow_berries"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "conditions": [
+                  {
+                    "block": "beautify:hanging_pot",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "grown": "true"
+                    }
+                  }
+                ],
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:glow_berries"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:hanging_pot",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "potflower": "23"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:hanging_pot"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:sweet_berries"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "conditions": [
+                  {
+                    "block": "beautify:hanging_pot",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "grown": "true"
+                    }
+                  }
+                ],
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:sweet_berries"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:hanging_pot",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "potflower": "24"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:hanging_pot"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:short_grass"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "conditions": [
+                  {
+                    "block": "beautify:hanging_pot",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "grown": "true"
+                    }
+                  }
+                ],
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:short_grass"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        },
+        {
+          "type": "minecraft:loot_table",
+          "conditions": [
+            {
+              "block": "beautify:hanging_pot",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "potflower": "25"
+              }
+            }
+          ],
+          "value": {
+            "pools": [
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "beautify:hanging_pot"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:fern"
+                  }
+                ],
+                "rolls": 1.0
+              },
+              {
+                "conditions": [
+                  {
+                    "block": "beautify:hanging_pot",
+                    "condition": "minecraft:block_state_property",
+                    "properties": {
+                      "grown": "true"
+                    }
+                  }
+                ],
+                "entries": [
+                  {
+                    "type": "minecraft:item",
+                    "name": "minecraft:fern"
+                  }
+                ],
+                "rolls": 1.0
+              }
+            ]
+          }
+        }
+      ],
+      "rolls": 1.0
+    }
+  ]
+}

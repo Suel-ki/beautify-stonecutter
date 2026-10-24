@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "trellis",
+  "key": {
+    "/": {
+      "item": "minecraft:stick"
+    },
+    "O": {
+      "item": "minecraft:bamboo_block"
+    }
+  },
+  "pattern": [
+    "/ /",
+    " O ",
+    "/ /"
+  ],
+  "result": {
+    "count": 4,
+    "id": "beautify:bamboo_trellis"
+  }
+}

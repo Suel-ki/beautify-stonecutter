@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "frames",
+  "key": {
+    "/": "minecraft:stick",
+    "W": "minecraft:white_wool",
+    "_": "minecraft:pale_oak_slab"
+  },
+  "pattern": [
+    " _ ",
+    " W ",
+    " _/"
+  ],
+  "result": {
+    "count": 1,
+    "id": "beautify:pale_oak_picture_frame"
+  }
+}

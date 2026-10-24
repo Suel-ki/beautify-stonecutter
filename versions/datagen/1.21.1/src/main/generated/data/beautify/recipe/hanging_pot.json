@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "hanging_pot",
+  "key": {
+    "#": {
+      "item": "beautify:rope"
+    },
+    "F": {
+      "item": "minecraft:flower_pot"
+    }
+  },
+  "pattern": [
+    "#",
+    "F"
+  ],
+  "result": {
+    "count": 1,
+    "id": "beautify:hanging_pot"
+  }
+}

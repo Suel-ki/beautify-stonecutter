@@ -1,0 +1,33 @@
+{
+  "parent": "beautify:progression/root",
+  "criteria": {
+    "obtain": {
+      "conditions": {
+        "items": [
+          {
+            "items": "beautify:rope"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.beautify.rope.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "beautify:rope"
+    },
+    "title": {
+      "translate": "advancements.beautify.rope.title"
+    }
+  },
+  "requirements": [
+    [
+      "obtain"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 250,
+  "experience": 0.1,
+  "ingredient": "beautify:iron_blinds",
+  "result": {
+    "id": "minecraft:iron_ingot"
+  }
+}

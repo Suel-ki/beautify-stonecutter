@@ -1,0 +1,9 @@
+{
+  "parent": "beautify:block/pictureframes/base_picture_frame_diagonal",
+  "render_type": "cutout",
+  "textures": {
+    "0": "beautify:block/motive_aztec2",
+    "1": "beautify:block/pale_frame_texture",
+    "particle": "beautify:block/pale_frame_texture"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "parent": "beautify:progression/root",
+  "criteria": {
+    "obtain": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "beautify:lamp_jar",
+              "beautify:lamp_bamboo",
+              "beautify:lamp_light_bulb"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.beautify.light.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "beautify:lamp_light_bulb"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.beautify.light.title"
+    }
+  },
+  "requirements": [
+    [
+      "obtain"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

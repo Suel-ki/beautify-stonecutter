@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": "minecraft:flower_pot",
+    "P": "#minecraft:planks"
+  },
+  "pattern": [
+    "##",
+    "PP"
+  ],
+  "result": {
+    "id": "beautify:botanist_workbench"
+  }
+}

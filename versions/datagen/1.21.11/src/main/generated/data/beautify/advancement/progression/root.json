@@ -1,0 +1,28 @@
+{
+  "criteria": {
+    "Install": {
+      "trigger": "minecraft:tick"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "minecraft:block/spruce_planks",
+    "description": {
+      "translate": "advancements.beautify.root.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "minecraft:rose_bush"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancements.beautify.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "Install"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

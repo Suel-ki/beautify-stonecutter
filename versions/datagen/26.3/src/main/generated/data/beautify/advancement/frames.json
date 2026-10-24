@@ -1,0 +1,36 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "requirement": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:white_wool"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "requirement"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "beautify:oak_picture_frame",
+      "beautify:spruce_picture_frame",
+      "beautify:birch_picture_frame",
+      "beautify:dark_oak_picture_frame",
+      "beautify:jungle_picture_frame",
+      "beautify:acacia_picture_frame",
+      "beautify:warped_picture_frame",
+      "beautify:crimson_picture_frame",
+      "beautify:mangrove_picture_frame",
+      "beautify:quartz_picture_frame",
+      "beautify:bamboo_picture_frame",
+      "beautify:pale_oak_picture_frame"
+    ]
+  }
+}
