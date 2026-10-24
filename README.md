@@ -1,8 +1,8 @@
 # Beautify: Refabricated/Refoxed
 
-<img align="right" width="160" src="src/main/resources/assets/icon.png">
+<!--suppress HtmlDeprecatedAttribute -->
+<img align="right" width="128" src="src/main/resources/assets/icon.png" alt="Beautify icon">
 
-### Fabric (Refabricated)
 [![](http://cf.way2muchnoise.eu/full_809311_downloads.svg)](https://www.curseforge.com/minecraft/mc-mods/beautify-refabricated)
 [![](http://cf.way2muchnoise.eu/full_1446138_downloads.svg)](https://www.curseforge.com/minecraft/mc-mods/beautify-refoxed)
 [![Minecraft Versions](https://cf.way2muchnoise.eu/versions/809311.svg)](https://www.curseforge.com/minecraft/mc-mods/beautify-refabricated)
