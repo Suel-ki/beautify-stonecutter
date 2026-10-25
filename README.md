@@ -3,7 +3,14 @@
 <!--suppress HtmlDeprecatedAttribute -->
 <img align="right" width="128" src="src/main/resources/assets/icon.png" alt="Beautify icon">
 
+[![neoforge](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/supported/neoforge_vector.svg)](https://www.curseforge.com/minecraft/mc-mods/beautify-refoxed)
+[![fabric](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/supported/fabric_vector.svg)](https://www.curseforge.com/minecraft/mc-mods/beautify-refabricated)
+![Available on Modrinth](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/modrinth_vector.svg)
+![Available on Curseforge](https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/available/curseforge_vector.svg)
+
+[![Download for Fabric](http://cf.way2muchnoise.eu/title/beautify-refabricated.svg?badge_style=flat)](https://www.curseforge.com/minecraft/mc-mods/beautify-refabricated)
 [![](http://cf.way2muchnoise.eu/full_809311_downloads.svg)](https://www.curseforge.com/minecraft/mc-mods/beautify-refabricated)
+[![Download for NeoForge](http://cf.way2muchnoise.eu/title/beautify-refoxed.svg?badge_style=flat)](https://www.curseforge.com/minecraft/mc-mods/beautify-refoxed)
 [![](http://cf.way2muchnoise.eu/full_1446138_downloads.svg)](https://www.curseforge.com/minecraft/mc-mods/beautify-refoxed)
 [![Minecraft Versions](https://cf.way2muchnoise.eu/versions/809311.svg)](https://www.curseforge.com/minecraft/mc-mods/beautify-refabricated)
 
