@@ -15,6 +15,7 @@ data class FabricManifest(
 	val icon: String,
 	val license: String,
 	val environment: String,
+	val accessWidener: String? = null,
 	val entrypoints: Map<String, List<String>>,
 	val depends: Map<String, String> = emptyMap(),
 	val suggests: Map<String, String> = emptyMap(),
@@ -30,6 +31,7 @@ data class ForgeManifest(
 	val issueTrackerURL: String,
 	val clientSideOnly: Boolean,
 	val mods: List<ForgeMod>,
+	val accessTransformers: List<ForgeAccessTransformer> = emptyList(),
 	val dependencies: Map<String, List<ForgeDependency>> = emptyMap()
 )
 
@@ -47,6 +49,11 @@ data class ForgeMod(
 	val logoBlur: Boolean = false,
 	val credits: String,
 	val description: String
+)
+
+@Serializable
+data class ForgeAccessTransformer(
+	val file: String
 )
 
 @Serializable

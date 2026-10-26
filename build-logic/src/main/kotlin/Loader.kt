@@ -56,6 +56,7 @@ sealed class Loader(val id: String) {
 					ModrinthEnvironment.CLIENT_ONLY_SERVER_OPTIONAL, ModrinthEnvironment.CLIENT_AND_SERVER,
 					ModrinthEnvironment.CLIENT_OR_SERVER_PREFERS_BOTH, ModrinthEnvironment.CLIENT_OR_SERVER -> "*"
 				},
+				accessWidener = if (ctx.stonecutter.eval(ctx.currentMcVersion, ">=26")) "beautify.classtweaker" else "beautify.accesswidener",
 				entrypoints = mapOf(
 					"main" to listOf("${ctx.modGroup}.${ctx.modId}.platform.fabric.FabricEntrypoint"),
 					"client" to listOf("${ctx.modGroup}.${ctx.modId}.platform.fabric.FabricClientEntrypoint"),
@@ -120,6 +121,9 @@ sealed class Loader(val id: String) {
 						description = ctx.description
 					)
 				),
+				accessTransformers = if (ctx.project.rootProject.file("src/${ctx.currentMcVersion}/${ctx.loader.id}/resources/META-INF/accesstransformer.cfg").exists()) {
+					listOf(ForgeAccessTransformer("META-INF/accesstransformer.cfg"))
+				} else emptyList(),
 				dependencies = mapOf(ctx.modId to forgeDeps)
 			)
 
