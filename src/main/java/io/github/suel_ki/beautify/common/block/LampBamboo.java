@@ -42,8 +42,8 @@ import net.minecraft.network.codec.StreamCodec;
 //? if >=1.21.11 {
 public class LampBamboo extends LanternBlock implements BlockTooltip {
 //?} else {
-/*public class LampBamboo extends LanternBlock {
-*///?}
+//public class LampBamboo extends LanternBlock {
+//?}
 	public static final BooleanProperty ON = BooleanProperty.create("on");
 	public static final BooleanProperty POWERED = BooleanProperty.create("powered");
 

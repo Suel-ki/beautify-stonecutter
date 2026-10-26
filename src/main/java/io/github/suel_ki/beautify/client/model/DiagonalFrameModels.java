@@ -35,8 +35,8 @@ public class DiagonalFrameModels implements ModelLoadingPlugin {
                 //? if >=1.21.1 {
                 isDiagonalFrame(context) ? new TurnedModel(model, YAW_DEGREES) : model);
                 //?} else {
-                /^isDiagonalFrame(context.id()) ? new TurnedModel(model, YAW_DEGREES) : model);
-                ^///?}
+                //isDiagonalFrame(context.id()) ? new TurnedModel(model, YAW_DEGREES) : model);
+                //?}
     }
 
     //? if >=1.21.1 {

@@ -266,7 +266,7 @@ public class ModVillagers {
     }
 }
 //?} else {
-/^¹package io.github.suel_ki.beautify.core.init;
+/^package io.github.suel_ki.beautify.core.init;
 
 import io.github.suel_ki.beautify.Beautify;
 import com.google.common.collect.ImmutableSet;
@@ -294,7 +294,7 @@ public class ModVillagers {
     public static final Supplier<VillagerProfession> BOTANIST = VILLAGER_PROFESSIONS.register("botanist",
             () -> new VillagerProfession("botanist", holder -> holder.value().equals(BOTANIST_WORKBENCH_POI.get()), holder -> holder.value().equals(BOTANIST_WORKBENCH_POI.get()), ImmutableSet.of(), ImmutableSet.of(), SoundEvents.CAVE_VINES_PLACE));
 }
-¹^///?}
+^///?}
 ^///?}
 *///?}
 

@@ -4,8 +4,8 @@
 //? if >=26.3 {
 import net.minecraft.world.level.storage.loot.providers.number.ints.ConstantValue;
 //?} else {
-/^import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
-^///?}
+//import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+//?}
 import io.github.suel_ki.beautify.common.block.HangingPot;
 import io.github.suel_ki.beautify.core.init.BlockInit;
 

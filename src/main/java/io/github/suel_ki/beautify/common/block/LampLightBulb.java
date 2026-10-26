@@ -52,8 +52,8 @@ import net.minecraft.world.item.TooltipFlag;
 //? if >=1.21.11 {
 public class LampLightBulb extends LanternBlock implements BlockTooltip {
 //?} else {
-/*public class LampLightBulb extends LanternBlock {
-*///?}
+//public class LampLightBulb extends LanternBlock {
+//?}
 	public static final BooleanProperty ON = BooleanProperty.create("on");
 	public static final BooleanProperty POWERED = BooleanProperty.create("powered");
 

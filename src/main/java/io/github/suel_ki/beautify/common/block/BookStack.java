@@ -58,8 +58,8 @@ import net.minecraft.world.level.LevelAccessor;
 //? if >=1.21.11 {
 public class BookStack extends HorizontalDirectionalBlock implements BlockTooltip {
 //?} else {
-/*public class BookStack extends HorizontalDirectionalBlock {
-*///?}
+//public class BookStack extends HorizontalDirectionalBlock {
+//?}
 	private static final int MODELCOUNT = 7; // number of models the bookstack has
 	public static final IntegerProperty BOOKSTACK_MODEL = IntegerProperty.create("bookstack_model", 0, MODELCOUNT - 1);
 
@@ -75,8 +75,8 @@ public class BookStack extends HorizontalDirectionalBlock implements BlockToolti
 	);
 
 	//? if >=1.21.1 && <26.3 {
-	/*public static final MapCodec<BookStack> CODEC = simpleCodec(BookStack::new);
-	*///?}
+	//public static final MapCodec<BookStack> CODEC = simpleCodec(BookStack::new);
+	//?}
 
 	public BookStack(Properties properties) {
 		super(properties);

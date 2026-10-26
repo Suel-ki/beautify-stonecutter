@@ -6,8 +6,8 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 //? if >=26.1.2 {
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 //?} else {
-/*import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-*///?}
+//import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+//?}
 import net.minecraft.core.HolderLookup;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.BlockTags;
@@ -18,8 +18,8 @@ import java.util.concurrent.CompletableFuture;
 //? if >=26.1.2 {
 public class BeautifyBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
 //?} else {
-/*public class BeautifyBlockTagProvider extends FabricTagProvider.BlockTagProvider {
-*///?}
+//public class BeautifyBlockTagProvider extends FabricTagProvider.BlockTagProvider {
+//?}
 
 	public BeautifyBlockTagProvider(FabricPackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
 		super(output, registries);

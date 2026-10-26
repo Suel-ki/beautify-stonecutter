@@ -54,8 +54,8 @@ import net.minecraft.network.codec.StreamCodec;
 //?}
 
 //? if >=1.21.1 && <1.21.11 {
-/*import net.minecraft.world.ItemInteractionResult;
-*///?}
+//import net.minecraft.world.ItemInteractionResult;
+//?}
 
 //? if <1.21.11 {
 /*import net.minecraft.ChatFormatting;
@@ -63,14 +63,14 @@ import net.minecraft.world.item.TooltipFlag;
 *///?}
 
 //? if >=1.21.1 && <26.3 {
-/*import com.mojang.serialization.MapCodec;
-*///?}
+//import com.mojang.serialization.MapCodec;
+//?}
 
 //? if >=1.21.11 {
 public class Trellis extends HorizontalDirectionalBlock implements BlockTooltip, SimpleWaterloggedBlock {
 //?} else {
-/*public class Trellis extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock {
-*///?}
+//public class Trellis extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock {
+//?}
 	public static final List<Item> VALID_FLOWERS = Arrays.asList(Items.AIR, Items.ROSE_BUSH, Items.SUNFLOWER,
 			Items.PEONY, Items.LILAC, Items.VINE, Items.WEEPING_VINES, Items.TWISTING_VINES, Items.GLOW_LICHEN);
 
@@ -91,8 +91,8 @@ public static final IntegerProperty FLOWERS = IntegerProperty.create("flowers", 
 	);
 
 	//? if >=1.21.1 && <26.3 {
-	/*public static final MapCodec<Trellis> CODEC = simpleCodec(Trellis::new);
-	*///?}
+	//public static final MapCodec<Trellis> CODEC = simpleCodec(Trellis::new);
+	//?}
 
 	public Trellis(Properties properties) {
 		super(properties);

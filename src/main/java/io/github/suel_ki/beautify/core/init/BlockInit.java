@@ -43,10 +43,10 @@ public class BlockInit {
                     //? if >=26.3 {
                     .pushReaction(PushReaction.POPPED).noOcclusion());
                     //?} else if >=1.21.11 {
-                    /*.pushReaction(PushReaction.DESTROY).noOcclusion());
-                    *///?} else {
-                    /*.noOcclusion());
-                    *///?}
+                    //.pushReaction(PushReaction.DESTROY).noOcclusion());
+                    //?} else {
+                    //.noOcclusion());
+                    //?}
 
     public static final HangingPot HANGING_POT = register("hanging_pot",
             HangingPot::new, BlockBehaviour.Properties.of().mapColor(MapColor.TERRACOTTA_BROWN)
@@ -244,8 +244,8 @@ public class BlockInit {
             //? if >=1.21.1 {
             BotanistWorkbench::new, BlockBehaviour.Properties.ofFullCopy(Blocks.CRAFTING_TABLE));
             //?} else {
-            /*BotanistWorkbench::new, BlockBehaviour.Properties.copy(Blocks.CRAFTING_TABLE));
-            *///?}
+            //BotanistWorkbench::new, BlockBehaviour.Properties.copy(Blocks.CRAFTING_TABLE));
+            //?}
 
     private static <T extends Block> T register(String name, Function<Block.Properties, T> factory, BlockBehaviour.Properties properties) {
         //? if >=1.21.11 {
@@ -253,8 +253,8 @@ public class BlockInit {
         T block = factory.apply(properties.setId(key));
         return Registry.register(BuiltInRegistries.BLOCK, key, block);
         //?} else {
-        /*return Registry.register(BuiltInRegistries.BLOCK, Beautify.id(name), factory.apply(properties));
-        *///?}
+        //return Registry.register(BuiltInRegistries.BLOCK, Beautify.id(name), factory.apply(properties));
+        //?}
     }
 
     private static LampCandelabra registerLampCandelabra(String name) {
@@ -278,10 +278,10 @@ public class BlockInit {
                 //? if >=26.3 {
                 .strength(0.1f, 0.1f).sound(type).noOcclusion().pushReaction(PushReaction.POPPED));
                 //?} else if >=1.21.11 {
-                /*.strength(0.1f, 0.1f).sound(type).noOcclusion().pushReaction(PushReaction.DESTROY));
-                *///?} else {
-                /*.strength(0.1f, 0.1f).sound(type).noOcclusion());
-                *///?}
+                //.strength(0.1f, 0.1f).sound(type).noOcclusion().pushReaction(PushReaction.DESTROY));
+                //?} else {
+                //.strength(0.1f, 0.1f).sound(type).noOcclusion());
+                //?}
     }
 
     private static Blinds registerBlinds(String name, MapColor color, SoundType type) {
@@ -381,8 +381,8 @@ public class BlockInit {
                     //? if >=26.3 {
                     .strength(0.2F, 0.2F).sound(SoundType.WOOL).pushReaction(PushReaction.POPPED).noOcclusion());
                     //?} else {
-                    /^.strength(0.2F, 0.2F).sound(SoundType.WOOL).pushReaction(PushReaction.DESTROY).noOcclusion());
-                    ^///?}
+                    //.strength(0.2F, 0.2F).sound(SoundType.WOOL).pushReaction(PushReaction.DESTROY).noOcclusion());
+                    //?}
 
     public static final DeferredBlock<HangingPot> HANGING_POT = register("hanging_pot",
             HangingPot::new,
@@ -585,15 +585,15 @@ public class BlockInit {
             //? if >=1.21.1 {
             () -> BlockBehaviour.Properties.ofFullCopy(Blocks.CRAFTING_TABLE));
             //?} else {
-            /^() -> BlockBehaviour.Properties.copy(Blocks.CRAFTING_TABLE));
-            ^///?}
+            //() -> BlockBehaviour.Properties.copy(Blocks.CRAFTING_TABLE));
+            //?}
 
     private static <T extends Block> DeferredBlock<T> register(String name, Function<BlockBehaviour.Properties, ? extends T> func, Supplier<BlockBehaviour.Properties> props) {
         //? if >=1.21.11 {
         return BLOCKS.registerBlock(name, func, props);
         //?} else {
-        /^return BLOCKS.registerBlock(name, func, props.get());
-        ^///?}
+        //return BLOCKS.registerBlock(name, func, props.get());
+        //?}
     }
 
     private static DeferredBlock<LampCandelabra> registerLampCandelabra(String name) {
@@ -617,10 +617,10 @@ public class BlockInit {
                 //? if >=26.3 {
                 .strength(0.1f, 0.1f).sound(type).noOcclusion().pushReaction(PushReaction.POPPED));
                 //?} else if >=1.21.11 {
-                /^.strength(0.1f, 0.1f).sound(type).noOcclusion().pushReaction(PushReaction.DESTROY));
-                ^///?} else {
-                /^.strength(0.1f, 0.1f).sound(type).noOcclusion());
-                ^///?}
+                //.strength(0.1f, 0.1f).sound(type).noOcclusion().pushReaction(PushReaction.DESTROY));
+                //?} else {
+                //.strength(0.1f, 0.1f).sound(type).noOcclusion());
+                //?}
     }
 
     private static DeferredBlock<Blinds> registerBlinds(String name, MapColor color, SoundType type) {

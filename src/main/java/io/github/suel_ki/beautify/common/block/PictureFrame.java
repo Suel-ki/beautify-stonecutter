@@ -58,8 +58,8 @@ import net.minecraft.network.codec.StreamCodec;
 //? if >=1.21.11 {
 public class PictureFrame extends HorizontalDirectionalBlock implements BlockTooltip, SimpleWaterloggedBlock {
 //?} else {
-/*public class PictureFrame extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock {
-*///?}
+//public class PictureFrame extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock {
+//?}
 	private static final int MODELCOUNT = 13; // number of models the frame has
 	public static final List<String> MOTIVE_MODELS = List.of(
 			"sunset",
@@ -83,8 +83,8 @@ public class PictureFrame extends HorizontalDirectionalBlock implements BlockToo
 	protected static final VoxelShape SHAPE = Block.box(5, 0, 5, 11, 8, 11);
 
 	//? if >=1.21.1 && <26.3 {
-	/*public static final MapCodec<PictureFrame> CODEC = simpleCodec(PictureFrame::new);
-	*///?}
+	//public static final MapCodec<PictureFrame> CODEC = simpleCodec(PictureFrame::new);
+	//?}
 
 	public PictureFrame(Properties properties) {
 		super(properties);

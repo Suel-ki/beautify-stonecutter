@@ -11,10 +11,10 @@ import net.minecraft.advancements.Advancement;
 //? if >=26.2 {
 import net.minecraft.advancements.triggers.InventoryChangeTrigger;
 //?} else if >=1.21.11 {
-/*import net.minecraft.advancements.criterion.InventoryChangeTrigger;
-*///?} else {
-/*import net.minecraft.advancements.critereon.InventoryChangeTrigger;
-*///?}
+//import net.minecraft.advancements.criterion.InventoryChangeTrigger;
+//?} else {
+//import net.minecraft.advancements.critereon.InventoryChangeTrigger;
+//?}
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -86,24 +86,24 @@ public class BeautifyRecipeProvider extends FabricRecipeProvider {
 		//? if >=1.21.11 {
 		return ShapedRecipeBuilder.shaped(items, RecipeCategory.MISC, result);
 		//?} else {
-		/*return ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result);
-		*///?}
+		//return ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result);
+		//?}
 	}
 
 	private static ShapedRecipeBuilder shaped(HolderGetter<Item> items, ItemLike result, int count) {
 		//? if >=1.21.11 {
 		return ShapedRecipeBuilder.shaped(items, RecipeCategory.MISC, result, count);
 		//?} else {
-		/*return ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result, count);
-		*///?}
+		//return ShapedRecipeBuilder.shaped(RecipeCategory.MISC, result, count);
+		//?}
 	}
 
 	private static ShapelessRecipeBuilder shapeless(HolderGetter<Item> items, ItemLike result) {
 		//? if >=1.21.11 {
 		return ShapelessRecipeBuilder.shapeless(items, RecipeCategory.MISC, result);
 		//?} else {
-		/*return ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result);
-		*///?}
+		//return ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, result);
+		//?}
 	}
 
 	private static void build(RecipeOutput output, HolderGetter<Item> itemGetter) {

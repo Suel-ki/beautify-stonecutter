@@ -57,8 +57,8 @@ import net.minecraft.world.item.TooltipFlag;
 //? if >=1.21.11 {
 public class HangingPot extends LanternBlock implements BlockTooltip {
 //?} else {
-/*public class HangingPot extends LanternBlock {
-*///?}
+//public class HangingPot extends LanternBlock {
+//?}
 	public static final List<Item> VALID_FLOWERS = Arrays.asList(Items.AIR, Items.ROSE_BUSH, Items.LILAC,
 			Items.BLUE_ORCHID, Items.VINE, Items.SUNFLOWER, Items.PEONY, Items.AZURE_BLUET, Items.RED_TULIP,
 			Items.ORANGE_TULIP, Items.WHITE_TULIP, Items.PINK_TULIP, Items.ALLIUM, Items.DANDELION, Items.POPPY,
@@ -361,7 +361,7 @@ public class HangingPot extends LanternBlock implements BlockTooltip {
 			// growing plant
 			// block below must not be sturdy to prevent clipping models
 			if (playerStack.getItem().equals(Items.BONE_MEAL) && state.getValue(POTFLOWER) != 0
-					/^¹&& !level.getBlockState(pos.below()).isFaceSturdy(level, pos.below(), Direction.UP)¹^/) {
+					/^&& !level.getBlockState(pos.below()).isFaceSturdy(level, pos.below(), Direction.UP)^/) {
 				if (!state.getValue(GROWN)) {
 					level.levelEvent(1505, result.getBlockPos(), 0);
 					//level.playSound(null, pos, SoundEvents.BONE_MEAL_USE, SoundSource.BLOCKS, 1, 1);

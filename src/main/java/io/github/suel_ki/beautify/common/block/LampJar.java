@@ -40,8 +40,8 @@ import net.minecraft.network.codec.StreamCodec;
 //?}
 
 //? if >=1.21.1 && <1.21.11 {
-/*import net.minecraft.world.ItemInteractionResult;
-*///?}
+//import net.minecraft.world.ItemInteractionResult;
+//?}
 
 //? if <1.21.11 {
 /*import net.minecraft.ChatFormatting;
@@ -53,8 +53,8 @@ import net.minecraft.world.item.TooltipFlag;
 //? if >=1.21.11 {
 public class LampJar extends LanternBlock implements BlockTooltip {
 //?} else {
-/*public class LampJar extends LanternBlock {
-*///?}
+//public class LampJar extends LanternBlock {
+//?}
 	private static final int maxLevel = 15;
 	public static final IntegerProperty FILL_LEVEL = IntegerProperty.create("fill_level", 0, maxLevel);
 

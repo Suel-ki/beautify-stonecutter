@@ -5,8 +5,8 @@ import io.github.suel_ki.beautify.common.block.Trellis;
 //? if >=1.21.11 {
 import net.minecraft.resources.Identifier;
 //?} else {
-/*import net.minecraft.resources.Identifier;
-*///?}
+//import net.minecraft.resources.Identifier;
+//?}
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.state.BlockState;
 import snownee.jade.api.BlockAccessor;
@@ -17,8 +17,8 @@ import snownee.jade.api.ui.IDisplayHelper;
 //? if >=1.21.11 {
 import snownee.jade.api.ui.JadeUI;
 //?} else {
-/*import snownee.jade.api.ui.IElementHelper;
-*///?}
+//import snownee.jade.api.ui.IElementHelper;
+//?}
 
 public enum TrellisProvider implements IBlockComponentProvider {
 
@@ -36,8 +36,8 @@ public enum TrellisProvider implements IBlockComponentProvider {
                 //? if >=1.21.11 {
                 tooltip.add(JadeUI.smallItem(iconFlower));
                 //?} else {
-                /*tooltip.add(IElementHelper.get().smallItem(iconFlower));
-                *///?}
+                //tooltip.add(IElementHelper.get().smallItem(iconFlower));
+                //?}
                 tooltip.append(IDisplayHelper.get().stripColor(iconFlower.getHoverName()));
             }
         }
@@ -47,8 +47,8 @@ public enum TrellisProvider implements IBlockComponentProvider {
     //? if >=1.21.11 {
     public Identifier getUid() {
     //?} else {
-    /*public Identifier getUid() {
-    *///?}
+    //public Identifier getUid() {
+    //?}
         return Beautify.id("trellis.pot_plant");
     }
 }

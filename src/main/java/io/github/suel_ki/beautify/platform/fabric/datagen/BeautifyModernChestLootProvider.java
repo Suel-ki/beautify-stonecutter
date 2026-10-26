@@ -77,8 +77,8 @@ public class BeautifyModernChestLootProvider extends SimpleFabricLootTableSubPro
 		//? if >=26.3 {
 		return LootPool.lootPool().setRolls(Holder.direct(new ConstantValue(rolls)));
 		//?} else {
-		/*return LootPool.lootPool().setRolls(ConstantValue.exactly(rolls));
-		*///?}
+		//return LootPool.lootPool().setRolls(ConstantValue.exactly(rolls));
+		//?}
 	}
 
 	private static LootPool.Builder chestPool(int min, int max) {
@@ -87,8 +87,8 @@ public class BeautifyModernChestLootProvider extends SimpleFabricLootTableSubPro
 				Holder.direct(new ConstantValue(min)),
 				Holder.direct(new ConstantValue(max)))));
 		//?} else {
-		/*return LootPool.lootPool().setRolls(UniformGenerator.between(min, max));
-		*///?}
+		//return LootPool.lootPool().setRolls(UniformGenerator.between(min, max));
+		//?}
 	}
 
 	private static LootPool.Builder chestAdd(LootPool.Builder pool, ItemLike item, int weight, int countMin, int countMax, boolean enchant) {
@@ -100,8 +100,8 @@ public class BeautifyModernChestLootProvider extends SimpleFabricLootTableSubPro
 					Holder.direct(new ConstantValue(countMin)),
 					Holder.direct(new ConstantValue(countMax))))));
 			//?} else {
-			/*entry.apply(SetItemCountFunction.setCount(UniformGenerator.between(countMin, countMax)));
-			*///?}
+			//entry.apply(SetItemCountFunction.setCount(UniformGenerator.between(countMin, countMax)));
+			//?}
 		}
 		if (enchant) {
 			entry.apply(EnchantRandomlyFunction.randomEnchantment());

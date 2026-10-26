@@ -6,8 +6,8 @@ import io.github.suel_ki.beautify.client.tooltip.LegacyTooltips;
 import com.google.common.collect.ImmutableMap;
 import com.mojang.serialization.Codec;
 //? if <26.3 {
-/*import com.mojang.serialization.MapCodec;
-*///?}
+//import com.mojang.serialization.MapCodec;
+//?}
 //? if <1.21.11 {
 /*import net.minecraft.ChatFormatting;
 import net.minecraft.world.item.Item;
@@ -60,8 +60,8 @@ import java.util.List;
 import java.util.Map;
 
 //? if <1.21.11 {
-/*public class BotanistWorkbench extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock {
-*///?} else {
+//public class BotanistWorkbench extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock {
+//?} else {
 public class BotanistWorkbench extends HorizontalDirectionalBlock implements BlockTooltip, SimpleWaterloggedBlock {
 //?}
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
@@ -138,8 +138,8 @@ public class BotanistWorkbench extends HorizontalDirectionalBlock implements Blo
 	/*//? if >=1.21.1 {
 	public void appendHoverText(ItemStack stack, Item.TooltipContext ctx, List<Component> component, TooltipFlag flag) {
 	//?} else {
-	/^public void appendHoverText(ItemStack stack, BlockGetter ctx, List<Component> component, TooltipFlag flag) {
-	^///?}
+	//public void appendHoverText(ItemStack stack, BlockGetter ctx, List<Component> component, TooltipFlag flag) {
+	//?}
 		LegacyTooltips.shiftOnly(component, "tooltip.beautify.botanist_workbench.1");
 		super.appendHoverText(stack, ctx, component, flag);
 	}
@@ -148,8 +148,8 @@ public class BotanistWorkbench extends HorizontalDirectionalBlock implements Blo
 		//? if fabric {
 		return ComponentInit.get(ComponentInit.BOTANIST_WORKBENCH_TOOLTIP);
 	//?} else {
-		/*return ComponentInit.get(ComponentInit.BOTANIST_WORKBENCH_TOOLTIP);
-	*///?}
+		//return ComponentInit.get(ComponentInit.BOTANIST_WORKBENCH_TOOLTIP);
+	//?}
     }
 
     @Override

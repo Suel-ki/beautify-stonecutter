@@ -25,8 +25,8 @@ import net.minecraft.world.level.storage.loot.providers.number.ints.ResolvableIn
 //?}
 import net.minecraft.world.level.block.Block;
 //? if >=1.21.2 && <26.3 {
-/^import net.minecraft.world.level.block.entity.FuelValues;
-^///?}
+//import net.minecraft.world.level.block.entity.FuelValues;
+//?}
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import org.jetbrains.annotations.NotNull;
@@ -266,8 +266,8 @@ public final class ItemInitNeoForge {
             //? if >=1.21.2 {
             public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType, FuelValues fuelValues) {
             //?} else {
-            /^¹public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
-            ¹^///?}
+            //public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
+            //?}
                 return burnTime;
             }
         };
@@ -307,8 +307,8 @@ public final class ItemInitNeoForge {
                     //? if >=1.21.2 {
                     public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType, FuelValues fuelValues) {
                     //?} else {
-                    /^¹public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
-                    ¹^///?}
+                    //public int getBurnTime(ItemStack itemStack, @Nullable RecipeType<?> recipeType) {
+                    //?}
                         return 300;
                     }
                     ^///?}

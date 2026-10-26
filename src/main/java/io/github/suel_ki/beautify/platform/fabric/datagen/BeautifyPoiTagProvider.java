@@ -6,8 +6,8 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 //? if >=26.1.2 {
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 //?} else {
-/*import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-*///?}
+//import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+//?}
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -20,8 +20,8 @@ import java.util.concurrent.CompletableFuture;
 //? if >=26.1.2 {
 public class BeautifyPoiTagProvider extends FabricTagsProvider<PoiType> {
 //?} else {
-/*public class BeautifyPoiTagProvider extends FabricTagProvider<PoiType> {
-*///?}
+//public class BeautifyPoiTagProvider extends FabricTagProvider<PoiType> {
+//?}
 
 	private static final TagKey<PoiType> ACQUIRABLE_JOB_SITE =
 			TagKey.create(Registries.POINT_OF_INTEREST_TYPE,

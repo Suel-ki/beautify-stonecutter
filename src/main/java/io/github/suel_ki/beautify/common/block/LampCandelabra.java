@@ -67,8 +67,8 @@ import net.minecraft.world.level.block.state.properties.DirectionProperty;
 //? if >=1.21.11 {
 public class LampCandelabra extends LanternBlock implements BlockTooltip {
 //?} else {
-/*public class LampCandelabra extends LanternBlock {
-*///?}
+//public class LampCandelabra extends LanternBlock {
+//?}
 	public static final BooleanProperty ON = BooleanProperty.create("on");
 	public static final EnumProperty<Direction> FACING = BlockStateProperties.HORIZONTAL_FACING;
 

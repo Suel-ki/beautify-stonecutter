@@ -68,8 +68,8 @@ import net.minecraft.world.item.TooltipFlag;
 //? if >=1.21.11 {
 public class Blinds extends HorizontalDirectionalBlock implements BlockTooltip, SimpleWaterloggedBlock {
 //?} else {
-/*public class Blinds extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock {
-*///?}
+//public class Blinds extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock {
+//?}
 	// Voxelshapes; Hidden = Blind not visible
 	private static final Map<Direction, VoxelShape> CLOSED_SHAPES = ImmutableMap.of(
 			Direction.NORTH, Block.box(0, 13, 13, 16, 16, 16),
@@ -93,8 +93,8 @@ public class Blinds extends HorizontalDirectionalBlock implements BlockTooltip, 
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
 	//? if >=1.21.1 && <26.3 {
-	/*public static final MapCodec<Blinds> CODEC = simpleCodec(Blinds::new);
-	*///?}
+	//public static final MapCodec<Blinds> CODEC = simpleCodec(Blinds::new);
+	//?}
 
 	// constructor
 	public Blinds(Properties properties) {

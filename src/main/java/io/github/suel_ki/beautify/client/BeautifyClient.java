@@ -15,8 +15,8 @@ import net.fabricmc.api.Environment;
 //? if >=26.1.2 {
 import net.fabricmc.fabric.api.client.rendering.v1.ClientTooltipComponentCallback;
 //?} else {
-/*import net.fabricmc.fabric.api.client.rendering.v1.TooltipComponentCallback;
-*///?}
+//import net.fabricmc.fabric.api.client.rendering.v1.TooltipComponentCallback;
+//?}
 
 @Environment(EnvType.CLIENT)
 public class BeautifyClient implements ClientModInitializer {
@@ -29,8 +29,8 @@ public class BeautifyClient implements ClientModInitializer {
         //? if >=26.1.2 {
         ClientTooltipComponentCallback.EVENT.register(ClientPlantableItemStackTooltip::get);
         //?} else {
-        /*TooltipComponentCallback.EVENT.register(ClientPlantableItemStackTooltip::get);
-        *///?}
+        //TooltipComponentCallback.EVENT.register(ClientPlantableItemStackTooltip::get);
+        //?}
         //? if <1.21.11
         //ModelLoadingPlugin.register(new DiagonalFrameModels());
     }

@@ -5,13 +5,13 @@ import io.github.suel_ki.beautify.core.init.BlockInit;
 //? if >=1.21.11 {
 import net.fabricmc.fabric.api.client.rendering.v1.BlockRenderLayerMap;
 //?} else {
-/^import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
-^///?}
+//import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+//?}
 //? if >=1.21.11 {
 import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
 //?} else {
-/^import net.minecraft.client.renderer.RenderType;
-^///?}
+//import net.minecraft.client.renderer.RenderType;
+//?}
 
 public class ClientBlockInit {
 
@@ -19,8 +19,8 @@ public class ClientBlockInit {
         //? if >=1.21.11 {
         BlockRenderLayerMap.putBlocks(ChunkSectionLayer.CUTOUT,
         //?} else {
-        /^BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutout(),
-        ^///?}
+        //BlockRenderLayerMap.INSTANCE.putBlocks(RenderType.cutout(),
+        //?}
                 // BLOCKS
                 BlockInit.BOOKSTACK,
                 BlockInit.HANGING_POT,

@@ -26,8 +26,8 @@ import net.minecraft.client.particle.TextureSheetParticle;
 //? if >=1.21.11 {
 public class GlowEssenceParticles extends SingleQuadParticle {
 //?} else {
-/*public class GlowEssenceParticles extends TextureSheetParticle {
-*///?}
+//public class GlowEssenceParticles extends TextureSheetParticle {
+//?}
 
 	private static final float size = 0.07f;
 
@@ -63,9 +63,9 @@ public class GlowEssenceParticles extends SingleQuadParticle {
 		/*@Override
 		public ParticleRenderType getRenderType() {
 			//? if fabric
-			//return ParticleRenderType.PARTICLE_SHEET_LIT;
+			return ParticleRenderType.PARTICLE_SHEET_LIT;
 			//? if neoforge
-			return ParticleRenderType.PARTICLE_SHEET_OPAQUE;
+			//return ParticleRenderType.PARTICLE_SHEET_OPAQUE;
 		}
 *///?}
 

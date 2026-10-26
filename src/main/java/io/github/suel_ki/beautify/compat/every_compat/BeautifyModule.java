@@ -8,8 +8,8 @@ import net.mehvahdjukaar.every_compat.api.SimpleEntrySet;
 //? if >=1.21.1 {
 import net.mehvahdjukaar.every_compat.modules.EveryCompatModule;
 //?} else {
-/^import net.mehvahdjukaar.every_compat.api.SimpleModule;
-^///?}
+//import net.mehvahdjukaar.every_compat.api.SimpleModule;
+//?}
 import net.mehvahdjukaar.moonlight.api.set.wood.VanillaWoodTypes;
 import net.mehvahdjukaar.moonlight.api.set.wood.WoodType;
 import net.mehvahdjukaar.moonlight.api.util.Utils;
@@ -24,8 +24,8 @@ import static net.mehvahdjukaar.moonlight.api.set.wood.VanillaWoodChildKeys.SLAB
 //? if >=1.21.1 {
 public class BeautifyModule extends EveryCompatModule {
 //?} else {
-/^public class BeautifyModule extends SimpleModule {
-^///?}
+//public class BeautifyModule extends SimpleModule {
+//?}
 
     public final SimpleEntrySet<WoodType, Block> tellis;
     public final SimpleEntrySet<WoodType, Block> blinds;

@@ -46,8 +46,8 @@ public class ConfigScreen {
         //? if >=26.2 {
         builder.setEditable(Minecraft.getInstance().hasSingleplayerServer());
         //?} else {
-        /^builder.setEditable(Minecraft.getInstance().isSingleplayer());
-        ^///?}
+        //builder.setEditable(Minecraft.getInstance().isSingleplayer());
+        //?}
 
         ConfigEntryBuilder eb = builder.entryBuilder();
 

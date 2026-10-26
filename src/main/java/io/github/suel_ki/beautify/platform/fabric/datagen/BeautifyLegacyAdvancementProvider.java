@@ -106,8 +106,8 @@ public class BeautifyLegacyAdvancementProvider extends FabricAdvancementProvider
 		//? if >=26.2 {
 		return Items.WOOL.pick(DyeColor.WHITE);
 		//?} else {
-		/^return Items.WHITE_WOOL;
-		^///?}
+		//return Items.WHITE_WOOL;
+		//?}
 	}
 
 	private static Item item(String id) {

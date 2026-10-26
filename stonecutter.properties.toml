@@ -107,7 +107,7 @@ issues_url = "https://github.com/Suel-ki/beautify-stonecutter/issues"
 [neoforge."26.3"]
 deps.mezz-config = "0.6.8"
 deps.minecraft = "26.3"
-deps.neoforge = "26.3.0.7-beta"
+deps.neoforge = "26.3.0.99"
 deps.cloth-config = "26.3.159"
 deps.jade = "26.3.1"
 deps.jei = "31.16.0.89"

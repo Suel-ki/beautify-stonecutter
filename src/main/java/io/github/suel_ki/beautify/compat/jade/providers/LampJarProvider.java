@@ -6,8 +6,8 @@ import net.minecraft.network.chat.Component;
 //? if >=1.21.11 {
 import net.minecraft.resources.Identifier;
 //?} else {
-/*import net.minecraft.resources.Identifier;
-*///?}
+//import net.minecraft.resources.Identifier;
+//?}
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.state.BlockState;
@@ -19,8 +19,8 @@ import snownee.jade.api.ui.IDisplayHelper;
 //? if >=1.21.11 {
 import snownee.jade.api.ui.JadeUI;
 //?} else {
-/*import snownee.jade.api.ui.IElementHelper;
-*///?}
+//import snownee.jade.api.ui.IElementHelper;
+//?}
 
 public enum  LampJarProvider implements IBlockComponentProvider {
 
@@ -39,8 +39,8 @@ public enum  LampJarProvider implements IBlockComponentProvider {
                 //? if >=1.21.11 {
                 tooltip.add(JadeUI.smallItem(icon));
                 //?} else {
-                /*tooltip.add(IElementHelper.get().smallItem(icon));
-                *///?}
+                //tooltip.add(IElementHelper.get().smallItem(icon));
+                //?}
                 tooltip.append(IDisplayHelper.get().stripColor(Component.literal(count + "× ")));
                 tooltip.append(IDisplayHelper.get().stripColor(icon.getHoverName()));
             }
@@ -51,8 +51,8 @@ public enum  LampJarProvider implements IBlockComponentProvider {
     //? if >=1.21.11 {
     public Identifier getUid() {
     //?} else {
-    /*public Identifier getUid() {
-    *///?}
+    //public Identifier getUid() {
+    //?}
         return Beautify.id("lamp_jar.glowstone_dust");
     }
 }

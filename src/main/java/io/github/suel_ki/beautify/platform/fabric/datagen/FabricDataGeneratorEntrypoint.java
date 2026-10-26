@@ -14,8 +14,8 @@ public class FabricDataGeneratorEntrypoint implements DataGeneratorEntrypoint {
 		pack.addProvider(BeautifyModelProvider::new);
 		pack.addProvider(BeautifyModelJsonProvider::new);
 		//? if >=1.21.1 && <26.1.2 {
-		/*pack.addProvider(BeautifyChestLootProvider::new);
-		*///?}
+		//pack.addProvider(BeautifyChestLootProvider::new);
+		//?}
 		//? if >=26.1.2 {
 		pack.addProvider(BeautifyModernChestLootProvider::new);
 		//?}

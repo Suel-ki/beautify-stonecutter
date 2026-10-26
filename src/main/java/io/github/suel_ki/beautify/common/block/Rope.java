@@ -29,8 +29,8 @@ import java.util.List;
 //? if >=1.21.11 {
 public class Rope extends ChainBlock implements BlockTooltip {
 //?} else {
-/*public class Rope extends ChainBlock {
-*///?}
+//public class Rope extends ChainBlock {
+//?}
 	public Rope(Properties properties) {
 		super(properties);
 		this.registerDefaultState(this.stateDefinition.any().setValue(WATERLOGGED, Boolean.FALSE)

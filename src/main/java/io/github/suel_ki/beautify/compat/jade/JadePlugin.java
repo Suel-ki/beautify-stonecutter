@@ -26,8 +26,8 @@ public class JadePlugin implements IWailaPlugin {
         /*//? if fabric {
         registration.registerCustomEnchantPower(BlockInit.BOOKSTACK, BookStackProvider.INSTANCE);
         //?} else {
-        /^registration.registerCustomEnchantPower(BlockInit.BOOKSTACK.get(), BookStackProvider.INSTANCE);
-        ^///?}
+        //registration.registerCustomEnchantPower(BlockInit.BOOKSTACK.get(), BookStackProvider.INSTANCE);
+        //?}
         *///?}
     }
 

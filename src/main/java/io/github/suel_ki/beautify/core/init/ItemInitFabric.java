@@ -253,8 +253,8 @@ public final class ItemInitFabric {
 				.useBlockDescriptionPrefix()
 				.component(DataComponents.COOKING_FUEL, new CookingFuel(new ResolvableInt.Constant(burnTime), new ResolvableFloat.Constant(1.0f))));
 		//?} else {
-		/*return registerBlockItem(name, block);
-		*///?}
+		//return registerBlockItem(name, block);
+		//?}
 	}
 
 	private static BlockItem registerTrellis(String name, Block block) {
@@ -287,10 +287,10 @@ public final class ItemInitFabric {
 				.component(ComponentInit.TRELLIS_TOOLTIP, Trellis.TooltipComponent.INSTANCE)
 				.component(DataComponents.COOKING_FUEL, new CookingFuel(new ResolvableInt.Constant(300), new ResolvableFloat.Constant(1.0f))));
 		//?} else if >=1.21.11 {
-		/*new Item.Properties().useBlockDescriptionPrefix().component(ComponentInit.TRELLIS_TOOLTIP, Trellis.TooltipComponent.INSTANCE));
-		*///?} else {
-		/*new Item.Properties());
-		*///?}
+		//new Item.Properties().useBlockDescriptionPrefix().component(ComponentInit.TRELLIS_TOOLTIP, Trellis.TooltipComponent.INSTANCE));
+		//?} else {
+		//new Item.Properties());
+		//?}
 	}
 
 	private static final Item[] FUEL_300 = {

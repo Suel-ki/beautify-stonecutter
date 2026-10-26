@@ -4,8 +4,8 @@ package io.github.suel_ki.beautify.platform.fabric.datagen;
 //? if >=26.3 {
 import net.minecraft.world.level.storage.loot.providers.number.ints.ConstantValue;
 //?} else {
-/*import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
-*///?}
+//import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
+//?}
 import io.github.suel_ki.beautify.Beautify;
 import io.github.suel_ki.beautify.common.block.HangingPot;
 import io.github.suel_ki.beautify.core.init.BlockInit;
@@ -13,15 +13,15 @@ import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 //? if >=26.1.2 {
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootSubProvider;
 //?} else {
-/*import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
-*///?}
+//import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
+//?}
 //? if >=26.2 {
 import net.minecraft.advancements.predicates.StatePropertiesPredicate;
 //?} else if >=1.21.11 {
-/*import net.minecraft.advancements.criterion.StatePropertiesPredicate;
-*///?} else {
-/*import net.minecraft.advancements.critereon.StatePropertiesPredicate;
-*///?}
+//import net.minecraft.advancements.criterion.StatePropertiesPredicate;
+//?} else {
+//import net.minecraft.advancements.critereon.StatePropertiesPredicate;
+//?}
 import net.minecraft.core.HolderGetter;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -41,8 +41,8 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.core.Holder;
 import net.minecraft.world.level.storage.loot.predicates.MatchBlock;
 //?} else {
-/*import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
-*///?}
+//import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+//?}
 
 import java.util.HashMap;
 import java.util.Map;
@@ -51,8 +51,8 @@ import java.util.concurrent.CompletableFuture;
 //? if >=26.1.2 {
 public class BeautifyBlockLootProvider extends FabricBlockLootSubProvider {
 //?} else {
-/*public class BeautifyBlockLootProvider extends FabricBlockLootTableProvider {
-*///?}
+//public class BeautifyBlockLootProvider extends FabricBlockLootTableProvider {
+//?}
 
 	private final HolderGetter<Block> blockGetter;
 	private final Map<String, LootTable> leaves = new HashMap<>();
