@@ -99,7 +99,10 @@ public class Beautify
 		//? if >=1.21.11
 		ComponentInit.DATA_COMPONENT_TYPE.register(bus);
 
-		modContainer.registerConfig(ModConfig.Type.SERVER, BeautifyConfig.SPEC);
+		//? if >=26.3
+		modContainer.registerConfig(ModConfig.Type.SYNCED, BeautifyConfig.SPEC);
+		//? if <26.3
+		//modContainer.registerConfig(ModConfig.Type.SERVER, BeautifyConfig.SPEC);
 		NeoForge.EVENT_BUS.addListener((ServerAboutToStartEvent event) -> VillageAdditions.addBotanistHouses(event.getServer().registryAccess()));
 	}
 *///?}
