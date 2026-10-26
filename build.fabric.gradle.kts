@@ -27,7 +27,7 @@ platform {
 		}
 		required("fabric-api") {
 			slug("fabric-api")
-			fabricLikeVersionRange = ">=${prop("deps.fabric-api")}"
+			fabricLikeVersionRange = ">=${if (hasProperty("deps.fabric-api-range")) prop("deps.fabric-api-range") else prop("deps.fabric-api")}"
 		}
 		required("fabricloader") {
 			fabricLikeVersionRange = if (hasProperty("deps.fabric-loader-range")) prop("deps.fabric-loader-range")
@@ -37,7 +37,7 @@ platform {
 
 		required("cloth-config") {
 			slug("cloth-config")
-			fabricLikeVersionRange = ">=${prop("deps.cloth-config")}"
+			fabricLikeVersionRange = "*"
 		}
 	}
 }

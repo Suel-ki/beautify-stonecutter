@@ -17,7 +17,7 @@ platform {
 			forgeLikeVersionRange = prop("deps.minecraft")
 		}
 		required("neoforge") {
-			forgeLikeVersionRange.set("[${prop("deps.neoforge")},)")
+			forgeLikeVersionRange.set("[${if (hasProperty("deps.neoforge-range")) prop("deps.neoforge-range") else prop("deps.neoforge")},)")
 		}
 
 	}

@@ -37,6 +37,7 @@ homepage_url = "https://www.curseforge.com/minecraft/mc-mods/beautify-refabricat
 issues_url = "https://github.com/Suel-ki/beautify-stonecutter/issues"
 
 [fabric."26.3"]
+deps.fabric-api-range = "0.156.3+26.3"
 deps.mezz-config = "0.6.8"
 deps.fabric-loader = "0.19.5"
 deps.minecraft = "26.3"
@@ -47,6 +48,7 @@ deps.jade = "26.3.1"
 deps.jei = "31.16.0.89"
 
 [fabric."26.2"]
+deps.fabric-api-range = "0.148.3+26.2"
 deps.mezz-config = "0.6.8"
 deps.fabric-loader = "0.19.5"
 deps.minecraft = "26.2"
@@ -57,6 +59,7 @@ deps.jade = "26.2.6"
 deps.jei = "30.47.0.239"
 
 [fabric."26.1.2"]
+deps.fabric-api-range = "0.144.0+26.1"
 deps.mezz-config = "0.6.8"
 deps.fabric-loader = "0.18.5"
 deps.minecraft = "26.1.2"
@@ -67,6 +70,7 @@ deps.jade = "26.0.5"
 deps.jei = "29.47.0.111"
 
 [fabric."1.21.11"]
+deps.fabric-api-range = "0.138.2+1.21.11"
 deps.mezz-config = "0.6.8"
 deps.fabric-loader = "0.18.4"
 deps.minecraft = "1.21.11"
@@ -77,6 +81,7 @@ deps.jade-curse = "7312559"
 deps.jei = "27.53.0.109"
 
 [fabric."1.21.1"]
+deps.fabric-api-range = "0.115.0+1.21.1"
 deps.mezz-config = "0.6.8"
 deps.fabric-loader = "0.16.5"
 deps.minecraft = "1.21.1"
@@ -89,6 +94,7 @@ deps.every-compat = "1.21-2.11.25-fabric"
 deps.moonlight = "1.21-2.29.16-fabric"
 
 [fabric."1.20.1"]
+deps.fabric-api-range = "0.89.0+1.20.1"
 deps.fabric-loader = "0.16.5"
 deps.minecraft = "1.20.1"
 deps.fabric-api = "0.92.2+1.20.1"
@@ -105,6 +111,7 @@ homepage_url = "https://www.curseforge.com/minecraft/mc-mods/beautify-refoxed"
 issues_url = "https://github.com/Suel-ki/beautify-stonecutter/issues"
 
 [neoforge."26.3"]
+deps.neoforge-range = "26.3.0.85"
 deps.mezz-config = "0.6.8"
 deps.minecraft = "26.3"
 deps.neoforge = "26.3.0.99"
