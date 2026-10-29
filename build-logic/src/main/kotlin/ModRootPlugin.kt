@@ -24,8 +24,8 @@ class ModRootPlugin : Plugin<Project> {
 		with(project) {
 			val stonecutter = extensions.getByType<StonecutterControllerExtension>()
 			val properties = stonecutter.properties
-			val modVersion = properties.getAs<String>("mod.version")
-			val channelTag = properties.getAs<String>("mod.channel_tag")
+			val modVersion = properties.get("mod.version")
+			val channelTag = properties.get("mod.channel_tag")
 			val changelogText = file("CHANGELOG.md").takeIf { it.exists() }?.readText() ?: ""
 			val githubToken = providers.environmentVariable("GITHUB_TOKEN")
 

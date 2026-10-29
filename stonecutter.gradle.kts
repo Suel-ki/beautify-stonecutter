@@ -14,14 +14,14 @@ stonecutter active file(".sc_active_version")
 
 stonecutter parameters {
 	constants.match(current.project.substringAfterLast('-'), "fabric", "neoforge")
-	swaps["mod_version"] = "\"${properties.getAs<String>("mod.version")}\";"
-	swaps["mod_id"] = "\"${properties.getAs<String>("mod.id")}\";"
-	swaps["mod_name"] = "\"${properties.getAs<String>("mod.name")}\";"
-	swaps["mod_group"] = "\"${properties.getAs<String>("mod.group")}\";"
+	swaps["mod_version"] = "\"${properties.get("mod.version")}\";"
+	swaps["mod_id"] = "\"${properties.get("mod.id")}\";"
+	swaps["mod_name"] = "\"${properties.get("mod.name")}\";"
+	swaps["mod_group"] = "\"${properties.get("mod.group")}\";"
 	swaps["minecraft"] = "\"${current.version}\";"
 	swaps["Identifier"] = if (current.parsed >= "1.21.11") "Identifier" else "ResourceLocation"
 	swaps["JadeUI"] = if (current.parsed >= "1.21.11") "snownee.jade.api.ui.JadeUI" else "snownee.jade.api.ui.IElementHelper"
-	constants["release"] = properties.getAs<String>("mod.id") != "modtemplate"
+	constants["release"] = properties.get("mod.id") != "modtemplate"
 }
 
 
