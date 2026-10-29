@@ -1,4 +1,8 @@
 import dev.kikugie.fletching_table.extension.FletchingTableExtension
+import java.io.File
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonObject
+import kotlinx.serialization.json.jsonObject
 import org.gradle.api.DefaultTask
 import org.gradle.api.Plugin
 import org.gradle.api.Project
@@ -22,6 +26,8 @@ import org.gradle.kotlin.dsl.withType
 import org.gradle.language.jvm.tasks.ProcessResources
 import org.gradle.plugins.ide.idea.model.IdeaModel
 import javax.inject.Inject
+
+private val LANG_JSON = Json { prettyPrint = true }
 
 abstract class ModPlatformPlugin @Inject constructor() : Plugin<Project> {
 	override fun apply(project: Project) = with(project) {
@@ -138,11 +144,39 @@ abstract class ModPlatformPlugin @Inject constructor() : Plugin<Project> {
 		tasks.named<ProcessResources>("processResources") { dependsOn(generateTask) }
 	}
 
+	private fun woodAssets(wood: String): List<String> = listOf(
+		"assets/beautify/blockstates/${wood}_*",
+		"assets/beautify/items/${wood}_*",
+		"assets/beautify/models/item/${wood}_*",
+		"assets/beautify/models/block/${wood}_*",
+		"assets/beautify/models/block/trellis/${wood}/**",
+		"assets/beautify/textures/*/${wood}_*"
+	)
+
 	private fun Project.configureProcessResources(ctx: Context) {
-		val excluded = ctx.loader.excludedResources
+		val missingWoods = buildList {
+			if (!ctx.stonecutter.eval(ctx.currentMcVersion, ">=26.3")) add("poplar")
+			if (!ctx.stonecutter.eval(ctx.currentMcVersion, ">=1.21.11")) add("pale_oak")
+		}
+		val excluded = ctx.loader.excludedResources.toMutableList()
+		for (wood in missingWoods) {
+			excluded += woodAssets(wood)
+		}
 		tasks.named<ProcessResources>("processResources") {
 			dependsOn(tasks.named("stonecutterGenerate"))
 			exclude(excluded)
+			doLast {
+				if (missingWoods.isEmpty()) return@doLast
+				val langDir = outputs.files.singleFile.resolve("assets/beautify/lang")
+				for (file in langDir.listFiles().orEmpty()) {
+					if (!file.isFile || !file.name.endsWith(".json")) continue
+					val entries = Json.parseToJsonElement(file.readText()).jsonObject
+					val kept = JsonObject(entries.filterKeys { key ->
+						missingWoods.none { wood -> key.substringAfterLast('.').startsWith("${wood}_") }
+					})
+					file.writeText(LANG_JSON.encodeToString(JsonObject.serializer(), kept))
+				}
+			}
 		}
 	}
 
