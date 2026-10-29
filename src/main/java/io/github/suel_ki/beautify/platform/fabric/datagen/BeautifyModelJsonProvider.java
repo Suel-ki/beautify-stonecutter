@@ -26,12 +26,18 @@ public class BeautifyModelJsonProvider implements DataProvider {
 			//? if >=1.21.11 {
 			, "pale_oak"
 			//?}
+			//? if >=26.3 {
+			, "poplar"
+			//?}
 	};
 
 	private static final String[] BLINDS_WOODS = {
 			"spruce", "birch", "jungle", "acacia", "dark_oak", "mangrove", "crimson", "warped", "cherry", "bamboo"
 			//? if >=1.21.11 {
 			, "pale_oak"
+			//?}
+			//? if >=26.3 {
+			, "poplar"
 			//?}
 			, "iron"
 	};
@@ -46,12 +52,18 @@ public class BeautifyModelJsonProvider implements DataProvider {
 			//? if >=1.21.11 {
 			, "pale_oak"
 			//?}
+			//? if >=26.3 {
+			, "poplar"
+			//?}
 	};
 
 	private static final String[] BLINDS_ITEM_WOODS = {
 			"oak", "spruce", "birch", "jungle", "acacia", "dark_oak", "crimson", "warped", "cherry", "mangrove", "bamboo"
 			//? if >=1.21.11 {
 			, "pale_oak"
+			//?}
+			//? if >=26.3 {
+			, "poplar"
 			//?}
 			, "iron"
 	};
@@ -60,6 +72,9 @@ public class BeautifyModelJsonProvider implements DataProvider {
 			"oak", "spruce", "birch", "jungle", "acacia", "dark_oak", "crimson", "warped", "cherry", "mangrove", "quartz", "bamboo"
 			//? if >=1.21.11 {
 			, "pale_oak"
+			//?}
+			//? if >=26.3 {
+			, "poplar"
 			//?}
 	};
 
@@ -99,13 +114,12 @@ public class BeautifyModelJsonProvider implements DataProvider {
 			}
 		}
 		for (String wood : FRAME_WOODS) {
-			String frameTexture = wood.equals("pale_oak") ? "pale" : wood;
 			for (String motive : PictureFrame.MOTIVE_MODELS) {
 				for (boolean diagonal : new boolean[]{false, true}) {
 					Map<String, String> textures = new LinkedHashMap<>();
 					textures.put("0", "beautify:block/motive_" + motive);
-					textures.put("1", "beautify:block/" + frameTexture + "_frame_texture");
-					textures.put("particle", "beautify:block/" + frameTexture + "_frame_texture");
+					textures.put("1", "beautify:block/" + wood + "_frame_texture");
+					textures.put("particle", "beautify:block/" + wood + "_frame_texture");
 					futures.add(save(cache, "block/pictureframes/" + wood + "_" + motive + "_picture_frame" + (diagonal ? "_diagonal" : ""),
 							"beautify:block/pictureframes/base_picture_frame" + (diagonal ? "_diagonal" : ""), textures));
 				}

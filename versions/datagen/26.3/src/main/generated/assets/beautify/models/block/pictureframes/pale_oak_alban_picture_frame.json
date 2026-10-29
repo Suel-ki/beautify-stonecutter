@@ -3,7 +3,7 @@
   "render_type": "cutout",
   "textures": {
     "0": "beautify:block/motive_alban",
-    "1": "beautify:block/pale_frame_texture",
-    "particle": "beautify:block/pale_frame_texture"
+    "1": "beautify:block/pale_oak_frame_texture",
+    "particle": "beautify:block/pale_oak_frame_texture"
   }
 }
