@@ -87,6 +87,10 @@ public class BlockInit {
     public static final Trellis PALE_OAK_TRELLIS = registerTrellis("pale_oak_trellis");
     //?}
 
+    //? if >=26.3 {
+    public static final Trellis POPLAR_TRELLIS = registerTrellis("poplar_trellis");
+    //?}
+
     // lamps
     public static final LampLightBulb LAMP_LIGHT_BULB = register("lamp_light_bulb",
             LampLightBulb::new, BlockBehaviour.Properties.of().mapColor(MapColor.METAL).noOcclusion()
@@ -194,6 +198,11 @@ public class BlockInit {
             "pale_oak_blinds", MapColor.WOOD, SoundType.WOOD);
     //?}
 
+    //? if >=26.3 {
+    public static final Blinds POPLAR_BLINDS = registerBlinds(
+            "poplar_blinds", MapColor.WOOD, SoundType.WOOD);
+    //?}
+
     public static final Blinds IRON_BLINDS = registerBlinds(
             "iron_blinds", MapColor.METAL, SoundType.CHAIN);
 
@@ -237,6 +246,11 @@ public class BlockInit {
     //? if >=1.21.11 {
     public static final PictureFrame PALE_OAK_PICTURE_FRAME = registerPictureFrame(
             "pale_oak_picture_frame", MapColor.WOOD, SoundType.WOOD);
+    //?}
+
+    //? if >=26.3 {
+    public static final PictureFrame POPLAR_PICTURE_FRAME = registerPictureFrame(
+            "poplar_picture_frame", MapColor.WOOD, SoundType.WOOD);
     //?}
 
     // workbench
@@ -303,6 +317,9 @@ public class BlockInit {
         //? if >=1.21.11 {
         flammableRegistry.add(PALE_OAK_TRELLIS, 30, 20);
         //?}
+        //? if >=26.3 {
+        flammableRegistry.add(POPLAR_TRELLIS, 30, 20);
+        //?}
 
         // blinds
         flammableRegistry.add(SPRUCE_BLINDS, 30, 20);
@@ -319,6 +336,9 @@ public class BlockInit {
         //? if >=1.21.11 {
         flammableRegistry.add(PALE_OAK_BLINDS, 30, 20);
         //?}
+        //? if >=26.3 {
+        flammableRegistry.add(POPLAR_BLINDS, 30, 20);
+        //?}
 
         // picture frames
         flammableRegistry.add(SPRUCE_PICTURE_FRAME, 30, 20);
@@ -334,6 +354,9 @@ public class BlockInit {
         flammableRegistry.add(BAMBOO_PICTURE_FRAME, 30, 20);
         //? if >=1.21.11 {
         flammableRegistry.add(PALE_OAK_PICTURE_FRAME, 30, 20);
+        //?}
+        //? if >=26.3 {
+        flammableRegistry.add(POPLAR_PICTURE_FRAME, 30, 20);
         //?}
     }
 }
@@ -422,6 +445,10 @@ public class BlockInit {
 
     //? if >=1.21.11 {
     public static final DeferredBlock<Trellis> PALE_OAK_TRELLIS = registerTrellis("pale_oak_trellis");
+    //?}
+
+    //? if >=26.3 {
+    public static final DeferredBlock<Trellis> POPLAR_TRELLIS = registerTrellis("poplar_trellis");
     //?}
 
     // lamps
@@ -534,6 +561,11 @@ public class BlockInit {
             "pale_oak_blinds", MapColor.WOOD, SoundType.WOOD);
     //?}
 
+    //? if >=26.3 {
+    public static final DeferredBlock<Blinds> POPLAR_BLINDS = registerBlinds(
+            "poplar_blinds", MapColor.WOOD, SoundType.WOOD);
+    //?}
+
     public static final DeferredBlock<Blinds> IRON_BLINDS = registerBlinds(
             "iron_blinds", MapColor.METAL, SoundType.CHAIN);
 
@@ -577,6 +609,11 @@ public class BlockInit {
     //? if >=1.21.11 {
     public static final DeferredBlock<PictureFrame> PALE_OAK_PICTURE_FRAME = registerPictureFrame(
             "pale_oak_picture_frame", MapColor.WOOD, SoundType.WOOD);
+    //?}
+
+    //? if >=26.3 {
+    public static final DeferredBlock<PictureFrame> POPLAR_PICTURE_FRAME = registerPictureFrame(
+            "poplar_picture_frame", MapColor.WOOD, SoundType.WOOD);
     //?}
 
     // workbench

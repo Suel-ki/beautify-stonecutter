@@ -30,7 +30,8 @@
       "beautify:warped_blinds",
       "beautify:mangrove_blinds",
       "beautify:bamboo_blinds",
-      "beautify:pale_oak_blinds"
+      "beautify:pale_oak_blinds",
+      "beautify:poplar_blinds"
     ]
   }
 }

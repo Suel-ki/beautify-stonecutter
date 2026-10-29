@@ -30,7 +30,8 @@
       "beautify:mangrove_picture_frame",
       "beautify:quartz_picture_frame",
       "beautify:bamboo_picture_frame",
-      "beautify:pale_oak_picture_frame"
+      "beautify:pale_oak_picture_frame",
+      "beautify:poplar_picture_frame"
     ]
   }
 }

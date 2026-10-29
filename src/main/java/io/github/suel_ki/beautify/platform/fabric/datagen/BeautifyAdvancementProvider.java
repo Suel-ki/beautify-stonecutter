@@ -53,6 +53,9 @@ public class BeautifyAdvancementProvider extends FabricAdvancementProvider {
 						//? if >=1.21.11 {
 						, BlockInit.PALE_OAK_BLINDS
 						//?}
+						//? if >=26.3 {
+						, BlockInit.POPLAR_BLINDS
+						//?}
 						));
 		recipeUnlock(consumer, "bookstack", Items.BOOK, List.of(BlockInit.BOOKSTACK));
 		recipeUnlock(consumer, "botanist_workbench", Items.FLOWER_POT, List.of(BlockInit.BOTANIST_WORKBENCH));
@@ -62,6 +65,9 @@ public class BeautifyAdvancementProvider extends FabricAdvancementProvider {
 				List.of(BlockInit.OAK_PICTURE_FRAME, BlockInit.SPRUCE_PICTURE_FRAME, BlockInit.BIRCH_PICTURE_FRAME, BlockInit.DARK_OAK_PICTURE_FRAME, BlockInit.JUNGLE_PICTURE_FRAME, BlockInit.ACACIA_PICTURE_FRAME, BlockInit.WARPED_PICTURE_FRAME, BlockInit.CRIMSON_PICTURE_FRAME, BlockInit.MANGROVE_PICTURE_FRAME, BlockInit.QUARTZ_PICTURE_FRAME, BlockInit.BAMBOO_PICTURE_FRAME
 						//? if >=1.21.11 {
 						, BlockInit.PALE_OAK_PICTURE_FRAME
+						//?}
+						//? if >=26.3 {
+						, BlockInit.POPLAR_PICTURE_FRAME
 						//?}
 						));
 		recipeUnlock(consumer, "hanging_pot", BlockInit.ROPE, List.of(BlockInit.HANGING_POT));
@@ -73,6 +79,9 @@ public class BeautifyAdvancementProvider extends FabricAdvancementProvider {
 				List.of(BlockInit.OAK_TRELLIS, BlockInit.SPRUCE_TRELLIS, BlockInit.BIRCH_TRELLIS, BlockInit.JUNGLE_TRELLIS, BlockInit.ACACIA_TRELLIS, BlockInit.DARK_OAK_TRELLIS, BlockInit.MANGROVE_TRELLIS, BlockInit.CRIMSON_TRELLIS, BlockInit.CHERRY_TRELLIS, BlockInit.WARPED_TRELLIS, BlockInit.BAMBOO_TRELLIS
 						//? if >=1.21.11 {
 						, BlockInit.PALE_OAK_TRELLIS
+						//?}
+						//? if >=26.3 {
+						, BlockInit.POPLAR_TRELLIS
 						//?}
 						));
 

@@ -98,6 +98,9 @@ public class BeautifyModelProvider extends FabricModelProvider {
 		//? if >=1.21.11 {
 		blinds(generator, BlockInit.PALE_OAK_BLINDS, "pale_oak_blinds");
 		//?}
+		//? if >=26.3 {
+		blinds(generator, BlockInit.POPLAR_BLINDS, "poplar_blinds");
+		//?}
 		blinds(generator, BlockInit.IRON_BLINDS, "iron_blinds");
 
 		candelabra(generator, BlockInit.LAMP_CANDELABRA, "");
@@ -134,6 +137,9 @@ public class BeautifyModelProvider extends FabricModelProvider {
 		//? if >=1.21.11 {
 		frame(generator, BlockInit.PALE_OAK_PICTURE_FRAME, "pale_oak");
 		//?}
+		//? if >=26.3 {
+		frame(generator, BlockInit.POPLAR_PICTURE_FRAME, "poplar");
+		//?}
 
 		trellis(generator, BlockInit.OAK_TRELLIS, "oak");
 		trellis(generator, BlockInit.SPRUCE_TRELLIS, "spruce");
@@ -148,6 +154,9 @@ public class BeautifyModelProvider extends FabricModelProvider {
 		trellis(generator, BlockInit.BAMBOO_TRELLIS, "bamboo");
 		//? if >=1.21.11 {
 		trellis(generator, BlockInit.PALE_OAK_TRELLIS, "pale_oak");
+		//?}
+		//? if >=26.3 {
+		trellis(generator, BlockInit.POPLAR_TRELLIS, "poplar");
 		//?}
 	}
 
@@ -355,6 +364,9 @@ public class BeautifyModelProvider extends FabricModelProvider {
 		//? if >=1.21.11 {
 		blinds(generator, BlockInit.PALE_OAK_BLINDS, "pale_oak_blinds");
 		//?}
+		//? if >=26.3 {
+		blinds(generator, BlockInit.POPLAR_BLINDS, "poplar_blinds");
+		//?}
 		blinds(generator, BlockInit.IRON_BLINDS, "iron_blinds");
 
 		candelabra(generator, BlockInit.LAMP_CANDELABRA, "");
@@ -391,6 +403,9 @@ public class BeautifyModelProvider extends FabricModelProvider {
 		//? if >=1.21.11 {
 		frame(generator, BlockInit.PALE_OAK_PICTURE_FRAME, "pale_oak");
 		//?}
+		//? if >=26.3 {
+		frame(generator, BlockInit.POPLAR_PICTURE_FRAME, "poplar");
+		//?}
 
 		trellis(generator, BlockInit.OAK_TRELLIS, "oak");
 		trellis(generator, BlockInit.SPRUCE_TRELLIS, "spruce");
@@ -405,6 +420,9 @@ public class BeautifyModelProvider extends FabricModelProvider {
 		trellis(generator, BlockInit.BAMBOO_TRELLIS, "bamboo");
 		//? if >=1.21.11 {
 		trellis(generator, BlockInit.PALE_OAK_TRELLIS, "pale_oak");
+		//?}
+		//? if >=26.3 {
+		trellis(generator, BlockInit.POPLAR_TRELLIS, "poplar");
 		//?}
 	}
 
@@ -607,6 +625,9 @@ public class BeautifyModelProvider extends FabricModelProvider {
 		//? if >=1.21.11 {
 		blinds(generator, BlockInit.PALE_OAK_BLINDS, "pale_oak_blinds");
 		//?}
+		//? if >=26.3 {
+		blinds(generator, BlockInit.POPLAR_BLINDS, "poplar_blinds");
+		//?}
 		blinds(generator, BlockInit.IRON_BLINDS, "iron_blinds");
 
 		candelabra(generator, BlockInit.LAMP_CANDELABRA, "");
@@ -643,6 +664,9 @@ public class BeautifyModelProvider extends FabricModelProvider {
 		//? if >=1.21.11 {
 		frame(generator, BlockInit.PALE_OAK_PICTURE_FRAME, "pale_oak");
 		//?}
+		//? if >=26.3 {
+		frame(generator, BlockInit.POPLAR_PICTURE_FRAME, "poplar");
+		//?}
 
 		trellis(generator, BlockInit.OAK_TRELLIS, "oak");
 		trellis(generator, BlockInit.SPRUCE_TRELLIS, "spruce");
@@ -657,6 +681,9 @@ public class BeautifyModelProvider extends FabricModelProvider {
 		trellis(generator, BlockInit.BAMBOO_TRELLIS, "bamboo");
 		//? if >=1.21.11 {
 		trellis(generator, BlockInit.PALE_OAK_TRELLIS, "pale_oak");
+		//?}
+		//? if >=26.3 {
+		trellis(generator, BlockInit.POPLAR_TRELLIS, "poplar");
 		//?}
 	}
 

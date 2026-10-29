@@ -68,6 +68,10 @@ public final class ItemInitNeoForge {
 	public static final DeferredItem<BlockItem> PALE_OAK_TRELLIS_ITEM = registerTrellis(BlockInit.PALE_OAK_TRELLIS);
 	//?}
 
+	//? if >=26.3 {
+	public static final DeferredItem<BlockItem> POPLAR_TRELLIS_ITEM = registerTrellis(BlockInit.POPLAR_TRELLIS);
+	//?}
+
 	// blinds
 	public static final DeferredItem<BlockItem> OAK_BLINDS_ITEM = registerBurnBlockItem(BlockInit.OAK_BLINDS, 300);
 
@@ -93,6 +97,10 @@ public final class ItemInitNeoForge {
 
 	//? if >=1.21.11 {
 	public static final DeferredItem<BlockItem> PALE_OAK_BLINDS_ITEM = registerBurnBlockItem(BlockInit.PALE_OAK_BLINDS, 300);
+	//?}
+
+	//? if >=26.3 {
+	public static final DeferredItem<BlockItem> POPLAR_BLINDS_ITEM = registerBurnBlockItem(BlockInit.POPLAR_BLINDS, 300);
 	//?}
 
 	public static final DeferredItem<BlockItem> IRON_BLINDS_ITEM = registerBlockItem(BlockInit.IRON_BLINDS);
@@ -124,6 +132,10 @@ public final class ItemInitNeoForge {
 
 	//? if >=1.21.11 {
 	public static final DeferredItem<BlockItem> PALE_OAK_PICTURE_FRAME_ITEM = registerBurnBlockItem(BlockInit.PALE_OAK_PICTURE_FRAME, 300);
+	//?}
+
+	//? if >=26.3 {
+	public static final DeferredItem<BlockItem> POPLAR_PICTURE_FRAME_ITEM = registerBurnBlockItem(BlockInit.POPLAR_PICTURE_FRAME, 300);
 	//?}
 
 	public static final DeferredItem<BlockItem> ROPE_ITEM = registerBurnBlockItem(BlockInit.ROPE, 100);

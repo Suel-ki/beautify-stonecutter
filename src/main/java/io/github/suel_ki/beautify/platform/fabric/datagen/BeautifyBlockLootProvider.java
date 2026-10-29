@@ -75,6 +75,9 @@ public class BeautifyBlockLootProvider extends FabricBlockLootSubProvider {
 		//? if >=1.21.11 {
 		drops(BlockInit.PALE_OAK_BLINDS, BlockInit.PALE_OAK_PICTURE_FRAME);
 		//?}
+		//? if >=26.3 {
+		drops(BlockInit.POPLAR_BLINDS, BlockInit.POPLAR_PICTURE_FRAME);
+		//?}
 		drops(BlockInit.BOOKSTACK, BlockInit.BOTANIST_WORKBENCH, BlockInit.ROPE, BlockInit.LAMP_BAMBOO,
 				BlockInit.LAMP_LIGHT_BULB);
 		drops(BlockInit.LAMP_CANDELABRA, BlockInit.LAMP_CANDELABRA_BLACK, BlockInit.LAMP_CANDELABRA_BLUE,
@@ -107,6 +110,9 @@ public class BeautifyBlockLootProvider extends FabricBlockLootSubProvider {
 		trellisLoot(BlockInit.BAMBOO_TRELLIS);
 		//? if >=1.21.11 {
 			trellisLoot(BlockInit.PALE_OAK_TRELLIS);
+		//?}
+		//? if >=26.3 {
+			trellisLoot(BlockInit.POPLAR_TRELLIS);
 		//?}
 		add(BlockInit.HANGING_POT, hangingPot());
 		add(BlockInit.LAMP_JAR, lampJar());

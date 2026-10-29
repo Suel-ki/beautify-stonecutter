@@ -54,12 +54,18 @@ public class BeautifyBlockTagProvider extends FabricTagsProvider.BlockTagsProvid
 		//? if >=1.21.11 {
 		axe.add(key(BlockInit.PALE_OAK_BLINDS));
 		//?}
+		//? if >=26.3 {
+		axe.add(key(BlockInit.POPLAR_BLINDS));
+		//?}
 		axe.add(key(BlockInit.OAK_TRELLIS), key(BlockInit.SPRUCE_TRELLIS), key(BlockInit.BIRCH_TRELLIS), key(BlockInit.JUNGLE_TRELLIS),
 				key(BlockInit.ACACIA_TRELLIS), key(BlockInit.DARK_OAK_TRELLIS), key(BlockInit.MANGROVE_TRELLIS),
 				key(BlockInit.CRIMSON_TRELLIS), key(BlockInit.CHERRY_TRELLIS), key(BlockInit.WARPED_TRELLIS),
 				key(BlockInit.BAMBOO_TRELLIS));
 		//? if >=1.21.11 {
 		axe.add(key(BlockInit.PALE_OAK_TRELLIS));
+		//?}
+		//? if >=26.3 {
+		axe.add(key(BlockInit.POPLAR_TRELLIS));
 		//?}
 
 		pickaxe.add(key(BlockInit.IRON_BLINDS), key(BlockInit.LAMP_CANDELABRA), key(BlockInit.LAMP_CANDELABRA_LIGHT_BLUE),
@@ -78,6 +84,9 @@ public class BeautifyBlockTagProvider extends FabricTagsProvider.BlockTagsProvid
 				key(BlockInit.BAMBOO_TRELLIS));
 		//? if >=1.21.11 {
 		climbable.add(key(BlockInit.PALE_OAK_TRELLIS));
+		//?}
+		//? if >=26.3 {
+		climbable.add(key(BlockInit.POPLAR_TRELLIS));
 		//?}
 
 		enchantProvider.add(key(BlockInit.BOOKSTACK));

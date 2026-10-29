@@ -190,6 +190,35 @@ public class BeautifyRecipeProvider extends FabricRecipeProvider {
 					.unlockedBy("has_item", InventoryChangeTrigger.TriggerInstance.hasItems(BlockInit.PALE_OAK_TRELLIS))
 					.save(output, key(recipePath(BlockInit.PALE_OAK_TRELLIS)));
 		//?}
+		//? if >=26.3 {
+			shaped(itemGetter, BlockInit.POPLAR_BLINDS)
+					.pattern("/_/")
+					.pattern("/_/")
+					.define('/', Items.STICK)
+					.define('_', Items.POPLAR_SLAB)
+					.group("blinds")
+					.unlockedBy("has_item", InventoryChangeTrigger.TriggerInstance.hasItems(BlockInit.POPLAR_BLINDS))
+					.save(output, key(recipePath(BlockInit.POPLAR_BLINDS)));
+			shaped(itemGetter, BlockInit.POPLAR_PICTURE_FRAME)
+					.pattern(" _ ")
+					.pattern(" W ")
+					.pattern(" _/")
+					.define('_', Items.POPLAR_SLAB)
+					.define('W', whiteWool())
+					.define('/', Items.STICK)
+					.group("frames")
+					.unlockedBy("has_item", InventoryChangeTrigger.TriggerInstance.hasItems(BlockInit.POPLAR_PICTURE_FRAME))
+					.save(output, key(recipePath(BlockInit.POPLAR_PICTURE_FRAME)));
+			shaped(itemGetter, BlockInit.POPLAR_TRELLIS, 4)
+					.pattern("/ /")
+					.pattern(" O ")
+					.pattern("/ /")
+					.define('/', Items.STICK)
+					.define('O', Items.POPLAR_LOG)
+					.group("trellis")
+					.unlockedBy("has_item", InventoryChangeTrigger.TriggerInstance.hasItems(BlockInit.POPLAR_TRELLIS))
+					.save(output, key(recipePath(BlockInit.POPLAR_TRELLIS)));
+		//?}
 		shaped(itemGetter, BlockInit.BIRCH_BLINDS)
 				.pattern("/_/")
 				.pattern("/_/")

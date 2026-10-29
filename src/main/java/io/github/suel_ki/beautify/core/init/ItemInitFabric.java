@@ -69,6 +69,10 @@ public final class ItemInitFabric {
 	public static final BlockItem PALE_OAK_TRELLIS_ITEM = registerTrellis("pale_oak_trellis", BlockInit.PALE_OAK_TRELLIS);
 	//?}
 
+	//? if >=26.3 {
+	public static final BlockItem POPLAR_TRELLIS_ITEM = registerTrellis("poplar_trellis", BlockInit.POPLAR_TRELLIS);
+	//?}
+
 	// blinds
 	public static final BlockItem OAK_BLINDS_ITEM = registerFuelBlockItem("oak_blinds", BlockInit.OAK_BLINDS);
 
@@ -94,6 +98,10 @@ public final class ItemInitFabric {
 
 	//? if >=1.21.11 {
 	public static final BlockItem PALE_OAK_BLINDS_ITEM = registerFuelBlockItem("pale_oak_blinds", BlockInit.PALE_OAK_BLINDS);
+	//?}
+
+	//? if >=26.3 {
+	public static final BlockItem POPLAR_BLINDS_ITEM = registerFuelBlockItem("poplar_blinds", BlockInit.POPLAR_BLINDS);
 	//?}
 
 	public static final BlockItem IRON_BLINDS_ITEM = registerBlockItem("iron_blinds", BlockInit.IRON_BLINDS);
@@ -125,6 +133,10 @@ public final class ItemInitFabric {
 
 	//? if >=1.21.11 {
 	public static final BlockItem PALE_OAK_PICTURE_FRAME_ITEM = registerFuelBlockItem("pale_oak_picture_frame", BlockInit.PALE_OAK_PICTURE_FRAME);
+	//?}
+
+	//? if >=26.3 {
+	public static final BlockItem POPLAR_PICTURE_FRAME_ITEM = registerFuelBlockItem("poplar_picture_frame", BlockInit.POPLAR_PICTURE_FRAME);
 	//?}
 
 	public static BlockItem ROPE_ITEM = registerFuelBlockItem("rope", BlockInit.ROPE, 100);
@@ -307,6 +319,9 @@ public final class ItemInitFabric {
 			BAMBOO_TRELLIS_ITEM, BAMBOO_BLINDS_ITEM, BAMBOO_PICTURE_FRAME_ITEM,
 			//? if >=1.21.11 {
 			PALE_OAK_TRELLIS_ITEM, PALE_OAK_BLINDS_ITEM, PALE_OAK_PICTURE_FRAME_ITEM,
+			//?}
+			//? if >=26.3 {
+			POPLAR_TRELLIS_ITEM, POPLAR_BLINDS_ITEM, POPLAR_PICTURE_FRAME_ITEM,
 			//?}
 	};
 
