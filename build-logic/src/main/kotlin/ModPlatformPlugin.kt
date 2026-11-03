@@ -4,6 +4,7 @@ import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
 import kotlinx.serialization.json.jsonObject
 import org.gradle.api.DefaultTask
+import org.gradle.api.artifacts.repositories.MavenArtifactRepository
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.file.RegularFileProperty
@@ -79,10 +80,19 @@ abstract class ModPlatformPlugin @Inject constructor() : Plugin<Project> {
 		configureProject(ctx)
 	}
 
+	private fun Project.restrictKikugieRepositories() {
+		repositories.all {
+			if (this is MavenArtifactRepository && url.host == "maven.kikugie.dev") {
+				content { includeGroupByRegex("dev\\.kikugie.*") }
+			}
+		}
+	}
+
 	private fun Project.configureProject(ctx: Context) {
 		version = ctx.fullVersion
 
 		listOf("java", "idea").forEach { apply(plugin = it) }
+		restrictKikugieRepositories()
 		ctx.extension.requiredJava.set(ctx.javaVersion)
 
 		if (ctx.loader.isFabricLike) {
