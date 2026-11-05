@@ -113,12 +113,16 @@ public class BeautifyAdvancementProvider extends FabricAdvancementProvider {
 	}
 
 	private static void progressionRoot(Consumer<AdvancementHolder> consumer) {
+		//? if >=1.21.5
+		Identifier background = Identifier.parse("minecraft:block/spruce_planks");
+		//? if <1.21.5
+		//Identifier background = Identifier.parse("minecraft:textures/block/spruce_planks.png");
 		//? if >=26.3 {
 		consumer.accept(Advancement.Builder.advancement()
 				.rootDisplay(Items.ROSE_BUSH,
 						Component.translatable("advancements.beautify.root.title"),
 						Component.translatable("advancements.beautify.root.description"),
-						Identifier.parse("minecraft:block/spruce_planks"),
+						background,
 						AdvancementType.TASK, false, false, false)
 				.addCriterion("Install", PlayerTrigger.TriggerInstance.tick())
 				.build(Beautify.id("progression/root")));
@@ -127,7 +131,7 @@ public class BeautifyAdvancementProvider extends FabricAdvancementProvider {
 				.display(Items.ROSE_BUSH,
 						Component.translatable("advancements.beautify.root.title"),
 						Component.translatable("advancements.beautify.root.description"),
-						Identifier.parse("minecraft:block/spruce_planks"),
+						background,
 						AdvancementType.TASK, false, false, false)
 				.addCriterion("Install", PlayerTrigger.TriggerInstance.tick())
 				.build(Beautify.id("progression/root")));
