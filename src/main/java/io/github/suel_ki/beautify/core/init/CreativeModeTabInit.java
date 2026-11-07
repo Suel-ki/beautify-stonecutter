@@ -39,7 +39,7 @@ public class CreativeModeTabInit {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Beautify.MODID);
 
     // TAB
-    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BEAUTIFY_TAB = CREATIVE_MODE_TABS.register("beautify", () -> CreativeModeTab.builder()
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> BEAUTIFY_TAB = CREATIVE_MODE_TABS.register("group", () -> CreativeModeTab.builder()
             .title(Component.translatable("itemGroup.beautify.group"))
             .icon(ItemInitNeoForge.HANGING_POT_ITEM.get()::getDefaultInstance)
             .displayItems((enabledFeatures, entries) -> entries.acceptAll(ItemInitNeoForge.ITEMS.getEntries().stream().map(ItemStack::new).toList())) // adds items to itemgroup
