@@ -48,8 +48,7 @@ public class BeautifyModule extends EveryCompatModule {
                 .setTabKey(tab)
                 .defaultRecipe()
                 //REASON: take a look at their //TEXTURES, you'll see why.
-                .excludeBlockTypes("terrestria:(sakura|yucca_palm)|betternether:(nether_mushroom|nether_reed)")
-                .excludeBlockTypes("betternether:(nether_mushroom|nether_reed)")
+                .excludedWoodTypes()
                 .build();
         this.addEntry(tellis);
 

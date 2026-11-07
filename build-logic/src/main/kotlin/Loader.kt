@@ -57,11 +57,14 @@ sealed class Loader(val id: String) {
 					ModrinthEnvironment.CLIENT_OR_SERVER_PREFERS_BOTH, ModrinthEnvironment.CLIENT_OR_SERVER -> "*"
 				},
 				accessWidener = if (ctx.stonecutter.eval(ctx.currentMcVersion, ">=26")) "beautify.classtweaker" else "beautify.accesswidener",
-				entrypoints = mapOf(
-					"main" to listOf("${ctx.modGroup}.${ctx.modId}.platform.fabric.FabricEntrypoint"),
-					"client" to listOf("${ctx.modGroup}.${ctx.modId}.platform.fabric.FabricClientEntrypoint"),
-					"fabric-datagen" to listOf("${ctx.modGroup}.${ctx.modId}.platform.fabric.datagen.FabricDataGeneratorEntrypoint")
-				),
+				entrypoints = buildMap {
+					put("main", listOf("${ctx.modGroup}.${ctx.modId}.platform.fabric.FabricEntrypoint"))
+					put("client", listOf("${ctx.modGroup}.${ctx.modId}.platform.fabric.FabricClientEntrypoint"))
+					put("fabric-datagen", listOf("${ctx.modGroup}.${ctx.modId}.platform.fabric.datagen.FabricDataGeneratorEntrypoint"))
+					if (ctx.stonecutter.eval(ctx.currentMcVersion, ">=26.1.2") && ctx.stonecutter.eval(ctx.currentMcVersion, "<26.2")) {
+						put("everycomp", listOf("${ctx.modGroup}.${ctx.modId}.compat.every_compat.BeautifyCompatPlugin"))
+					}
+				},
 				depends = ctx.extension.dependencies.required.associate { it.modid.get() to it.fabricLikeVersionRange.get() },
 				suggests = ctx.extension.dependencies.optional.associate { it.modid.get() to it.fabricLikeVersionRange.get() },
 				breaks = ctx.extension.dependencies.incompatible.associate { it.modid.get() to it.fabricLikeVersionRange.get() },
