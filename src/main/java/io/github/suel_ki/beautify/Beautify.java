@@ -90,6 +90,8 @@ public class Beautify
 		}
 		^///?}
 		BlockInit.BLOCKS.register(bus);
+		//? if >=1.21.1
+		BlockInit.BLOCK_ENTITIES.register(bus);
 		ItemInitNeoForge.ITEMS.register(bus);
 		ModVillagers.POI_TYPES.register(bus);
 		ModVillagers.VILLAGER_PROFESSIONS.register(bus);

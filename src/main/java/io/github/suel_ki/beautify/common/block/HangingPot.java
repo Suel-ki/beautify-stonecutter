@@ -11,6 +11,8 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+//? if >=1.21.11
+import net.minecraft.world.item.component.SwingAnimation;
 import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
@@ -207,7 +209,7 @@ public class HangingPot extends LanternBlock implements BlockTooltip {
 					&& state.getValue(GROWN)) {
 				level.playSound(null, pos, SoundEvents.SHEEP_SHEAR, SoundSource.BLOCKS, 1, 1);
 				//? if >=26.3
-				player.swing(hand, net.minecraft.world.item.component.SwingAnimation.DEFAULT, true);
+				player.swing(hand, SwingAnimation.DEFAULT, true);
 				//? if <26.3
 				//player.swing(hand, true);
 				level.setBlock(pos, state.setValue(GROWN, false), 3);
@@ -226,7 +228,7 @@ public class HangingPot extends LanternBlock implements BlockTooltip {
 					level.setBlock(pos, state.setValue(POTFLOWER, 0).setValue(GROWN, false), 3); // emptying the pot
 					level.playSound(null, pos, SoundEvents.COMPOSTER_READY, SoundSource.BLOCKS, 1, 1);
 					//? if >=26.3
-					player.swing(hand, net.minecraft.world.item.component.SwingAnimation.DEFAULT, true);
+					player.swing(hand, SwingAnimation.DEFAULT, true);
 					//? if <26.3
 					//player.swing(hand, true);
 					return InteractionResult.SUCCESS;
@@ -236,7 +238,7 @@ public class HangingPot extends LanternBlock implements BlockTooltip {
 					level.setBlock(pos, state.setValue(POTFLOWER, 0).setValue(GROWN, false), 3);
 					level.playSound(null, pos, SoundEvents.AZALEA_LEAVES_BREAK, SoundSource.BLOCKS, 1, 1);
 					//? if >=26.3
-					player.swing(hand, net.minecraft.world.item.component.SwingAnimation.DEFAULT, true);
+					player.swing(hand, SwingAnimation.DEFAULT, true);
 					//? if <26.3
 					//player.swing(hand, true);
 					return InteractionResult.SUCCESS;
@@ -253,7 +255,7 @@ public class HangingPot extends LanternBlock implements BlockTooltip {
 						if (!flower.equals(Items.AIR)) {
 							level.playSound(null, pos, SoundEvents.AZALEA_PLACE, SoundSource.BLOCKS, 1, 1);
 							//? if >=26.3
-							player.swing(hand, net.minecraft.world.item.component.SwingAnimation.DEFAULT, true);
+							player.swing(hand, SwingAnimation.DEFAULT, true);
 							//? if <26.3
 							//player.swing(hand, true);
 						}

@@ -183,6 +183,12 @@ public class BeautifyModelJsonProvider implements DataProvider {
 		//? if >=1.21.11 {
 		futures.add(saveRopeItemDefinition(cache));
 		//?}
+		//? if >=1.20.1 {
+		futures.add(saveItemAlias(cache, "multi_flower_pot", "beautify:block/flower_pot/two_pots_spread"));
+		//? if >=1.21.11 {
+		futures.add(saveItemDefinition(cache, "multi_flower_pot"));
+		//?}
+		//?}
 		return CompletableFuture.allOf(futures.toArray(CompletableFuture[]::new));
 	}
 
@@ -193,6 +199,27 @@ public class BeautifyModelJsonProvider implements DataProvider {
 				.resolve("beautify/models/block/" + id + ".json");
 		return DataProvider.saveStable(cache, json, target);
 	}
+	private CompletableFuture<?> saveItemAlias(CachedOutput cache, String id, String parent) {
+		JsonObject json = new JsonObject();
+		json.addProperty("parent", parent);
+		Path target = this.output.getOutputFolder(PackOutput.Target.RESOURCE_PACK)
+				.resolve("beautify/models/item/" + id + ".json");
+		return DataProvider.saveStable(cache, json, target);
+	}
+
+	//? if >=1.21.11 {
+	private CompletableFuture<?> saveItemDefinition(CachedOutput cache, String id) {
+		JsonObject model = new JsonObject();
+		model.addProperty("type", "minecraft:model");
+		model.addProperty("model", "beautify:item/" + id);
+		JsonObject json = new JsonObject();
+		json.add("model", model);
+		Path target = this.output.getOutputFolder(PackOutput.Target.RESOURCE_PACK)
+				.resolve("beautify/items/" + id + ".json");
+		return DataProvider.saveStable(cache, json, target);
+	}
+	//?}
+
 	private CompletableFuture<?> saveRopeItemModel(CachedOutput cache) {
 		JsonObject json = new JsonObject();
 		json.addProperty("parent", "item/generated");

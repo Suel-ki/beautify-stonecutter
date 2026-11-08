@@ -13,9 +13,22 @@ import io.github.suel_ki.beautify.common.block.Blinds;
 import io.github.suel_ki.beautify.common.block.PictureFrame;
 import io.github.suel_ki.beautify.common.block.Trellis;
 import io.github.suel_ki.beautify.common.block.Rope;
+//? if >=1.20.1 {
+import io.github.suel_ki.beautify.common.block.MultiFlowerPotBlock;
+import io.github.suel_ki.beautify.common.block.entity.MultiFlowerPotBlockEntity;
+//?}
+//? if >=1.21.11
+import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+//? if >=1.21.1 && <1.21.11 {
+/*import io.github.suel_ki.beautify.common.block.MultiFlowerPotBlock;
+import io.github.suel_ki.beautify.common.block.entity.MultiFlowerPotBlockEntity;
+*///?}
 
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.minecraft.core.Registry;
+//? if >=1.21.1 && <1.21.11
+//import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.core.registries.BuiltInRegistries;
 //? if >=1.21.11
 import net.minecraft.core.registries.Registries;
@@ -36,6 +49,23 @@ public class BlockInit {
     public static final BookStack BOOKSTACK = register("bookstack",
             BookStack::new, BlockBehaviour.Properties.of().mapColor(MapColor.NONE)
                     .strength(0.2F, 0.2F).sound(SoundInit.BOOKSTACK_SOUNDS).noOcclusion());
+
+    //? if >=1.20.1 {
+    public static final MultiFlowerPotBlock MULTI_FLOWER_POT = register("multi_flower_pot",
+            MultiFlowerPotBlock::new, BlockBehaviour.Properties.of().mapColor(MapColor.STONE)
+                    .strength(0.1F).sound(SoundType.STONE).noOcclusion());
+
+    //? if <1.21.11 {
+    /*public static final BlockEntityType<MultiFlowerPotBlockEntity> MULTI_FLOWER_POT_BE = Registry.register(
+            BuiltInRegistries.BLOCK_ENTITY_TYPE, Beautify.id("multi_flower_pot"),
+            BlockEntityType.Builder.of(MultiFlowerPotBlockEntity::new, MULTI_FLOWER_POT).build(null));
+    *///?}
+    //? if >=1.21.11 {
+    public static final BlockEntityType<MultiFlowerPotBlockEntity> MULTI_FLOWER_POT_BE = Registry.register(
+            BuiltInRegistries.BLOCK_ENTITY_TYPE, Beautify.id("multi_flower_pot"),
+            FabricBlockEntityTypeBuilder.create(MultiFlowerPotBlockEntity::new, MULTI_FLOWER_POT).build());
+    //?}
+    //?}
 
     public static final Rope ROPE = register("rope",
             Rope::new, BlockBehaviour.Properties.of().mapColor(MapColor.NONE)
@@ -384,19 +414,42 @@ import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
+//? if >=1.20.1 {
+import io.github.suel_ki.beautify.common.block.MultiFlowerPotBlock;
+import io.github.suel_ki.beautify.common.block.entity.MultiFlowerPotBlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.core.registries.Registries;
+//?}
 
 import java.util.function.Function;
 import java.util.function.Supplier;
+    //? if >=1.21.11
+    import java.util.Set;
 
 public class BlockInit {
 
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(Beautify.MODID);
+//? if >=1.21.1
+    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(Registries.BLOCK_ENTITY_TYPE, Beautify.MODID);
 
     // BLOCKS
     public static final DeferredBlock<BookStack> BOOKSTACK = register("bookstack",
             BookStack::new,
             () -> BlockBehaviour.Properties.of().mapColor(MapColor.NONE)
                     .strength(0.2F, 0.2F).sound(SoundInit.BOOKSTACK_SOUNDS).noOcclusion());
+
+//? if >=1.21.1 {
+        public static final DeferredBlock<MultiFlowerPotBlock> MULTI_FLOWER_POT = register("multi_flower_pot",
+            MultiFlowerPotBlock::new,
+            () -> BlockBehaviour.Properties.of().mapColor(MapColor.STONE).strength(0.1F).sound(SoundType.STONE).noOcclusion());
+
+    public static final Supplier<BlockEntityType<MultiFlowerPotBlockEntity>> MULTI_FLOWER_POT_BE = BLOCK_ENTITIES.register(
+            "multi_flower_pot",
+            //? if <1.21.11
+            //() -> BlockEntityType.Builder.of(MultiFlowerPotBlockEntity::new, MULTI_FLOWER_POT.get()).build(null));
+//? if >=1.21.11
+            () -> new BlockEntityType<>(MultiFlowerPotBlockEntity::new, Set.of(MULTI_FLOWER_POT.get())));
+    //?}
 
     public static final DeferredBlock<Rope> ROPE = register("rope",
             Rope::new,

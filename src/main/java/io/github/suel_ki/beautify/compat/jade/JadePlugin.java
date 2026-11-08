@@ -2,9 +2,11 @@ package io.github.suel_ki.beautify.compat.jade;
 
 import io.github.suel_ki.beautify.common.block.HangingPot;
 import io.github.suel_ki.beautify.common.block.LampJar;
+import io.github.suel_ki.beautify.common.block.MultiFlowerPotBlock;
 import io.github.suel_ki.beautify.common.block.Trellis;
 import io.github.suel_ki.beautify.compat.jade.providers.HangingPotProvider;
 import io.github.suel_ki.beautify.compat.jade.providers.LampJarProvider;
+import io.github.suel_ki.beautify.compat.jade.providers.MultiFlowerPotProvider;
 import io.github.suel_ki.beautify.compat.jade.providers.TrellisProvider;
 //? if <26.3 {
 /*import io.github.suel_ki.beautify.compat.jade.providers.BookStackProvider;
@@ -22,6 +24,7 @@ public class JadePlugin implements IWailaPlugin {
         registration.registerBlockComponent(HangingPotProvider.INSTANCE, HangingPot.class);
         registration.registerBlockComponent(TrellisProvider.INSTANCE, Trellis.class);
         registration.registerBlockComponent(LampJarProvider.INSTANCE, LampJar.class);
+        registration.registerBlockComponent(MultiFlowerPotProvider.INSTANCE, MultiFlowerPotBlock.class);
         //? if <26.3 {
         /*//? if fabric {
         registration.registerCustomEnchantPower(BlockInit.BOOKSTACK, BookStackProvider.INSTANCE);

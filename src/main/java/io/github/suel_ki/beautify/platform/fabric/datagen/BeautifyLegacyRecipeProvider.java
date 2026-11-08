@@ -120,6 +120,11 @@ public class BeautifyLegacyRecipeProvider extends FabricRecipeProvider {
 				.requires(Items.BOOK)
 				.unlockedBy("has_item", InventoryChangeTrigger.TriggerInstance.hasItems(BlockInit.BOOKSTACK))
 				.save(consumer, recipeId(BlockInit.BOOKSTACK));
+		ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, BlockInit.MULTI_FLOWER_POT)
+				.requires(Items.FLOWER_POT)
+				.requires(Items.FLOWER_POT)
+				.unlockedBy("has_item", InventoryChangeTrigger.TriggerInstance.hasItems(BlockInit.MULTI_FLOWER_POT))
+				.save(consumer, recipeId(BlockInit.MULTI_FLOWER_POT));
 		ShapedRecipeBuilder.shaped(RecipeCategory.MISC, BlockInit.BOTANIST_WORKBENCH)
 				.pattern("##")
 				.pattern("PP")

@@ -82,6 +82,7 @@ public class BeautifyLegacyLootProvider extends FabricBlockLootTableProvider {
 		trellisLoot(BlockInit.SPRUCE_TRELLIS);
 		trellisLoot(BlockInit.WARPED_TRELLIS);
 		trellisLoot(BlockInit.BAMBOO_TRELLIS);
+		add(BlockInit.MULTI_FLOWER_POT, multiFlowerPot());
 		add(BlockInit.HANGING_POT, hangingPot());
 		add(BlockInit.LAMP_JAR, lampJar());
 	}
@@ -122,6 +123,15 @@ public class BeautifyLegacyLootProvider extends FabricBlockLootTableProvider {
 			pool.add(ref(leafKey(block, flowers[i])).when(match(block, propsInt(block, "flowers", i + 1))));
 		}
 		return LootTable.lootTable().withPool(pool);
+	}
+
+	private LootTable.Builder multiFlowerPot() {
+		Block block = BlockInit.MULTI_FLOWER_POT;
+		return LootTable.lootTable()
+				.withPool(pool(block))
+				.withPool(pool(Items.FLOWER_POT).when(match(block, propsInt(block, "pots", 3))))
+				.withPool(pool(Items.FLOWER_POT).when(match(block, propsInt(block, "pots", 4))))
+				.withPool(pool(Items.FLOWER_POT).when(match(block, propsInt(block, "pots", 4))));
 	}
 
 	private LootTable.Builder hangingPot() {

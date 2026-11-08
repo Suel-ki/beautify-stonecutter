@@ -4,6 +4,9 @@ package io.github.suel_ki.beautify.core.init;
 import io.github.suel_ki.beautify.client.util.ClientKeys;
 import io.github.suel_ki.beautify.Beautify;
 import io.github.suel_ki.beautify.common.block.*;
+//? if >=1.20.1 {
+import io.github.suel_ki.beautify.common.item.MultiFlowerPotItem;
+//?}
 //? if >=1.21.11
 import io.github.suel_ki.beautify.common.item.TooltipBlockItems;
 //? if >=1.21.11
@@ -107,8 +110,6 @@ public final class ItemInitFabric {
 	//?}
 
 	public static final BlockItem IRON_BLINDS_ITEM = registerBlockItem("iron_blinds", BlockInit.IRON_BLINDS);
-    //? if >=1.21.1 && <1.21.11
-    //public static final BlockItem MULTI_FLOWER_POT_ITEM = registerBlockItem("multi_flower_pot", BlockInit.MULTI_FLOWER_POT);
 
 	// picture frame
 	public static final BlockItem OAK_PICTURE_FRAME_ITEM = registerFuelBlockItem("oak_picture_frame", BlockInit.OAK_PICTURE_FRAME);
@@ -175,6 +176,16 @@ public final class ItemInitFabric {
 			//? if <1.21.11
 			//new Item.Properties()
 	);
+
+//? if >=1.20.1 && <1.21.11 {
+    /*public static final BlockItem MULTI_FLOWER_POT_ITEM = register("multi_flower_pot",
+            properties -> new MultiFlowerPotItem(BlockInit.MULTI_FLOWER_POT, properties), new Item.Properties());
+*///?}
+//? if >=1.21.11 {
+public static final BlockItem MULTI_FLOWER_POT_ITEM = register("multi_flower_pot",
+        properties -> new MultiFlowerPotItem(BlockInit.MULTI_FLOWER_POT, properties),
+        new Item.Properties().useBlockDescriptionPrefix());
+//?}
 
 	public static final BlockItem BOOKSTACK_ITEM = registerFuelBlockItem("bookstack", BlockInit.BOOKSTACK);
 

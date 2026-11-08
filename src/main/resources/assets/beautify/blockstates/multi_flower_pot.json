@@ -1,0 +1,94 @@
+{
+  "variants": {
+    "variant=0,pots=2,facing=north": {
+      "model": "beautify:block/flower_pot/two_pots_spread"
+    },
+    "variant=0,pots=2,facing=east": {
+      "model": "beautify:block/flower_pot/two_pots_spread",
+      "y": 90
+    },
+    "variant=0,pots=2,facing=south": {
+      "model": "beautify:block/flower_pot/two_pots_spread",
+      "y": 180
+    },
+    "variant=0,pots=2,facing=west": {
+      "model": "beautify:block/flower_pot/two_pots_spread",
+      "y": 270
+    },
+    "variant=0,pots=3,facing=north": {
+      "model": "beautify:block/flower_pot/three_pots_spread"
+    },
+    "variant=0,pots=3,facing=east": {
+      "model": "beautify:block/flower_pot/three_pots_spread",
+      "y": 90
+    },
+    "variant=0,pots=3,facing=south": {
+      "model": "beautify:block/flower_pot/three_pots_spread",
+      "y": 180
+    },
+    "variant=0,pots=3,facing=west": {
+      "model": "beautify:block/flower_pot/three_pots_spread",
+      "y": 270
+    },
+    "variant=0,pots=4,facing=north": {
+      "model": "beautify:block/flower_pot/four_pots_spread"
+    },
+    "variant=0,pots=4,facing=east": {
+      "model": "beautify:block/flower_pot/four_pots_spread",
+      "y": 90
+    },
+    "variant=0,pots=4,facing=south": {
+      "model": "beautify:block/flower_pot/four_pots_spread",
+      "y": 180
+    },
+    "variant=0,pots=4,facing=west": {
+      "model": "beautify:block/flower_pot/four_pots_spread",
+      "y": 270
+    },
+    "variant=1,pots=2,facing=north": {
+      "model": "beautify:block/flower_pot/two_pots_compact"
+    },
+    "variant=1,pots=2,facing=east": {
+      "model": "beautify:block/flower_pot/two_pots_compact",
+      "y": 90
+    },
+    "variant=1,pots=2,facing=south": {
+      "model": "beautify:block/flower_pot/two_pots_compact",
+      "y": 180
+    },
+    "variant=1,pots=2,facing=west": {
+      "model": "beautify:block/flower_pot/two_pots_compact",
+      "y": 270
+    },
+    "variant=1,pots=3,facing=north": {
+      "model": "beautify:block/flower_pot/three_pots_compact"
+    },
+    "variant=1,pots=3,facing=east": {
+      "model": "beautify:block/flower_pot/three_pots_compact",
+      "y": 90
+    },
+    "variant=1,pots=3,facing=south": {
+      "model": "beautify:block/flower_pot/three_pots_compact",
+      "y": 180
+    },
+    "variant=1,pots=3,facing=west": {
+      "model": "beautify:block/flower_pot/three_pots_compact",
+      "y": 270
+    },
+    "variant=1,pots=4,facing=north": {
+      "model": "beautify:block/flower_pot/four_pots_compact"
+    },
+    "variant=1,pots=4,facing=east": {
+      "model": "beautify:block/flower_pot/four_pots_compact",
+      "y": 90
+    },
+    "variant=1,pots=4,facing=south": {
+      "model": "beautify:block/flower_pot/four_pots_compact",
+      "y": 180
+    },
+    "variant=1,pots=4,facing=west": {
+      "model": "beautify:block/flower_pot/four_pots_compact",
+      "y": 270
+    }
+  }
+}

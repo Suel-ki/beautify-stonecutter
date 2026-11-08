@@ -7,6 +7,8 @@ import io.github.suel_ki.beautify.common.block.HangingPot;
 import io.github.suel_ki.beautify.common.block.Trellis;
 //? if >=1.21.11
 import io.github.suel_ki.beautify.common.tooltip.BlockTooltip;
+//? if >=1.21.1
+import io.github.suel_ki.beautify.common.item.MultiFlowerPotItem;
 //? if >=1.21.11
 import io.github.suel_ki.beautify.common.item.TooltipBlockItems;
 import io.github.suel_ki.beautify.common.tooltip.PlantableItemStackTooltip;
@@ -44,6 +46,8 @@ public final class ItemInitNeoForge {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(Beautify.MODID);
 
 	// trellis
+	//? if >=1.21.1
+
 	public static final DeferredItem<BlockItem> OAK_TRELLIS_ITEM = registerTrellis(BlockInit.OAK_TRELLIS);
 
 	public static final DeferredItem<BlockItem> SPRUCE_TRELLIS_ITEM = registerTrellis(BlockInit.SPRUCE_TRELLIS);
@@ -171,6 +175,8 @@ public final class ItemInitNeoForge {
 
 			});
 
+	public static final DeferredItem<BlockItem> MULTI_FLOWER_POT_ITEM = registerMultiFlowerPot(BlockInit.MULTI_FLOWER_POT);
+
 	public static final DeferredItem<BlockItem> BOOKSTACK_ITEM = registerBlockItem(BlockInit.BOOKSTACK);
 
 	public static final DeferredItem<BlockItem> LAMP_LIGHT_BULB_ITEM = registerBlockItem(BlockInit.LAMP_LIGHT_BULB);
@@ -227,6 +233,12 @@ public final class ItemInitNeoForge {
         //? if <1.21.11
         //return ITEMS.registerItem(key, func, new Item.Properties());
     }
+
+	//? if >=1.21.1 {
+	private static DeferredItem<BlockItem> registerMultiFlowerPot(Holder<Block> holder) {
+		return registerBlockItem(holder, properties -> new MultiFlowerPotItem(holder.value(), properties));
+	}
+	//?}
 
 	private static DeferredItem<BlockItem> registerBlockItem(Holder<Block> holder) {
         return registerBlockItem(holder, properties -> blockItem(holder, properties));

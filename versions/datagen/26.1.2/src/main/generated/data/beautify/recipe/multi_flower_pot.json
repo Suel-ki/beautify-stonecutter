@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    "minecraft:flower_pot",
+    "minecraft:flower_pot"
+  ],
+  "result": {
+    "id": "beautify:multi_flower_pot"
+  }
+}

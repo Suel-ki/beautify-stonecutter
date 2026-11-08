@@ -114,6 +114,7 @@ public class BeautifyBlockLootProvider extends FabricBlockLootSubProvider {
 		//? if >=26.3 {
 			trellisLoot(BlockInit.POPLAR_TRELLIS);
 		//?}
+		add(BlockInit.MULTI_FLOWER_POT, multiFlowerPot());
 		add(BlockInit.HANGING_POT, hangingPot());
 		add(BlockInit.LAMP_JAR, lampJar());
 	}
@@ -155,6 +156,15 @@ public class BeautifyBlockLootProvider extends FabricBlockLootSubProvider {
 					.when(match(block, propsInt(block, "flowers", i + 1))));
 		}
 		return LootTable.lootTable().withPool(pool);
+	}
+
+	private LootTable.Builder multiFlowerPot() {
+		Block block = BlockInit.MULTI_FLOWER_POT;
+		return LootTable.lootTable()
+				.withPool(rolls().add(LootItem.lootTableItem(block)))
+				.withPool(rolls().add(LootItem.lootTableItem(Items.FLOWER_POT)).when(match(block, propsInt(block, "pots", 3))))
+				.withPool(rolls().add(LootItem.lootTableItem(Items.FLOWER_POT)).when(match(block, propsInt(block, "pots", 4))))
+				.withPool(rolls().add(LootItem.lootTableItem(Items.FLOWER_POT)).when(match(block, propsInt(block, "pots", 4))));
 	}
 
 	private LootTable.Builder hangingPot() {

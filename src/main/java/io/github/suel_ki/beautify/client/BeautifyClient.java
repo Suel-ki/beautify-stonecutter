@@ -7,6 +7,13 @@ package io.github.suel_ki.beautify.client;
 //import io.github.suel_ki.beautify.client.model.DiagonalFrameModels;
 import io.github.suel_ki.beautify.client.tooltip.ClientPlantableItemStackTooltip;
 import io.github.suel_ki.beautify.particle.ParticleInit;
+//? if >=1.20.1 && <1.21.11
+//import io.github.suel_ki.beautify.client.render.MultiFlowerPotRenderer;
+//? if >=1.21.11
+import io.github.suel_ki.beautify.client.render.MultiFlowerPotRendererModern;
+//? if fabric && >=1.20.1
+import io.github.suel_ki.beautify.core.init.BlockInit;
+import net.fabricmc.fabric.api.client.rendering.v1.BlockEntityRendererRegistry;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -24,7 +31,15 @@ public class BeautifyClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
         ParticleInit.registerParticle();
-        //? if <26.1.2
+        //? if >=1.20.1 && <1.21.11 {
+        /*BlockEntityRendererRegistry.register(
+                BlockInit.MULTI_FLOWER_POT_BE, context -> new MultiFlowerPotRenderer());
+        *///?}
+        //? if >=1.21.11 {
+        BlockEntityRendererRegistry.register(
+                BlockInit.MULTI_FLOWER_POT_BE, context -> new MultiFlowerPotRendererModern(context));
+        //?}
+        //? if <1.21.11
         //ClientBlockInit.registerBlockRenderLayer();
         //? if >=26.1.2 {
         ClientTooltipComponentCallback.EVENT.register(ClientPlantableItemStackTooltip::get);
@@ -39,7 +54,12 @@ public class BeautifyClient implements ClientModInitializer {
 /*package io.github.suel_ki.beautify.client;
 
 import io.github.suel_ki.beautify.Beautify;
+import io.github.suel_ki.beautify.core.init.BlockInit;
 import io.github.suel_ki.beautify.client.tooltip.ClientPlantableItemStackTooltip;
+//? if <1.21.11
+//import io.github.suel_ki.beautify.client.render.MultiFlowerPotRenderer;
+//? if >=1.21.11
+//import io.github.suel_ki.beautify.client.render.MultiFlowerPotRendererModern;
 import io.github.suel_ki.beautify.common.tooltip.PlantableItemStackTooltip;
 import io.github.suel_ki.beautify.particle.ParticleInit;
 import io.github.suel_ki.beautify.particle.custom.GlowEssenceParticles;
@@ -50,6 +70,7 @@ import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.event.RegisterClientTooltipComponentFactoriesEvent;
 import net.neoforged.neoforge.client.event.RegisterParticleProvidersEvent;
 
@@ -69,6 +90,14 @@ public class BeautifyClient  {
     @SubscribeEvent
     public static void registerTooltipComponent(RegisterClientTooltipComponentFactoriesEvent event) {
         event.register(PlantableItemStackTooltip.class, ClientPlantableItemStackTooltip::get);
+    }
+
+    @SubscribeEvent
+    public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
+        //? if <1.21.11
+        //event.registerBlockEntityRenderer(BlockInit.MULTI_FLOWER_POT_BE.get(), context -> new MultiFlowerPotRenderer());
+        //? if >=1.21.11
+        //event.registerBlockEntityRenderer(BlockInit.MULTI_FLOWER_POT_BE.get(), MultiFlowerPotRendererModern::new);
     }
 }
 *///?}

@@ -12,6 +12,8 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+//? if >=1.21.11
+import net.minecraft.world.item.component.SwingAnimation;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -151,7 +153,7 @@ public static final IntegerProperty FLOWERS = IntegerProperty.create("flowers", 
 					level.setBlock(pos, state.setValue(FLOWERS, 0), 3);
 					level.playSound(null, pos, SoundEvents.AZALEA_LEAVES_BREAK, SoundSource.BLOCKS, 1, 1);
 					//? if >=26.3
-					player.swing(hand, net.minecraft.world.item.component.SwingAnimation.DEFAULT, true);
+					player.swing(hand, SwingAnimation.DEFAULT, true);
 					//? if <26.3
 					//player.swing(hand, true);
 					return InteractionResult.SUCCESS;
@@ -161,7 +163,7 @@ public static final IntegerProperty FLOWERS = IntegerProperty.create("flowers", 
 					level.setBlock(pos, state.setValue(FLOWERS, 0), 3);
 					level.playSound(null, pos, SoundEvents.AZALEA_LEAVES_BREAK, SoundSource.BLOCKS, 1, 1);
 					//? if >=26.3
-					player.swing(hand, net.minecraft.world.item.component.SwingAnimation.DEFAULT, true);
+					player.swing(hand, SwingAnimation.DEFAULT, true);
 					//? if <26.3
 					//player.swing(hand, true);
 					return InteractionResult.SUCCESS;
@@ -179,7 +181,7 @@ public static final IntegerProperty FLOWERS = IntegerProperty.create("flowers", 
 						if (!flower.equals(Items.AIR)) {
 							level.playSound(null, pos, SoundEvents.AZALEA_PLACE, SoundSource.BLOCKS, 1, 1);
 							//? if >=26.3
-							player.swing(hand, net.minecraft.world.item.component.SwingAnimation.DEFAULT, true);
+							player.swing(hand, SwingAnimation.DEFAULT, true);
 							//? if <26.3
 							//player.swing(hand, true);
 						}
