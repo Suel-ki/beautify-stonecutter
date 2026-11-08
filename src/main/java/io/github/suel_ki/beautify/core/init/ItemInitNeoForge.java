@@ -7,6 +7,8 @@ import io.github.suel_ki.beautify.common.block.HangingPot;
 import io.github.suel_ki.beautify.common.block.Trellis;
 //? if >=1.21.11
 import io.github.suel_ki.beautify.common.tooltip.BlockTooltip;
+//? if >=1.21.11
+import io.github.suel_ki.beautify.common.item.TooltipBlockItems;
 import io.github.suel_ki.beautify.common.tooltip.PlantableItemStackTooltip;
 import net.minecraft.core.Holder;
 //? if >=1.21.11
@@ -231,17 +233,10 @@ public final class ItemInitNeoForge {
 	}
 
     private static BlockItem blockItem(Holder<Block> holder, Item.Properties properties) {
-        //? if >=1.21.11 {
-        if (holder.value() instanceof BlockTooltip tooltipBlock) {
-            return new BlockItem(holder.value(), properties.component((DataComponentType) tooltipBlock.getTooltipType(), tooltipBlock.getTooltipComponent())) {
-                @Override
-                public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay display, Consumer<Component> consumer, TooltipFlag flag) {
-                    stack.addToTooltip(tooltipBlock.getTooltipType(), context, display, consumer, flag);
-                }
-            };
-        }
-        //?}
-        return new BlockItem(holder.value(), properties);
+        //? if >=1.21.11
+        return TooltipBlockItems.create(holder.value(), properties);
+        //? if <1.21.11
+        //return new BlockItem(holder.value(), properties);
     }
 
     private static DeferredItem<BlockItem> registerBurnBlockItem(Holder<Block> holder, int burnTime) {

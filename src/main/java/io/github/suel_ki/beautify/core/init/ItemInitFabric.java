@@ -5,6 +5,8 @@ import io.github.suel_ki.beautify.client.util.ClientKeys;
 import io.github.suel_ki.beautify.Beautify;
 import io.github.suel_ki.beautify.common.block.*;
 //? if >=1.21.11
+import io.github.suel_ki.beautify.common.item.TooltipBlockItems;
+//? if >=1.21.11
 import io.github.suel_ki.beautify.common.tooltip.BlockTooltip;
 import io.github.suel_ki.beautify.common.tooltip.PlantableItemStackTooltip;
 //? if >=26.1.2 && <26.3
@@ -105,6 +107,8 @@ public final class ItemInitFabric {
 	//?}
 
 	public static final BlockItem IRON_BLINDS_ITEM = registerBlockItem("iron_blinds", BlockInit.IRON_BLINDS);
+    //? if >=1.21.1 && <1.21.11
+    //public static final BlockItem MULTI_FLOWER_POT_ITEM = registerBlockItem("multi_flower_pot", BlockInit.MULTI_FLOWER_POT);
 
 	// picture frame
 	public static final BlockItem OAK_PICTURE_FRAME_ITEM = registerFuelBlockItem("oak_picture_frame", BlockInit.OAK_PICTURE_FRAME);
@@ -241,18 +245,10 @@ public final class ItemInitFabric {
 	}
 
 	private static BlockItem registerBlockItem(String name, Block block, Item.Properties properties) {
-		//? if >=1.21.11 {
-		if (block instanceof BlockTooltip hasTooltip) {
-			properties = properties.component(hasTooltip.getTooltipType(), hasTooltip.getTooltipComponent());
-			return register(name, props -> new BlockItem(block, props) {
-				@Override
-				public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay display, Consumer<Component> consumer, TooltipFlag flag) {
-					stack.addToTooltip(hasTooltip.getTooltipType(), context, display, consumer, flag);
-				}
-			}, properties);
-		}
-		//?}
-		return register(name, props -> new BlockItem(block, props), properties);
+		//? if >=1.21.11
+		return register(name, props -> TooltipBlockItems.create(block, props), properties);
+		//? if <1.21.11
+		//return register(name, props -> new BlockItem(block, props), properties);
 	}
 
 	private static BlockItem registerFuelBlockItem(String name, Block block) {
@@ -270,39 +266,7 @@ public final class ItemInitFabric {
 	}
 
 	private static BlockItem registerTrellis(String name, Block block) {
-		return register(name, properties -> new BlockItem(block, properties) {
-			//? if >=1.21.11 {
-			@Override
-			public void appendHoverText(ItemStack stack, TooltipContext context, TooltipDisplay display, Consumer<Component> consumer, TooltipFlag flag) {
-				stack.addToTooltip(ComponentInit.TRELLIS_TOOLTIP, context, display, consumer, flag);
-			}
-			//?}
-
-			@Override
-			public Optional<TooltipComponent> getTooltipImage(@NotNull ItemStack stack) {
-				if (ClientKeys.hasControlDown()) {
-					List<ItemStack> plants = Trellis.VALID_FLOWERS
-							.stream()
-							.filter(item -> item != Items.AIR)
-							.map(ItemStack::new)
-							.toList();
-					return Optional.of(new PlantableItemStackTooltip(plants));
-				} else {
-					return super.getTooltipImage(stack);
-				}
-			}
-
-		},
-		//? if >=26.3 {
-		new Item.Properties()
-				.useBlockDescriptionPrefix()
-				.component(ComponentInit.TRELLIS_TOOLTIP, Trellis.TooltipComponent.INSTANCE)
-				.component(DataComponents.COOKING_FUEL, new CookingFuel(new ResolvableInt.Constant(300), new ResolvableFloat.Constant(1.0f))));
-		//?} else if >=1.21.11 {
-		//new Item.Properties().useBlockDescriptionPrefix().component(ComponentInit.TRELLIS_TOOLTIP, Trellis.TooltipComponent.INSTANCE));
-		//?} else {
-		//new Item.Properties());
-		//?}
+		return registerFuelBlockItem(name, block, 300);
 	}
 
 	private static final Item[] FUEL_300 = {
