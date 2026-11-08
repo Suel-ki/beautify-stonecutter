@@ -2,10 +2,12 @@
 /*package io.github.suel_ki.beautify.compat.every_compat;
 
 import io.github.suel_ki.beautify.common.block.Blinds;
+import io.github.suel_ki.beautify.common.item.TooltipBlockItems;
 import io.github.suel_ki.beautify.common.block.PictureFrame;
 import io.github.suel_ki.beautify.common.block.Trellis;
 import net.mehvahdjukaar.every_compat.api.SimpleEntrySet;
 import net.mehvahdjukaar.every_compat.modules.EveryCompatModule;
+import net.mehvahdjukaar.moonlight.api.platform.PlatHelper;
 import net.mehvahdjukaar.moonlight.api.set.wood.VanillaWoodTypes;
 import net.mehvahdjukaar.moonlight.api.set.wood.WoodType;
 import net.minecraft.core.registries.Registries;
@@ -30,6 +32,7 @@ public class BeautifyModuleModern extends EveryCompatModule {
 
     public BeautifyModuleModern(String modId) {
         super(modId, "bd", modId);
+		setProviderId(PlatHelper.getPlatform().isFabric() ? "Beautify Refabricated" : "Beautify Refoxed");
 
         Supplier<CreativeModeTab> tab = getModTab("group");
 
@@ -45,6 +48,7 @@ public class BeautifyModuleModern extends EveryCompatModule {
                 .defaultRecipe()
                 .excludedWoodTypes()
                 .includeModelsBlock(true, modRes("block/oak_trellis"))
+                .addCustomItem((type, block, properties) -> TooltipBlockItems.create(block, properties))
                 .build();
         this.addEntry(trellis);
 
@@ -57,6 +61,7 @@ public class BeautifyModuleModern extends EveryCompatModule {
                 .requiresChildren(SLAB)
                 .addTag(BlockTags.MINEABLE_WITH_AXE, Registries.BLOCK)
                 .includeModelsBlock(true, modRes("block/oak_blinds"))
+                .addCustomItem((type, block, properties) -> TooltipBlockItems.create(block, properties))
                 .setTab(tab)
                 .defaultRecipe()
                 .build();
@@ -71,6 +76,7 @@ public class BeautifyModuleModern extends EveryCompatModule {
                 .requiresChildren(SLAB)
                 .addTexture(modRes("block/oak_frame_texture"))
                 .includeModelsBlock(true, modRes("block/oak_picture_frame"))
+                .addCustomItem((type, block, properties) -> TooltipBlockItems.create(block, properties))
                 .setTab(tab)
                 .defaultRecipe()
                 .build();
