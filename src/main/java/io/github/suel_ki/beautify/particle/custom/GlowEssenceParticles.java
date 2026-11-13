@@ -46,7 +46,7 @@ public class GlowEssenceParticles extends SingleQuadParticle {
 		this.yd = yd;
 		this.zd = zd;
 		this.quadSize = 0;
-		this.lifetime = (int) (60 * (0.5 + Math.random() / 2));
+		this.lifetime = (int) (60 * (0.5 + this.random.nextDouble() / 2));
 		this.setSpriteFromAge(spriteSet);
 
 		this.rCol = 1f;
@@ -77,14 +77,14 @@ public class GlowEssenceParticles extends SingleQuadParticle {
 	}
 
 	private void move() {
-		if (Math.random() <= 0.05) {
-			this.xd = (Math.random() * 2 - 1) / 70;
+		if (this.random.nextDouble() <= 0.05) {
+			this.xd = (this.random.nextDouble() * 2 - 1) / 70;
 		}
-		if (Math.random() <= 0.05) {
-			this.yd = (Math.random() * 2 - 1) / 70;
+		if (this.random.nextDouble() <= 0.05) {
+			this.yd = (this.random.nextDouble() * 2 - 1) / 70;
 		}
-		if (Math.random() <= 0.05) {
-			this.zd = (Math.random() * 2 - 1) / 70;
+		if (this.random.nextDouble() <= 0.05) {
+			this.zd = (this.random.nextDouble() * 2 - 1) / 70;
 		}
 	}
 

@@ -49,7 +49,7 @@ public class Rope extends ChainBlock implements BlockTooltip {
 	}
 
 	public static final class TooltipComponent {
-	    public static final TooltipLore INSTANCE = TooltipLore.of("tooltip.beautify.rope.1", "tooltip.beautify.rope.2");
+		public static final TooltipLore INSTANCE = TooltipLore.of("tooltip.beautify.rope.1", "tooltip.beautify.rope.2");
 	}
 	//?} else {
 	/*public PushReaction getPistonPushReaction(BlockState blockState) {

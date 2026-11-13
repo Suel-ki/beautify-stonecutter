@@ -26,7 +26,6 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
-import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 import java.util.List;
@@ -65,13 +64,13 @@ public class BookStack extends HorizontalDirectionalBlock implements BlockToolti
 
 	//Map of hitboxes for every model the model can be
 	private static final Map<Integer, VoxelShape> SHAPES_FOR_MODEL = ImmutableMap.of(
-			0, Shapes.or(Block.box(1, 0, 1, 15, 4, 15)),
-			1, Shapes.or(Block.box(1, 0, 1, 15, 4, 15)),
-			2, Shapes.or(Block.box(0, 0, 0, 16, 1.5, 16)),
-			3, Shapes.or(Block.box(0, 0, 0, 16, 9.5, 16)),
-			4, Shapes.or(Block.box(1, 0, 1, 15, 5, 15)),
-			5, Shapes.or(Block.box(0.5, 0, 0.5, 15.5, 7.25, 15.5)),
-			6, Shapes.or(Block.box(1, 0, 1, 15, 12, 15))
+			0, Block.box(1, 0, 1, 15, 4, 15),
+			1, Block.box(1, 0, 1, 15, 4, 15),
+			2, Block.box(0, 0, 0, 16, 1.5, 16),
+			3, Block.box(0, 0, 0, 16, 9.5, 16),
+			4, Block.box(1, 0, 1, 15, 5, 15),
+			5, Block.box(0.5, 0, 0.5, 15.5, 7.25, 15.5),
+			6, Block.box(1, 0, 1, 15, 12, 15)
 	);
 
 	//? if >=1.21.1 && <26.3 {

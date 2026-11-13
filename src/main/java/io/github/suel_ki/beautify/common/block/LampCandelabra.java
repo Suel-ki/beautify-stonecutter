@@ -36,7 +36,6 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.FluidState;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
-import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -72,7 +71,7 @@ public class LampCandelabra extends LanternBlock implements BlockTooltip {
 	public static final BooleanProperty ON = BooleanProperty.create("on");
 	public static final EnumProperty<Direction> FACING = BlockStateProperties.HORIZONTAL_FACING;
 
-	private static final VoxelShape SHAPE_HANGING = Shapes.join(Block.box(0, 2, 6.5, 16, 16, 9.5), Block.box(6.5, 2, 0, 9.5, 16, 16), BooleanOp.OR);
+	private static final VoxelShape SHAPE_HANGING = Shapes.or(Block.box(0, 2, 6.5, 16, 16, 9.5), Block.box(6.5, 2, 0, 9.5, 16, 16));
 	private static final VoxelShape SHAPE_STANDING = Block.box(5, 0, 5, 11, 14, 11);
 
 	public LampCandelabra(Properties properties) {
