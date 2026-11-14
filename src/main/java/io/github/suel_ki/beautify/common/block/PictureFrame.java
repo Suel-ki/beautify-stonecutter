@@ -56,9 +56,9 @@ import net.minecraft.network.codec.StreamCodec;
 //import com.mojang.serialization.MapCodec;
 
 //? if >=1.21.11 {
-public class PictureFrame extends HorizontalDirectionalBlock implements BlockTooltip, SimpleWaterloggedBlock {
+public class PictureFrame extends HorizontalDirectionalBlock implements BlockTooltip, SimpleWaterloggedBlock, FlammableBlock {
 //?} else {
-//public class PictureFrame extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock {
+//public class PictureFrame extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock, FlammableBlock {
 //?}
 	private static final int MODELCOUNT = 13; // number of models the frame has
 	public static final List<String> MOTIVE_MODELS = List.of(
@@ -86,13 +86,25 @@ public class PictureFrame extends HorizontalDirectionalBlock implements BlockToo
 	//public static final MapCodec<PictureFrame> CODEC = simpleCodec(PictureFrame::new);
 	//?}
 
+	private final boolean flammable;
+
 	public PictureFrame(Properties properties) {
+		this(properties, true);
+	}
+
+	public PictureFrame(Properties properties, boolean flammable) {
 		super(properties);
+		this.flammable = flammable;
 		this.registerDefaultState(this.defaultBlockState()
                 .setValue(FRAME_MOTIVE, 0)
                 .setValue(FACING, Direction.NORTH)
                 .setValue(DIAGONAL, false)
                 .setValue(WATERLOGGED, false));
+	}
+
+	@Override
+	public boolean isFlammable() {
+		return flammable;
 	}
 
 	//? if >=1.21.1 && <26.3 {
@@ -237,17 +249,17 @@ public class PictureFrame extends HorizontalDirectionalBlock implements BlockToo
 	//? if neoforge {
 	/*@Override
 	public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-		return true;
+		return flammable;
 	}
 
 	@Override
 	public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-		return 30;
+		return flammable ? 30 : 0;
 	}
 
 	@Override
 	public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-		return 20;
+		return flammable ? 20 : 0;
 	}
 	*///?}
 }

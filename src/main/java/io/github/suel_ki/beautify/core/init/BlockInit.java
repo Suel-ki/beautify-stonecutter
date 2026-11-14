@@ -4,6 +4,7 @@ package io.github.suel_ki.beautify.core.init;
 import io.github.suel_ki.beautify.Beautify;
 import io.github.suel_ki.beautify.common.block.BookStack;
 import io.github.suel_ki.beautify.common.block.BotanistWorkbench;
+import io.github.suel_ki.beautify.common.block.FlammableBlock;
 import io.github.suel_ki.beautify.common.block.HangingPot;
 import io.github.suel_ki.beautify.common.block.LampBamboo;
 import io.github.suel_ki.beautify.common.block.LampCandelabra;
@@ -105,11 +106,11 @@ public class BlockInit {
 
     public static final Trellis MANGROVE_TRELLIS = registerTrellis("mangrove_trellis");
 
-    public static final Trellis CRIMSON_TRELLIS = registerTrellis("crimson_trellis");
+    public static final Trellis CRIMSON_TRELLIS = registerTrellis("crimson_trellis", false);
 
     public static final Trellis CHERRY_TRELLIS = registerTrellis("cherry_trellis");
 
-    public static final Trellis WARPED_TRELLIS = registerTrellis("warped_trellis");
+    public static final Trellis WARPED_TRELLIS = registerTrellis("warped_trellis", false);
 
     public static final Trellis BAMBOO_TRELLIS = registerTrellis("bamboo_trellis");
 
@@ -197,7 +198,7 @@ public class BlockInit {
             "dark_oak_blinds", MapColor.WOOD, SoundType.WOOD);
 
     public static final Blinds CRIMSON_BLINDS = registerBlinds(
-            "crimson_blinds", MapColor.WOOD, SoundType.WOOD);
+            "crimson_blinds", MapColor.WOOD, SoundType.WOOD, false);
 
     public static final Blinds CHERRY_BLINDS = registerBlinds(
             "cherry_blinds", MapColor.WOOD, SoundType.WOOD);
@@ -215,7 +216,7 @@ public class BlockInit {
             "birch_blinds", MapColor.WOOD, SoundType.WOOD);
 
     public static final Blinds WARPED_BLINDS = registerBlinds(
-            "warped_blinds", MapColor.WOOD, SoundType.WOOD);
+            "warped_blinds", MapColor.WOOD, SoundType.WOOD, false);
 
     public static final Blinds MANGROVE_BLINDS = registerBlinds(
             "mangrove_blinds", MapColor.WOOD, SoundType.WOOD);
@@ -234,7 +235,7 @@ public class BlockInit {
     //?}
 
     public static final Blinds IRON_BLINDS = registerBlinds(
-            "iron_blinds", MapColor.METAL, SoundType.CHAIN);
+            "iron_blinds", MapColor.METAL, SoundType.CHAIN, false);
 
     // picture frames
     public static final PictureFrame SPRUCE_PICTURE_FRAME = registerPictureFrame(
@@ -244,7 +245,7 @@ public class BlockInit {
             "dark_oak_picture_frame", MapColor.WOOD, SoundType.WOOD);
 
     public static final PictureFrame CRIMSON_PICTURE_FRAME = registerPictureFrame(
-            "crimson_picture_frame", MapColor.WOOD, SoundType.WOOD);
+            "crimson_picture_frame", MapColor.WOOD, SoundType.WOOD, false);
 
     public static final PictureFrame CHERRY_PICTURE_FRAME = registerPictureFrame(
             "cherry_picture_frame", MapColor.WOOD, SoundType.WOOD);
@@ -262,7 +263,7 @@ public class BlockInit {
             "birch_picture_frame", MapColor.WOOD, SoundType.WOOD);
 
     public static final PictureFrame WARPED_PICTURE_FRAME = registerPictureFrame(
-            "warped_picture_frame", MapColor.WOOD, SoundType.WOOD);
+            "warped_picture_frame", MapColor.WOOD, SoundType.WOOD, false);
 
     public static final PictureFrame MANGROVE_PICTURE_FRAME = registerPictureFrame(
             "mangrove_picture_frame", MapColor.WOOD, SoundType.WOOD);
@@ -313,12 +314,22 @@ public class BlockInit {
     }
 
     private static Trellis registerTrellis(String name) {
-        return register(name, Trellis::new, BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).mapColor(MapColor.WOOD)
+        return registerTrellis(name, true);
+    }
+
+    private static Trellis registerTrellis(String name, boolean flammable) {
+        return register(name, properties -> new Trellis(properties, flammable),
+                BlockBehaviour.Properties.of().mapColor(MapColor.WOOD)
                 .strength(0.3F, 0.3F).sound(SoundType.BAMBOO).noOcclusion());
     }
 
     private static PictureFrame registerPictureFrame(String name, MapColor color, SoundType type) {
-        return register(name, PictureFrame::new, BlockBehaviour.Properties.of().mapColor(color).noOcclusion()
+        return registerPictureFrame(name, color, type, true);
+    }
+
+    private static PictureFrame registerPictureFrame(String name, MapColor color, SoundType type, boolean flammable) {
+        return register(name, properties -> new PictureFrame(properties, flammable),
+                BlockBehaviour.Properties.of().mapColor(color).noOcclusion()
                 //? if >=26.3 {
                 .strength(0.1f, 0.1f).sound(type).noOcclusion().pushReaction(PushReaction.POPPED));
                 //?} else if >=1.21.11 {
@@ -329,65 +340,20 @@ public class BlockInit {
     }
 
     private static Blinds registerBlinds(String name, MapColor color, SoundType type) {
-        return register(name, Blinds::new, BlockBehaviour.Properties.of().mapColor(color).noOcclusion()
+        return registerBlinds(name, color, type, true);
+    }
+
+    private static Blinds registerBlinds(String name, MapColor color, SoundType type, boolean flammable) {
+        return register(name, properties -> new Blinds(properties, flammable),
+                BlockBehaviour.Properties.of().mapColor(color).noOcclusion()
                 .strength(0.4f, 0.4f).sound(type));
     }
 
     public static void registerFlammableBlock() {
         FlammableBlockRegistry flammableRegistry = FlammableBlockRegistry.getDefaultInstance();
-        flammableRegistry.add(OAK_TRELLIS, 30, 20);
-        flammableRegistry.add(SPRUCE_TRELLIS, 30, 20);
-        flammableRegistry.add(BIRCH_TRELLIS, 30, 20);
-        flammableRegistry.add(JUNGLE_TRELLIS, 30, 20);
-        flammableRegistry.add(ACACIA_TRELLIS, 30, 20);
-        flammableRegistry.add(DARK_OAK_TRELLIS, 30, 20);
-        flammableRegistry.add(MANGROVE_TRELLIS, 30, 20);
-        flammableRegistry.add(CHERRY_TRELLIS, 30, 20);
-        flammableRegistry.add(BAMBOO_TRELLIS, 30, 20);
-        //? if >=1.21.11 {
-        flammableRegistry.add(PALE_OAK_TRELLIS, 30, 20);
-        //?}
-        //? if >=26.3 {
-        flammableRegistry.add(POPLAR_TRELLIS, 30, 20);
-        //?}
-
-        // blinds
-        flammableRegistry.add(SPRUCE_BLINDS, 30, 20);
-        flammableRegistry.add(DARK_OAK_BLINDS, 30, 20);
-        flammableRegistry.add(CRIMSON_BLINDS, 30, 20);
-        flammableRegistry.add(CHERRY_BLINDS, 30, 20);
-        flammableRegistry.add(ACACIA_BLINDS, 30, 20);
-        flammableRegistry.add(JUNGLE_BLINDS, 30, 20);
-        flammableRegistry.add(OAK_BLINDS, 30, 20);
-        flammableRegistry.add(BIRCH_BLINDS, 30, 20);
-        flammableRegistry.add(WARPED_BLINDS, 30, 20);
-        flammableRegistry.add(MANGROVE_BLINDS, 30, 20);
-        flammableRegistry.add(BAMBOO_BLINDS, 30, 20);
-        //? if >=1.21.11 {
-        flammableRegistry.add(PALE_OAK_BLINDS, 30, 20);
-        //?}
-        //? if >=26.3 {
-        flammableRegistry.add(POPLAR_BLINDS, 30, 20);
-        //?}
-
-        // picture frames
-        flammableRegistry.add(SPRUCE_PICTURE_FRAME, 30, 20);
-        flammableRegistry.add(DARK_OAK_PICTURE_FRAME, 30, 20);
-        flammableRegistry.add(CRIMSON_PICTURE_FRAME, 30, 20);
-        flammableRegistry.add(CHERRY_PICTURE_FRAME, 30, 20);
-        flammableRegistry.add(ACACIA_PICTURE_FRAME, 30, 20);
-        flammableRegistry.add(JUNGLE_PICTURE_FRAME, 30, 20);
-        flammableRegistry.add(OAK_PICTURE_FRAME, 30, 20);
-        flammableRegistry.add(BIRCH_PICTURE_FRAME, 30, 20);
-        flammableRegistry.add(WARPED_PICTURE_FRAME, 30, 20);
-        flammableRegistry.add(MANGROVE_PICTURE_FRAME, 30, 20);
-        flammableRegistry.add(BAMBOO_PICTURE_FRAME, 30, 20);
-        //? if >=1.21.11 {
-        flammableRegistry.add(PALE_OAK_PICTURE_FRAME, 30, 20);
-        //?}
-        //? if >=26.3 {
-        flammableRegistry.add(POPLAR_PICTURE_FRAME, 30, 20);
-        //?}
+        BuiltInRegistries.BLOCK.stream()
+                .filter(block -> block instanceof FlammableBlock flammable && flammable.isFlammable())
+                .forEach(block -> flammableRegistry.add(block, 30, 20));
     }
 }
 //?} else {
@@ -396,6 +362,7 @@ public class BlockInit {
 import io.github.suel_ki.beautify.Beautify;
 import io.github.suel_ki.beautify.common.block.BookStack;
 import io.github.suel_ki.beautify.common.block.BotanistWorkbench;
+import io.github.suel_ki.beautify.common.block.FlammableBlock;
 import io.github.suel_ki.beautify.common.block.HangingPot;
 import io.github.suel_ki.beautify.common.block.LampBamboo;
 import io.github.suel_ki.beautify.common.block.LampCandelabra;
@@ -488,11 +455,11 @@ public class BlockInit {
 
     public static final DeferredBlock<Trellis> MANGROVE_TRELLIS = registerTrellis("mangrove_trellis");
 
-    public static final DeferredBlock<Trellis> CRIMSON_TRELLIS = registerTrellis("crimson_trellis");
+    public static final DeferredBlock<Trellis> CRIMSON_TRELLIS = registerTrellis("crimson_trellis", false);
 
     public static final DeferredBlock<Trellis> CHERRY_TRELLIS = registerTrellis("cherry_trellis");
 
-    public static final DeferredBlock<Trellis> WARPED_TRELLIS = registerTrellis("warped_trellis");
+    public static final DeferredBlock<Trellis> WARPED_TRELLIS = registerTrellis("warped_trellis", false);
 
     public static final DeferredBlock<Trellis> BAMBOO_TRELLIS = registerTrellis("bamboo_trellis");
 
@@ -583,7 +550,7 @@ public class BlockInit {
             "dark_oak_blinds", MapColor.WOOD, SoundType.WOOD);
 
     public static final DeferredBlock<Blinds> CRIMSON_BLINDS = registerBlinds(
-            "crimson_blinds", MapColor.WOOD, SoundType.WOOD);
+            "crimson_blinds", MapColor.WOOD, SoundType.WOOD, false);
 
     public static final DeferredBlock<Blinds> CHERRY_BLINDS = registerBlinds(
             "cherry_blinds", MapColor.WOOD, SoundType.WOOD);
@@ -601,7 +568,7 @@ public class BlockInit {
             "birch_blinds", MapColor.WOOD, SoundType.WOOD);
 
     public static final DeferredBlock<Blinds> WARPED_BLINDS = registerBlinds(
-            "warped_blinds", MapColor.WOOD, SoundType.WOOD);
+            "warped_blinds", MapColor.WOOD, SoundType.WOOD, false);
 
     public static final DeferredBlock<Blinds> MANGROVE_BLINDS = registerBlinds(
             "mangrove_blinds", MapColor.WOOD, SoundType.WOOD);
@@ -620,7 +587,7 @@ public class BlockInit {
     //?}
 
     public static final DeferredBlock<Blinds> IRON_BLINDS = registerBlinds(
-            "iron_blinds", MapColor.METAL, SoundType.CHAIN);
+            "iron_blinds", MapColor.METAL, SoundType.CHAIN, false);
 
     // picture frames
     public static final DeferredBlock<PictureFrame> SPRUCE_PICTURE_FRAME = registerPictureFrame(
@@ -630,7 +597,7 @@ public class BlockInit {
             "dark_oak_picture_frame", MapColor.WOOD, SoundType.WOOD);
 
     public static final DeferredBlock<PictureFrame> CRIMSON_PICTURE_FRAME = registerPictureFrame(
-            "crimson_picture_frame", MapColor.WOOD, SoundType.WOOD);
+            "crimson_picture_frame", MapColor.WOOD, SoundType.WOOD, false);
 
     public static final DeferredBlock<PictureFrame> CHERRY_PICTURE_FRAME = registerPictureFrame(
             "cherry_picture_frame", MapColor.WOOD, SoundType.WOOD);
@@ -648,7 +615,7 @@ public class BlockInit {
             "birch_picture_frame", MapColor.WOOD, SoundType.WOOD);
 
     public static final DeferredBlock<PictureFrame> WARPED_PICTURE_FRAME = registerPictureFrame(
-            "warped_picture_frame", MapColor.WOOD, SoundType.WOOD);
+            "warped_picture_frame", MapColor.WOOD, SoundType.WOOD, false);
 
     public static final DeferredBlock<PictureFrame> MANGROVE_PICTURE_FRAME = registerPictureFrame(
             "mangrove_picture_frame", MapColor.WOOD, SoundType.WOOD);
@@ -698,12 +665,22 @@ public class BlockInit {
     }
 
     private static DeferredBlock<Trellis> registerTrellis(String name) {
-        return register(name, Trellis::new, () -> BlockBehaviour.Properties.of().mapColor(MapColor.WOOD).mapColor(MapColor.WOOD)
+        return registerTrellis(name, true);
+    }
+
+    private static DeferredBlock<Trellis> registerTrellis(String name, boolean flammable) {
+        return register(name, properties -> new Trellis(properties, flammable),
+                () -> BlockBehaviour.Properties.of().mapColor(MapColor.WOOD)
                 .strength(0.3F, 0.3F).sound(SoundType.BAMBOO).noOcclusion());
     }
 
     private static DeferredBlock<PictureFrame> registerPictureFrame(String name, MapColor color, SoundType type) {
-        return register(name, PictureFrame::new, () -> BlockBehaviour.Properties.of().mapColor(color).noOcclusion()
+        return registerPictureFrame(name, color, type, true);
+    }
+
+    private static DeferredBlock<PictureFrame> registerPictureFrame(String name, MapColor color, SoundType type, boolean flammable) {
+        return register(name, properties -> new PictureFrame(properties, flammable),
+                () -> BlockBehaviour.Properties.of().mapColor(color).noOcclusion()
                 //? if >=26.3 {
                 .strength(0.1f, 0.1f).sound(type).noOcclusion().pushReaction(PushReaction.POPPED));
                 //?} else if >=1.21.11 {
@@ -714,7 +691,12 @@ public class BlockInit {
     }
 
     private static DeferredBlock<Blinds> registerBlinds(String name, MapColor color, SoundType type) {
-        return register(name, Blinds::new, () -> BlockBehaviour.Properties.of().mapColor(color).noOcclusion()
+        return registerBlinds(name, color, type, true);
+    }
+
+    private static DeferredBlock<Blinds> registerBlinds(String name, MapColor color, SoundType type, boolean flammable) {
+        return register(name, properties -> new Blinds(properties, flammable),
+                () -> BlockBehaviour.Properties.of().mapColor(color).noOcclusion()
                 .strength(0.4f, 0.4f).sound(type));
     }
 }

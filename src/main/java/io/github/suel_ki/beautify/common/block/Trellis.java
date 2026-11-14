@@ -69,9 +69,9 @@ import net.minecraft.world.item.TooltipFlag;
 //?}
 
 //? if >=1.21.11 {
-public class Trellis extends HorizontalDirectionalBlock implements BlockTooltip, SimpleWaterloggedBlock {
+public class Trellis extends HorizontalDirectionalBlock implements BlockTooltip, SimpleWaterloggedBlock, FlammableBlock {
 //?} else {
-//public class Trellis extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock {
+//public class Trellis extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock, FlammableBlock {
 //?}
 	public static final List<Item> VALID_FLOWERS = Arrays.asList(Items.AIR, Items.ROSE_BUSH, Items.SUNFLOWER,
 			Items.PEONY, Items.LILAC, Items.VINE, Items.WEEPING_VINES, Items.TWISTING_VINES, Items.GLOW_LICHEN);
@@ -96,10 +96,22 @@ public static final IntegerProperty FLOWERS = IntegerProperty.create("flowers", 
 	//public static final MapCodec<Trellis> CODEC = simpleCodec(Trellis::new);
 	//?}
 
+	private final boolean flammable;
+
 	public Trellis(Properties properties) {
+		this(properties, true);
+	}
+
+	public Trellis(Properties properties, boolean flammable) {
 		super(properties);
+		this.flammable = flammable;
 		this.registerDefaultState(this.defaultBlockState().setValue(CEILLING, false).setValue(FACING, Direction.NORTH)
 				.setValue(WATERLOGGED, false));
+	}
+
+	@Override
+	public boolean isFlammable() {
+		return flammable;
 	}
 
 	//? if >=1.21.1 && <26.3 {
@@ -368,17 +380,17 @@ public static final IntegerProperty FLOWERS = IntegerProperty.create("flowers", 
 	//? if neoforge {
 	/*@Override
 	public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-		return true;
+		return flammable;
 	}
 
 	@Override
 	public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-		return 30;
+		return flammable ? 30 : 0;
 	}
 
 	@Override
 	public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-		return 20;
+		return flammable ? 20 : 0;
 	}
 	*///?}
 }

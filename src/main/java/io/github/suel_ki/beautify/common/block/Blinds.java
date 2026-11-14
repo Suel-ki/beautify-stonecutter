@@ -67,9 +67,9 @@ import net.minecraft.world.item.TooltipFlag;
 //import com.mojang.serialization.MapCodec;
 
 //? if >=1.21.11 {
-public class Blinds extends HorizontalDirectionalBlock implements BlockTooltip, SimpleWaterloggedBlock {
+public class Blinds extends HorizontalDirectionalBlock implements BlockTooltip, SimpleWaterloggedBlock, FlammableBlock {
 //?} else {
-//public class Blinds extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock {
+//public class Blinds extends HorizontalDirectionalBlock implements SimpleWaterloggedBlock, FlammableBlock {
 //?}
 	// Voxelshapes; Hidden = Blind not visible
 	private static final Map<Direction, VoxelShape> CLOSED_SHAPES = ImmutableMap.of(
@@ -94,15 +94,27 @@ public class Blinds extends HorizontalDirectionalBlock implements BlockTooltip, 
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 	public static final BooleanProperty POWERED = BooleanProperty.create("powered");
 
+	private final boolean flammable;
+
 	//? if >=1.21.1 && <26.3 {
 	//public static final MapCodec<Blinds> CODEC = simpleCodec(Blinds::new);
 	//?}
 
 	// constructor
 	public Blinds(Properties properties) {
+		this(properties, true);
+	}
+
+	public Blinds(Properties properties, boolean flammable) {
 		super(properties);
+		this.flammable = flammable;
 		this.registerDefaultState(this.defaultBlockState().setValue(OPEN, false).setValue(FACING, Direction.NORTH)
 				.setValue(HIDDEN, false).setValue(POWERED, false).setValue(WATERLOGGED, false));
+	}
+
+	@Override
+	public boolean isFlammable() {
+		return flammable;
 	}
 
 	//? if >=1.21.1 && <26.3 {
@@ -415,17 +427,17 @@ public class Blinds extends HorizontalDirectionalBlock implements BlockTooltip, 
 	//? if neoforge {
 	/*@Override
 	public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-		return true;
+		return flammable;
 	}
 
 	@Override
 	public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-		return 30;
+		return flammable ? 30 : 0;
 	}
 
 	@Override
 	public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
-		return 20;
+		return flammable ? 20 : 0;
 	}
 	*///?}
 }
