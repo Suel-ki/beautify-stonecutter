@@ -25,6 +25,14 @@ public class BeautifyConfig implements ConfigData {
 		@ConfigEntry.Gui.Tooltip
 		@Comment("Opens blinds from the topmost blind on if true")
 		public boolean opensFromRoot = true;
+
+		@ConfigEntry.Gui.Tooltip
+		@Comment("Blinds drop when powered and roll up when unpowered")
+		public boolean redstone = true;
+
+		@ConfigEntry.Gui.Tooltip
+		@Comment("Allows right-clicking blinds while they are powered")
+		public boolean interactWhenPowered = true;
 	}
 
 	public static class Houses {
@@ -41,6 +49,14 @@ public class BeautifyConfig implements ConfigData {
 		return Beautify.CONFIG.blinds.opensFromRoot;
 	}
 
+	public static boolean redstone() {
+		return Beautify.CONFIG.blinds.redstone;
+	}
+
+	public static boolean interactWhenPowered() {
+		return Beautify.CONFIG.blinds.interactWhenPowered;
+	}
+
 	public static int botanistSpawnWeight() {
 		return Beautify.CONFIG.houses.botanistSpawnWeight;
 	}
@@ -54,6 +70,8 @@ public class BeautifyConfig {
 
     public static final ModConfigSpec.IntValue SEARCH_RADIUS;
     public static final ModConfigSpec.BooleanValue OPENS_FROM_ROOT;
+    public static final ModConfigSpec.BooleanValue REDSTONE;
+    public static final ModConfigSpec.BooleanValue INTERACT_WHEN_POWERED;
     public static final ModConfigSpec.IntValue BOTANIST_SPAWN_WEIGHT;
 
     public static final ModConfigSpec SPEC;
@@ -72,6 +90,14 @@ public class BeautifyConfig {
         OPENS_FROM_ROOT = SERVER_BUILDER
                 .comment("Opens blinds from the topmost blind on if true")
                 .define("opensFromRoot", true);
+
+        REDSTONE = SERVER_BUILDER
+                .comment("Blinds drop when powered and roll up when unpowered")
+                .define("redstone", true);
+
+        INTERACT_WHEN_POWERED = SERVER_BUILDER
+                .comment("Allows right-clicking blinds while they are powered")
+                .define("interactWhenPowered", true);
 
         SERVER_BUILDER.pop();
 
@@ -94,6 +120,14 @@ public class BeautifyConfig {
 
     public static boolean opensFromRoot() {
         return OPENS_FROM_ROOT.get();
+    }
+
+    public static boolean redstone() {
+        return REDSTONE.get();
+    }
+
+    public static boolean interactWhenPowered() {
+        return INTERACT_WHEN_POWERED.get();
     }
 
     public static int botanistSpawnWeight() {

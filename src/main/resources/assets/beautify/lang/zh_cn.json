@@ -127,5 +127,9 @@
   "text.autoconfig.beautify.option.houses.botanistSpawnWeight": "植物学家村民生成权重",
   "text.autoconfig.beautify.option.blinds.searchRadius.@Tooltip": "搜索半径会确定打开或关闭距离被点击的百叶窗的块数（例如，搜索半径为 6 时，将搜索被点击的百叶窗左右 3 个方块和向下 6 个方块）。",
   "text.autoconfig.beautify.option.blinds.opensFromRoot.@Tooltip": "是否从顶部打开百叶窗。",
+  "text.autoconfig.beautify.option.blinds.redstone": "红石控制",
+  "text.autoconfig.beautify.option.blinds.redstone.@Tooltip": "充能时放下，未充能时收起。",
+  "text.autoconfig.beautify.option.blinds.interactWhenPowered": "充能时可交互",
+  "text.autoconfig.beautify.option.blinds.interactWhenPowered.@Tooltip": "充能状态下是否仍可右键操作百叶窗。",
   "text.autoconfig.beautify.option.houses.botanistSpawnWeight.@Tooltip": "植物学家村民小屋在村庄中的生成几率。"
 }

@@ -55,6 +55,8 @@ public class ConfigScreen {
 
         ModConfigSpec.IntValue searchRadius = BeautifyConfig.SEARCH_RADIUS;
         ModConfigSpec.BooleanValue opensFromRoot = BeautifyConfig.OPENS_FROM_ROOT;
+        ModConfigSpec.BooleanValue redstone = BeautifyConfig.REDSTONE;
+        ModConfigSpec.BooleanValue interactWhenPowered = BeautifyConfig.INTERACT_WHEN_POWERED;
 
         blinds.addEntry(eb
                 .startIntField(
@@ -72,6 +74,24 @@ public class ConfigScreen {
                 .setTooltip(Component.translatable("text.autoconfig.beautify.option.blinds.opensFromRoot.@Tooltip"))
                 .setDefaultValue(opensFromRoot.getDefault())
                 .setSaveConsumer(opensFromRoot::set)
+                .build());
+
+        blinds.addEntry(eb
+                .startBooleanToggle(
+                        Component.translatable("text.autoconfig.beautify.option.blinds.redstone"),
+                        redstone.get())
+                .setTooltip(Component.translatable("text.autoconfig.beautify.option.blinds.redstone.@Tooltip"))
+                .setDefaultValue(redstone.getDefault())
+                .setSaveConsumer(redstone::set)
+                .build());
+
+        blinds.addEntry(eb
+                .startBooleanToggle(
+                        Component.translatable("text.autoconfig.beautify.option.blinds.interactWhenPowered"),
+                        interactWhenPowered.get())
+                .setTooltip(Component.translatable("text.autoconfig.beautify.option.blinds.interactWhenPowered.@Tooltip"))
+                .setDefaultValue(interactWhenPowered.getDefault())
+                .setSaveConsumer(interactWhenPowered::set)
                 .build());
 
         ConfigCategory houses = builder.getOrCreateCategory(Component.translatable("text.autoconfig.beautify.option.houses"));

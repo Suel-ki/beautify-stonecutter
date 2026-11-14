@@ -22,6 +22,7 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 //? if >=1.21.11 {
 import net.minecraft.world.level.ScheduledTickAccess;
+import net.minecraft.world.level.redstone.Orientation;
 //?}
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
@@ -91,6 +92,7 @@ public class Blinds extends HorizontalDirectionalBlock implements BlockTooltip, 
 	public static final BooleanProperty OPEN = BooleanProperty.create("open");
 	public static final BooleanProperty HIDDEN = BooleanProperty.create("hidden");
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
+	public static final BooleanProperty POWERED = BooleanProperty.create("powered");
 
 	//? if >=1.21.1 && <26.3 {
 	//public static final MapCodec<Blinds> CODEC = simpleCodec(Blinds::new);
@@ -100,7 +102,7 @@ public class Blinds extends HorizontalDirectionalBlock implements BlockTooltip, 
 	public Blinds(Properties properties) {
 		super(properties);
 		this.registerDefaultState(this.defaultBlockState().setValue(OPEN, false).setValue(FACING, Direction.NORTH)
-				.setValue(HIDDEN, false).setValue(WATERLOGGED, false));
+				.setValue(HIDDEN, false).setValue(POWERED, false).setValue(WATERLOGGED, false));
 	}
 
 	//? if >=1.21.1 && <26.3 {
@@ -135,16 +137,19 @@ public class Blinds extends HorizontalDirectionalBlock implements BlockTooltip, 
 	// check for facing placement, hidden is false per default
 	@Override
 	public BlockState getStateForPlacement(BlockPlaceContext context) {
+		Level level = context.getLevel();
+		BlockPos pos = context.getClickedPos();
+		boolean powered = level.hasNeighborSignal(pos) && (level.isClientSide() || BeautifyConfig.redstone());
 		return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite())
-				.setValue(OPEN, false).setValue(HIDDEN, false)
-				.setValue(WATERLOGGED, context.getLevel().getFluidState(context.getClickedPos()).getType() == Fluids.WATER);
+				.setValue(OPEN, powered).setValue(HIDDEN, false).setValue(POWERED, powered)
+				.setValue(WATERLOGGED, level.getFluidState(pos).getType() == Fluids.WATER);
 	}
 
 	// creating blockstates
 	@Override
 	protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
 		super.createBlockStateDefinition(builder);
-		builder.add(OPEN, FACING, HIDDEN, WATERLOGGED);
+		builder.add(OPEN, FACING, HIDDEN, POWERED, WATERLOGGED);
 	}
 
 	@Override
@@ -180,137 +185,21 @@ public class Blinds extends HorizontalDirectionalBlock implements BlockTooltip, 
 	//? if >=1.21.11 {
 	@Override
 	public InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos, Player player,
-											BlockHitResult result) {
+			BlockHitResult result) {
 		if (level.isClientSide()) {
 			return InteractionResult.SUCCESS;
 		}
-
-		// stores last value of blind
-		final boolean currentlyOpen = state.getValue(OPEN);
-
-		// if the blinds open from the root
-		// search for the position of the topmost blind and set the pos
-		if (BeautifyConfig.opensFromRoot()) {
-			int step = 1;
-			while (sameBlindType(level, pos.above(step), state)) {
-				++step;
-			}
-			pos = pos.above(step - 1);
+		if (!BeautifyConfig.interactWhenPowered() && state.getValue(POWERED)) {
+			return InteractionResult.PASS;
 		}
-
-		{
-			// changes clicked blind: open <-> closed
-			level.setBlock(pos, state.setValue(OPEN, !currentlyOpen), 3);
-
-			// CODE BELOW IS DISABLED IF SEARCHRADIUS = 0
-			// checks for blinds below clicked blind: open <-> closed, hidden=true
-			if (BeautifyConfig.searchRadius() > 0) {
-				for (int offsetDown = 1; offsetDown <= BeautifyConfig.searchRadius(); ++offsetDown) {
-					if (sameBlindType(level, pos.below(offsetDown), state)) {
-						switchOpenUpdateHidden(level, pos.below(offsetDown), state, false);
-					} else {
-						break;
-					}
-				}
-			}
-
-			if (BeautifyConfig.searchRadius() > 0) {
-				// FOR BLINDS ON NORTH-SOUTH AXIS
-				if (state.getValue(FACING) == Direction.NORTH || state.getValue(FACING) == Direction.SOUTH) {
-
-					// checks blinds east of clicked blind
-					for (int offsetEast = 1; offsetEast <= BeautifyConfig.searchRadius() / 2; ++offsetEast) {
-						if (sameBlindType(level, pos.east(offsetEast), state)) {
-							// changes east blinds: open <-> closed
-							level.setBlock(pos.east(offsetEast), state.setValue(OPEN, !currentlyOpen), 3);
-							// checks for blinds below east blinds: open <-> closed, hidden=true
-							for (int offsetDown = 1; offsetDown <= BeautifyConfig.searchRadius(); ++offsetDown) {
-								if (sameBlindType(level, pos.below(offsetDown).east(offsetEast), state)) {
-									switchOpenUpdateHidden(level, pos.below(offsetDown).east(offsetEast), state,
-											false);
-								} else {
-									break;
-								}
-							}
-						} else {
-							break;
-						}
-					}
-
-					// checks blinds west of clicked blind
-					for (int offsetWest = 1; offsetWest <= BeautifyConfig.searchRadius() / 2; ++offsetWest) {
-						if (sameBlindType(level, pos.west(offsetWest), state)) {
-							// changes west blinds: open <-> closed
-							level.setBlock(pos.west(offsetWest), state.setValue(OPEN, !currentlyOpen), 3);
-							// checks for blinds below west blinds: open <-> closed, hidden=true
-							for (int offsetDown = 1; offsetDown <= BeautifyConfig.searchRadius(); ++offsetDown) {
-								if (sameBlindType(level, pos.below(offsetDown).west(offsetWest), state)) {
-									switchOpenUpdateHidden(level, pos.below(offsetDown).west(offsetWest), state,
-											false);
-								} else {
-									break;
-								}
-							}
-						} else {
-							break;
-						}
-					}
-				}
-
-				// FOR BLINDS ON EAST-WEST AXIS
-				if (state.getValue(FACING) == Direction.EAST || state.getValue(FACING) == Direction.WEST) {
-
-					// checks blinds north of clicked blind
-					for (int offsetNorth = 1; offsetNorth <= BeautifyConfig.searchRadius() / 2; ++offsetNorth) {
-						if (sameBlindType(level, pos.north(offsetNorth), state)) {
-							// changes north blinds: open <-> closed
-							level.setBlock(pos.north(offsetNorth), state.setValue(OPEN, !currentlyOpen), 3);
-							// checks for blinds below north blinds: open <-> closed, hidden=true
-							for (int offsetDown = 1; offsetDown <= BeautifyConfig.searchRadius(); ++offsetDown) {
-								if (sameBlindType(level, pos.below(offsetDown).north(offsetNorth), state)) {
-									switchOpenUpdateHidden(level, pos.below(offsetDown).north(offsetNorth),
-											state, false);
-								} else {
-									break;
-								}
-							}
-						} else {
-							break;
-						}
-					}
-
-					// checks blinds south of clicked blind
-					for (int offsetSouth = 1; offsetSouth <= BeautifyConfig.searchRadius() / 2; ++offsetSouth) {
-						if (sameBlindType(level, pos.south(offsetSouth), state)) {
-							// changes south blinds: open <-> closed
-							level.setBlock(pos.south(offsetSouth), state.setValue(OPEN, !currentlyOpen), 3);
-							// checks for blinds below south blinds: open <-> closed, hidden=true
-							for (int offsetDown = 1; offsetDown <= BeautifyConfig.searchRadius(); ++offsetDown) {
-								if (sameBlindType(level, pos.below(offsetDown).south(offsetSouth), state)) {
-									switchOpenUpdateHidden(level, pos.below(offsetDown).south(offsetSouth),
-											state, false);
-								} else {
-									break;
-								}
-							}
-						} else {
-							break;
-						}
-					}
-				}
-				level.playSound(null, pos,
-						currentlyOpen ? SoundInit.get(SoundInit.BLINDS_CLOSE) : SoundInit.get(SoundInit.BLINDS_OPEN),
-						SoundSource.BLOCKS, 1, 1);
-				return InteractionResult.SUCCESS;
-			}
-		}
+		setGroupOpen(level, pos, state, !state.getValue(OPEN));
 		return InteractionResult.SUCCESS;
 	}
+
 	@Override
 	public InteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos,
-										   Player player, InteractionHand hand, BlockHitResult hit) {
-		useWithoutItem(state, level, pos, player, hit);
-		return InteractionResult.SUCCESS;
+			Player player, InteractionHand hand, BlockHitResult hit) {
+		return useWithoutItem(state, level, pos, player, hit);
 	}
 
 //?} else {
@@ -318,138 +207,16 @@ public class Blinds extends HorizontalDirectionalBlock implements BlockTooltip, 
 	@Override
 	public ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos,
 										Player player, InteractionHand hand, BlockHitResult hit) {
-		toggle(state, level, pos);
-		return ItemInteractionResult.SUCCESS;
+		InteractionResult result = toggle(state, level, pos);
+		return result == InteractionResult.SUCCESS ? ItemInteractionResult.SUCCESS
+				: ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 	}
 	//?} else {
 	/^@Override
 	public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand,
 			BlockHitResult result) {
-        if (level.isClientSide()) {
-            return InteractionResult.SUCCESS;
-        }
-
-        // stores last value of blind
-        final boolean currentlyOpen = state.getValue(OPEN);
-
-        // if the blinds open from the root
-        // search for the position of the topmost blind and set the pos
-        if (BeautifyConfig.opensFromRoot()) {
-            int step = 1;
-            while (sameBlindType(level, pos.above(step), state)) {
-                ++step;
-            }
-            pos = pos.above(step - 1);
-        }
-
-        {
-            // changes clicked blind: open <-> closed
-            level.setBlock(pos, state.setValue(OPEN, !currentlyOpen), 3);
-
-            // CODE BELOW IS DISABLED IF SEARCHRADIUS = 0
-            // checks for blinds below clicked blind: open <-> closed, hidden=true
-            if (BeautifyConfig.searchRadius() > 0) {
-                for (int offsetDown = 1; offsetDown <= BeautifyConfig.searchRadius(); ++offsetDown) {
-                    if (sameBlindType(level, pos.below(offsetDown), state)) {
-                        switchOpenUpdateHidden(level, pos.below(offsetDown), state, false);
-                    } else {
-                        break;
-                    }
-                }
-            }
-
-            if (BeautifyConfig.searchRadius() > 0) {
-                // FOR BLINDS ON NORTH-SOUTH AXIS
-                if (state.getValue(FACING) == Direction.NORTH || state.getValue(FACING) == Direction.SOUTH) {
-
-                    // checks blinds east of clicked blind
-                    for (int offsetEast = 1; offsetEast <= BeautifyConfig.searchRadius() / 2; ++offsetEast) {
-                        if (sameBlindType(level, pos.east(offsetEast), state)) {
-                            // changes east blinds: open <-> closed
-                            level.setBlock(pos.east(offsetEast), state.setValue(OPEN, !currentlyOpen), 3);
-                            // checks for blinds below east blinds: open <-> closed, hidden=true
-                            for (int offsetDown = 1; offsetDown <= BeautifyConfig.searchRadius(); ++offsetDown) {
-                                if (sameBlindType(level, pos.below(offsetDown).east(offsetEast), state)) {
-                                    switchOpenUpdateHidden(level, pos.below(offsetDown).east(offsetEast), state,
-                                            false);
-                                } else {
-                                    break;
-                                }
-                            }
-                        } else {
-                            break;
-                        }
-                    }
-
-                    // checks blinds west of clicked blind
-                    for (int offsetWest = 1; offsetWest <= BeautifyConfig.searchRadius() / 2; ++offsetWest) {
-                        if (sameBlindType(level, pos.west(offsetWest), state)) {
-                            // changes west blinds: open <-> closed
-                            level.setBlock(pos.west(offsetWest), state.setValue(OPEN, !currentlyOpen), 3);
-                            // checks for blinds below west blinds: open <-> closed, hidden=true
-                            for (int offsetDown = 1; offsetDown <= BeautifyConfig.searchRadius(); ++offsetDown) {
-                                if (sameBlindType(level, pos.below(offsetDown).west(offsetWest), state)) {
-                                    switchOpenUpdateHidden(level, pos.below(offsetDown).west(offsetWest), state,
-                                            false);
-                                } else {
-                                    break;
-                                }
-                            }
-                        } else {
-                            break;
-                        }
-                    }
-                }
-
-                // FOR BLINDS ON EAST-WEST AXIS
-                if (state.getValue(FACING) == Direction.EAST || state.getValue(FACING) == Direction.WEST) {
-
-                    // checks blinds north of clicked blind
-                    for (int offsetNorth = 1; offsetNorth <= BeautifyConfig.searchRadius() / 2; ++offsetNorth) {
-                        if (sameBlindType(level, pos.north(offsetNorth), state)) {
-                            // changes north blinds: open <-> closed
-                            level.setBlock(pos.north(offsetNorth), state.setValue(OPEN, !currentlyOpen), 3);
-                            // checks for blinds below north blinds: open <-> closed, hidden=true
-                            for (int offsetDown = 1; offsetDown <= BeautifyConfig.searchRadius(); ++offsetDown) {
-                                if (sameBlindType(level, pos.below(offsetDown).north(offsetNorth), state)) {
-                                    switchOpenUpdateHidden(level, pos.below(offsetDown).north(offsetNorth),
-                                            state, false);
-                                } else {
-                                    break;
-                                }
-                            }
-                        } else {
-                            break;
-                        }
-                    }
-
-                    // checks blinds south of clicked blind
-                    for (int offsetSouth = 1; offsetSouth <= BeautifyConfig.searchRadius() / 2; ++offsetSouth) {
-                        if (sameBlindType(level, pos.south(offsetSouth), state)) {
-                            // changes south blinds: open <-> closed
-                            level.setBlock(pos.south(offsetSouth), state.setValue(OPEN, !currentlyOpen), 3);
-                            // checks for blinds below south blinds: open <-> closed, hidden=true
-                            for (int offsetDown = 1; offsetDown <= BeautifyConfig.searchRadius(); ++offsetDown) {
-                                if (sameBlindType(level, pos.below(offsetDown).south(offsetSouth), state)) {
-                                    switchOpenUpdateHidden(level, pos.below(offsetDown).south(offsetSouth),
-                                            state, false);
-                                } else {
-                                    break;
-                                }
-                            }
-                        } else {
-                            break;
-                        }
-                    }
-                }
-                level.playSound(null, pos,
-                        currentlyOpen ? SoundInit.get(SoundInit.BLINDS_CLOSE) : SoundInit.get(SoundInit.BLINDS_OPEN),
-                        SoundSource.BLOCKS, 1, 1);
-                return InteractionResult.SUCCESS;
-            }
-        }
-        return InteractionResult.CONSUME;
-    }
+		return toggle(state, level, pos);
+	}
 	^///?}
 *///?}
 
@@ -458,122 +225,11 @@ public class Blinds extends HorizontalDirectionalBlock implements BlockTooltip, 
 		if (level.isClientSide()) {
 			return InteractionResult.SUCCESS;
 		}
-
-		// stores last value of blind
-		final boolean currentlyOpen = state.getValue(OPEN);
-
-		// if the blinds open from the root
-		// search for the position of the topmost blind and set the pos
-		if (BeautifyConfig.opensFromRoot()) {
-			int step = 1;
-			while (sameBlindType(level, pos.above(step), state)) {
-				++step;
-			}
-			pos = pos.above(step - 1);
+		if (!BeautifyConfig.interactWhenPowered() && state.getValue(POWERED)) {
+			return InteractionResult.PASS;
 		}
-
-		// changes clicked blind: open <-> closed
-		level.setBlock(pos, state.setValue(OPEN, !currentlyOpen), 3);
-
-		// CODE BELOW IS DISABLED IF SEARCHRADIUS = 0
-		// checks for blinds below clicked blind: open <-> closed, hidden=true
-		if (BeautifyConfig.searchRadius() > 0) {
-			for (int offsetDown = 1; offsetDown <= BeautifyConfig.searchRadius(); ++offsetDown) {
-				if (sameBlindType(level, pos.below(offsetDown), state)) {
-					switchOpenUpdateHidden(level, pos.below(offsetDown), state, false);
-				} else {
-					break;
-				}
-			}
-		}
-
-		if (BeautifyConfig.searchRadius() > 0) {
-			// FOR BLINDS ON NORTH-SOUTH AXIS
-			if (state.getValue(FACING) == Direction.NORTH || state.getValue(FACING) == Direction.SOUTH) {
-
-				// checks blinds east of clicked blind
-				for (int offsetEast = 1; offsetEast <= BeautifyConfig.searchRadius() / 2; ++offsetEast) {
-					if (sameBlindType(level, pos.east(offsetEast), state)) {
-						// changes east blinds: open <-> closed
-						level.setBlock(pos.east(offsetEast), state.setValue(OPEN, !currentlyOpen), 3);
-						// checks for blinds below east blinds: open <-> closed, hidden=true
-						for (int offsetDown = 1; offsetDown <= BeautifyConfig.searchRadius(); ++offsetDown) {
-							if (sameBlindType(level, pos.below(offsetDown).east(offsetEast), state)) {
-								switchOpenUpdateHidden(level, pos.below(offsetDown).east(offsetEast), state, false);
-							} else {
-								break;
-							}
-						}
-					} else {
-						break;
-					}
-				}
-
-				// checks blinds west of clicked blind
-				for (int offsetWest = 1; offsetWest <= BeautifyConfig.searchRadius() / 2; ++offsetWest) {
-					if (sameBlindType(level, pos.west(offsetWest), state)) {
-						// changes west blinds: open <-> closed
-						level.setBlock(pos.west(offsetWest), state.setValue(OPEN, !currentlyOpen), 3);
-						// checks for blinds below west blinds: open <-> closed, hidden=true
-						for (int offsetDown = 1; offsetDown <= BeautifyConfig.searchRadius(); ++offsetDown) {
-							if (sameBlindType(level, pos.below(offsetDown).west(offsetWest), state)) {
-								switchOpenUpdateHidden(level, pos.below(offsetDown).west(offsetWest), state, false);
-							} else {
-								break;
-							}
-						}
-					} else {
-						break;
-					}
-				}
-			}
-
-			// FOR BLINDS ON EAST-WEST AXIS
-			if (state.getValue(FACING) == Direction.EAST || state.getValue(FACING) == Direction.WEST) {
-
-				// checks blinds north of clicked blind
-				for (int offsetNorth = 1; offsetNorth <= BeautifyConfig.searchRadius() / 2; ++offsetNorth) {
-					if (sameBlindType(level, pos.north(offsetNorth), state)) {
-						// changes north blinds: open <-> closed
-						level.setBlock(pos.north(offsetNorth), state.setValue(OPEN, !currentlyOpen), 3);
-						// checks for blinds below north blinds: open <-> closed, hidden=true
-						for (int offsetDown = 1; offsetDown <= BeautifyConfig.searchRadius(); ++offsetDown) {
-							if (sameBlindType(level, pos.below(offsetDown).north(offsetNorth), state)) {
-								switchOpenUpdateHidden(level, pos.below(offsetDown).north(offsetNorth), state, false);
-							} else {
-								break;
-							}
-						}
-					} else {
-						break;
-					}
-				}
-
-				// checks blinds south of clicked blind
-				for (int offsetSouth = 1; offsetSouth <= BeautifyConfig.searchRadius() / 2; ++offsetSouth) {
-					if (sameBlindType(level, pos.south(offsetSouth), state)) {
-						// changes south blinds: open <-> closed
-						level.setBlock(pos.south(offsetSouth), state.setValue(OPEN, !currentlyOpen), 3);
-						// checks for blinds below south blinds: open <-> closed, hidden=true
-						for (int offsetDown = 1; offsetDown <= BeautifyConfig.searchRadius(); ++offsetDown) {
-							if (sameBlindType(level, pos.below(offsetDown).south(offsetSouth), state)) {
-								switchOpenUpdateHidden(level, pos.below(offsetDown).south(offsetSouth), state, false);
-							} else {
-								break;
-							}
-						}
-					} else {
-						break;
-					}
-				}
-			}
-		}
-
-		level.playSound(null, pos,
-				currentlyOpen ? SoundInit.get(SoundInit.BLINDS_CLOSE) : SoundInit.get(SoundInit.BLINDS_OPEN),
-				SoundSource.BLOCKS, 1, 1);
-
-		return InteractionResult.CONSUME;
+		setGroupOpen(level, pos, state, !state.getValue(OPEN));
+		return InteractionResult.SUCCESS;
 	}
 *///?}
 
@@ -591,21 +247,104 @@ public class Blinds extends HorizontalDirectionalBlock implements BlockTooltip, 
 		return false;
 	}
 
-	// method for changing the blockstates of blinds
-	// if updateOnly is true, only HIDDEN is changed
-	// if updateOnly is false, the blind will also open or close
+	//? if >=1.21.11 {
+	@Override
+	public void neighborChanged(BlockState state, Level level, BlockPos pos, Block neighborBlock,
+			Orientation orientation, boolean movedByPiston) {
+		updateRedstone(state, level, pos);
+	}
+	//?} else {
+	/*@Override
+	public void neighborChanged(BlockState state, Level level, BlockPos pos, Block neighborBlock, BlockPos neighborPos,
+			boolean movedByPiston) {
+		updateRedstone(state, level, pos);
+	}
+	*///?}
 
-	private void switchOpenUpdateHidden(LevelAccessor level, BlockPos pos, BlockState state, boolean updateOnly) {
-		if (updateOnly) {
-			level.setBlock(pos, state.setValue(HIDDEN, false), 3);
+	@Override
+	public void onPlace(BlockState state, Level level, BlockPos pos, BlockState oldState, boolean movedByPiston) {
+		updateRedstone(state, level, pos);
+	}
+
+	private void updateRedstone(BlockState state, Level level, BlockPos pos) {
+		if (level.isClientSide()) {
 			return;
 		}
-
-		if (!state.getValue(OPEN)) {
-			level.setBlock(pos, state.setValue(OPEN, true).setValue(HIDDEN, false), 3);
-		} else {
-			level.setBlock(pos, state.setValue(OPEN, false).setValue(HIDDEN, true), 3);
+		if (!BeautifyConfig.redstone()) {
+			if (state.getValue(POWERED)) {
+				level.setBlock(pos, state.setValue(POWERED, false), 3);
+			}
+			return;
 		}
+		boolean powered = level.hasNeighborSignal(pos);
+		if (powered == state.getValue(POWERED)) {
+			return;
+		}
+		setGroupOpen(level, pos, state, powered);
+	}
+
+	// powered blinds are down
+	private void setGroupOpen(Level level, BlockPos pos, BlockState state, boolean open) {
+		boolean wasOpen = state.getValue(OPEN);
+		BlockPos root = pos;
+		if (BeautifyConfig.opensFromRoot()) {
+			int step = 1;
+			while (sameBlindType(level, pos.above(step), state)) {
+				++step;
+			}
+			root = pos.above(step - 1);
+		}
+
+		applyOpen(level, root, open, true);
+		applyColumn(level, root, state, open);
+
+		int radius = BeautifyConfig.searchRadius();
+		if (radius > 0) {
+			Direction facing = state.getValue(FACING);
+			Direction[] sides = facing == Direction.NORTH || facing == Direction.SOUTH
+					? new Direction[]{Direction.EAST, Direction.WEST}
+					: new Direction[]{Direction.NORTH, Direction.SOUTH};
+			for (Direction side : sides) {
+				for (int offset = 1; offset <= radius / 2; ++offset) {
+					BlockPos sidePos = root.relative(side, offset);
+					if (!sameBlindType(level, sidePos, state)) {
+						break;
+					}
+					applyOpen(level, sidePos, open, true);
+					applyColumn(level, sidePos, state, open);
+				}
+			}
+		}
+
+		if (wasOpen != open) {
+			level.playSound(null, root,
+					open ? SoundInit.get(SoundInit.BLINDS_OPEN) : SoundInit.get(SoundInit.BLINDS_CLOSE),
+					SoundSource.BLOCKS, 1, 1);
+		}
+	}
+
+	private void applyColumn(Level level, BlockPos top, BlockState state, boolean open) {
+		for (int offset = 1; offset <= BeautifyConfig.searchRadius(); ++offset) {
+			BlockPos below = top.below(offset);
+			if (!sameBlindType(level, below, state)) {
+				break;
+			}
+			applyOpen(level, below, open, false);
+		}
+	}
+
+	private void applyOpen(Level level, BlockPos pos, boolean open, boolean top) {
+		BlockState current = level.getBlockState(pos);
+		BlockState next = current.setValue(OPEN, open).setValue(HIDDEN, !open && !top)
+				.setValue(POWERED, BeautifyConfig.redstone() && level.hasNeighborSignal(pos));
+		if (next != current) {
+			level.setBlock(pos, next, 3);
+		}
+	}
+
+	private void reveal(LevelAccessor level, BlockPos pos) {
+		BlockState state = level.getBlockState(pos);
+		level.setBlock(pos, state.setValue(HIDDEN, false), 3);
 	}
 
 	// method to prevent hidden blinds from being unaccessible
@@ -614,7 +353,7 @@ public class Blinds extends HorizontalDirectionalBlock implements BlockTooltip, 
 	@Override
 	public void destroy(LevelAccessor level, BlockPos pos, BlockState state) {
 		if (sameBlindType(level, pos.below(), state)) {
-			switchOpenUpdateHidden(level, pos.below(), state, true);
+			reveal(level, pos.below());
 		}
 	}
 
@@ -625,7 +364,7 @@ public class Blinds extends HorizontalDirectionalBlock implements BlockTooltip, 
 	//public void wasExploded(Level level, BlockPos pos, Explosion explosion) {
 		BlockState state = level.getBlockState(pos);
 		if (sameBlindType(level, pos.below(), state)) {
-			switchOpenUpdateHidden(level, pos.below(), state, true);
+			reveal(level, pos.below());
 		}
 		super.wasExploded(level, pos, explosion);
 	}
