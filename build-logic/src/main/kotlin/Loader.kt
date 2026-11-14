@@ -61,6 +61,7 @@ sealed class Loader(val id: String) {
 					put("main", listOf("${ctx.modGroup}.${ctx.modId}.platform.fabric.FabricEntrypoint"))
 					put("client", listOf("${ctx.modGroup}.${ctx.modId}.platform.fabric.FabricClientEntrypoint"))
 					put("fabric-datagen", listOf("${ctx.modGroup}.${ctx.modId}.platform.fabric.datagen.FabricDataGeneratorEntrypoint"))
+					put("modmenu", listOf("${ctx.modGroup}.${ctx.modId}.util.ModMenuConfig"))
 					if (ctx.stonecutter.eval(ctx.currentMcVersion, ">=26.1.2") && ctx.stonecutter.eval(ctx.currentMcVersion, "<26.2")) {
 						put("everycomp", listOf("${ctx.modGroup}.${ctx.modId}.compat.every_compat.BeautifyCompatPlugin"))
 					}
